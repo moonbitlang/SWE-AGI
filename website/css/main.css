@@ -1,0 +1,4 @@
+/* Main entry point - import all CSS modules */
+@import 'core.css';
+@import 'layout.css';
+@import 'components.css';

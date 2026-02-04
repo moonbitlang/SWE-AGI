@@ -1,0 +1,4667 @@
+{
+  "generated_at": "2026-02-10T10:52:22.271194",
+  "metadata": {
+    "difficulty_tiers": {
+      "easy": [
+        "csv",
+        "git_object",
+        "hpack",
+        "ini",
+        "protobuf",
+        "uri"
+      ],
+      "medium": [
+        "pug",
+        "yaml",
+        "toml",
+        "xml",
+        "zip",
+        "capnp",
+        "wasm",
+        "url"
+      ],
+      "hard": [
+        "jq",
+        "html5",
+        "c99",
+        "lua",
+        "ecma262",
+        "python",
+        "r6rs",
+        "cdcl"
+      ]
+    },
+    "total_tests_by_task": {
+      "c99": 117,
+      "capnp": 111,
+      "cdcl": 4312,
+      "csv": 98,
+      "ecma262": 618,
+      "git_object": 1000,
+      "hpack": 129,
+      "html5": 8221,
+      "ini": 98,
+      "jq": 218,
+      "lua": 137,
+      "protobuf": 141,
+      "pug": 251,
+      "python": 653,
+      "r6rs": 1362,
+      "toml": 733,
+      "uri": 138,
+      "url": 1220,
+      "wasm": 800,
+      "xml": 735,
+      "yaml": 345,
+      "zip": 1089
+    },
+    "actions_metric": "Avg Actions is the per-model mean of per-task total tool actions counted by report/behavior_stats.py.",
+    "behavior_categories": {
+      "spec_understanding": "Spec Understanding",
+      "planning": "Planning",
+      "code_understanding": "Code Understanding",
+      "code_writing": "Code Writing",
+      "debugging": "Debugging",
+      "hygiene": "Hygiene",
+      "external_search": "External Search",
+      "other": "Other"
+    }
+  },
+  "models": [
+    {
+      "id": "claude-opus-4.5",
+      "display_name": "Claude Opus 4.5",
+      "org": "Anthropic"
+    },
+    {
+      "id": "claude-opus-4.6",
+      "display_name": "Claude Opus 4.6",
+      "org": "Anthropic"
+    },
+    {
+      "id": "claude-sonnet-4.5",
+      "display_name": "Claude Sonnet 4.5",
+      "org": "Anthropic"
+    },
+    {
+      "id": "deepseek-v3.2",
+      "display_name": "DeepSeek V3.2",
+      "org": "DeepSeek"
+    },
+    {
+      "id": "gemini-3-flash-preview",
+      "display_name": "Gemini 3 Flash",
+      "org": "Google"
+    },
+    {
+      "id": "gemini-3-pro-preview",
+      "display_name": "Gemini 3 Pro",
+      "org": "Google"
+    },
+    {
+      "id": "glm-4.7",
+      "display_name": "GLM-4.7",
+      "org": "Zhipu AI"
+    },
+    {
+      "id": "gpt-5.2-codex-high",
+      "display_name": "GPT-5.2 Codex",
+      "org": "OpenAI"
+    },
+    {
+      "id": "gpt-5.3-codex-xhigh",
+      "display_name": "GPT-5.3 Codex",
+      "org": "OpenAI"
+    },
+    {
+      "id": "kimi-k2.5",
+      "display_name": "Kimi K2.5",
+      "org": "Moonshot AI"
+    },
+    {
+      "id": "qwen3-max-2026-01-23",
+      "display_name": "Qwen3 Max",
+      "org": "Alibaba"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "c99",
+      "display_name": "C99 Parser",
+      "difficulty": "hard",
+      "total_tests": 117
+    },
+    {
+      "id": "capnp",
+      "display_name": "Cap'n Proto",
+      "difficulty": "medium",
+      "total_tests": 111
+    },
+    {
+      "id": "cdcl",
+      "display_name": "CDCL SAT Solver",
+      "difficulty": "hard",
+      "total_tests": 4312
+    },
+    {
+      "id": "csv",
+      "display_name": "CSV Parser",
+      "difficulty": "easy",
+      "total_tests": 98
+    },
+    {
+      "id": "ecma262",
+      "display_name": "ECMAScript Parser",
+      "difficulty": "hard",
+      "total_tests": 618
+    },
+    {
+      "id": "git_object",
+      "display_name": "Git Object Parser",
+      "difficulty": "easy",
+      "total_tests": 1000
+    },
+    {
+      "id": "hpack",
+      "display_name": "HPACK Decoder",
+      "difficulty": "easy",
+      "total_tests": 129
+    },
+    {
+      "id": "html5",
+      "display_name": "HTML5 Parser",
+      "difficulty": "hard",
+      "total_tests": 8221
+    },
+    {
+      "id": "ini",
+      "display_name": "INI Parser",
+      "difficulty": "easy",
+      "total_tests": 98
+    },
+    {
+      "id": "jq",
+      "display_name": "jq Interpreter",
+      "difficulty": "hard",
+      "total_tests": 218
+    },
+    {
+      "id": "lua",
+      "display_name": "Lua Interpreter",
+      "difficulty": "hard",
+      "total_tests": 137
+    },
+    {
+      "id": "protobuf",
+      "display_name": "Protocol Buffers",
+      "difficulty": "easy",
+      "total_tests": 141
+    },
+    {
+      "id": "pug",
+      "display_name": "Pug Template Engine",
+      "difficulty": "medium",
+      "total_tests": 251
+    },
+    {
+      "id": "python",
+      "display_name": "Python Parser",
+      "difficulty": "hard",
+      "total_tests": 653
+    },
+    {
+      "id": "r6rs",
+      "display_name": "R6RS Scheme",
+      "difficulty": "hard",
+      "total_tests": 1362
+    },
+    {
+      "id": "toml",
+      "display_name": "TOML Parser",
+      "difficulty": "medium",
+      "total_tests": 733
+    },
+    {
+      "id": "uri",
+      "display_name": "URI Parser",
+      "difficulty": "easy",
+      "total_tests": 138
+    },
+    {
+      "id": "url",
+      "display_name": "URL Parser",
+      "difficulty": "medium",
+      "total_tests": 1220
+    },
+    {
+      "id": "wasm",
+      "display_name": "WebAssembly Validator",
+      "difficulty": "medium",
+      "total_tests": 800
+    },
+    {
+      "id": "xml",
+      "display_name": "XML Parser",
+      "difficulty": "medium",
+      "total_tests": 735
+    },
+    {
+      "id": "yaml",
+      "display_name": "YAML Parser",
+      "difficulty": "medium",
+      "total_tests": 345
+    },
+    {
+      "id": "zip",
+      "display_name": "ZIP Decoder",
+      "difficulty": "medium",
+      "total_tests": 1089
+    }
+  ],
+  "results": [
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "c99",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 117,
+        "passed": 53,
+        "pass_rate": 45.3
+      },
+      "metrics": {
+        "elapsed_ms": 2468758,
+        "code_loc": 4937,
+        "tokens_in": 30442264,
+        "tokens_out": 96221,
+        "cost_usd": 20.39131375000001,
+        "actions": 290,
+        "behavior": {
+          "total": 290,
+          "spec_understanding": 32,
+          "planning": 15,
+          "code_understanding": 101,
+          "code_writing": 60,
+          "debugging": 75,
+          "hygiene": 2,
+          "external_search": 0,
+          "other": 5
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "capnp",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 111,
+        "passed": 111,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 893849,
+        "code_loc": 2690,
+        "tokens_in": 7085371,
+        "tokens_out": 47623,
+        "cost_usd": 7.551608750000002,
+        "actions": 87,
+        "behavior": {
+          "total": 87,
+          "spec_understanding": 19,
+          "planning": 7,
+          "code_understanding": 32,
+          "code_writing": 18,
+          "debugging": 10,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "cdcl",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 4312,
+        "passed": 4295,
+        "pass_rate": 99.61
+      },
+      "metrics": {
+        "elapsed_ms": 10624101,
+        "code_loc": 1020,
+        "tokens_in": 31563390,
+        "tokens_out": 82945,
+        "cost_usd": 20.627141900000005,
+        "actions": 334,
+        "behavior": {
+          "total": 334,
+          "spec_understanding": 9,
+          "planning": 28,
+          "code_understanding": 109,
+          "code_writing": 91,
+          "debugging": 96,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 1
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "csv",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 98,
+        "passed": 98,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 1777826,
+        "code_loc": 483,
+        "tokens_in": 15542534,
+        "tokens_out": 65710,
+        "cost_usd": 11.886566500000008,
+        "actions": 149,
+        "behavior": {
+          "total": 149,
+          "spec_understanding": 7,
+          "planning": 10,
+          "code_understanding": 27,
+          "code_writing": 49,
+          "debugging": 51,
+          "hygiene": 0,
+          "external_search": 3,
+          "other": 2
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "ecma262",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 618,
+        "passed": 143,
+        "pass_rate": 23.14
+      },
+      "metrics": {
+        "elapsed_ms": 2297090,
+        "code_loc": 5172,
+        "tokens_in": 34133524,
+        "tokens_out": 107636,
+        "cost_usd": 21.77938239999999,
+        "actions": 347,
+        "behavior": {
+          "total": 347,
+          "spec_understanding": 21,
+          "planning": 12,
+          "code_understanding": 146,
+          "code_writing": 105,
+          "debugging": 45,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 18
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "git_object",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 1000,
+        "passed": 1000,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 2445843,
+        "code_loc": 1065,
+        "tokens_in": 23929174,
+        "tokens_out": 66873,
+        "cost_usd": 15.808963349999997,
+        "actions": 261,
+        "behavior": {
+          "total": 261,
+          "spec_understanding": 26,
+          "planning": 9,
+          "code_understanding": 88,
+          "code_writing": 63,
+          "debugging": 63,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 12
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "hpack",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 129,
+        "passed": 129,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 1377088,
+        "code_loc": 1561,
+        "tokens_in": 10835463,
+        "tokens_out": 75237,
+        "cost_usd": 10.534536400000002,
+        "actions": 143,
+        "behavior": {
+          "total": 143,
+          "spec_understanding": 32,
+          "planning": 9,
+          "code_understanding": 37,
+          "code_writing": 36,
+          "debugging": 28,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 1
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "html5",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 8221,
+        "passed": 4648,
+        "pass_rate": 56.54
+      },
+      "metrics": {
+        "elapsed_ms": 3753582,
+        "code_loc": 7583,
+        "tokens_in": 17388275,
+        "tokens_out": 110004,
+        "cost_usd": 14.377827699999983,
+        "actions": 181,
+        "behavior": {
+          "total": 181,
+          "spec_understanding": 29,
+          "planning": 10,
+          "code_understanding": 30,
+          "code_writing": 66,
+          "debugging": 42,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 4
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "ini",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 98,
+        "passed": 98,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 1009349,
+        "code_loc": 1070,
+        "tokens_in": 8281882,
+        "tokens_out": 53906,
+        "cost_usd": 6.434515699999999,
+        "actions": 97,
+        "behavior": {
+          "total": 97,
+          "spec_understanding": 11,
+          "planning": 6,
+          "code_understanding": 21,
+          "code_writing": 30,
+          "debugging": 29,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "jq",
+      "difficulty": "hard",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 218,
+        "passed": 218,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 4535488,
+        "code_loc": 7812,
+        "tokens_in": 48462125,
+        "tokens_out": 245930,
+        "cost_usd": 34.466098599999974,
+        "actions": 464,
+        "behavior": {
+          "total": 464,
+          "spec_understanding": 16,
+          "planning": 14,
+          "code_understanding": 220,
+          "code_writing": 127,
+          "debugging": 84,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 2
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "lua",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 137,
+        "passed": 132,
+        "pass_rate": 96.35
+      },
+      "metrics": {
+        "elapsed_ms": 4298319,
+        "code_loc": 6782,
+        "tokens_in": 46135326,
+        "tokens_out": 220042,
+        "cost_usd": 34.14935555,
+        "actions": 465,
+        "behavior": {
+          "total": 465,
+          "spec_understanding": 13,
+          "planning": 27,
+          "code_understanding": 239,
+          "code_writing": 81,
+          "debugging": 88,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 17
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "protobuf",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 141,
+        "passed": 141,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 626486,
+        "code_loc": 1051,
+        "tokens_in": 6704845,
+        "tokens_out": 32359,
+        "cost_usd": 5.211278449999998,
+        "actions": 94,
+        "behavior": {
+          "total": 94,
+          "spec_understanding": 25,
+          "planning": 15,
+          "code_understanding": 19,
+          "code_writing": 25,
+          "debugging": 10,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "pug",
+      "difficulty": "medium",
+      "task_passed": false,
+      "exit_code": 0,
+      "tests": {
+        "total": 251,
+        "passed": 89,
+        "pass_rate": 35.46
+      },
+      "metrics": {
+        "elapsed_ms": 4055364,
+        "code_loc": 3422,
+        "tokens_in": 30963791,
+        "tokens_out": 130755,
+        "cost_usd": 22.822639999999982,
+        "actions": 309,
+        "behavior": {
+          "total": 309,
+          "spec_understanding": 18,
+          "planning": 10,
+          "code_understanding": 86,
+          "code_writing": 109,
+          "debugging": 62,
+          "hygiene": 0,
+          "external_search": 2,
+          "other": 22
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "python",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 0,
+      "tests": {
+        "total": 653,
+        "passed": 397,
+        "pass_rate": 60.8
+      },
+      "metrics": {
+        "elapsed_ms": 11344033,
+        "code_loc": 10932,
+        "tokens_in": 84849906,
+        "tokens_out": 252085,
+        "cost_usd": 60.45137270000001,
+        "actions": 848,
+        "behavior": {
+          "total": 848,
+          "spec_understanding": 27,
+          "planning": 20,
+          "code_understanding": 425,
+          "code_writing": 199,
+          "debugging": 159,
+          "hygiene": 0,
+          "external_search": 8,
+          "other": 10
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "r6rs",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 1362,
+        "passed": 735,
+        "pass_rate": 53.96
+      },
+      "metrics": {
+        "elapsed_ms": 10327877,
+        "code_loc": 8585,
+        "tokens_in": 51904287,
+        "tokens_out": 214430,
+        "cost_usd": 36.574374299999974,
+        "actions": 539,
+        "behavior": {
+          "total": 539,
+          "spec_understanding": 35,
+          "planning": 25,
+          "code_understanding": 240,
+          "code_writing": 119,
+          "debugging": 115,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 5
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "toml",
+      "difficulty": "medium",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 733,
+        "passed": 603,
+        "pass_rate": 82.26
+      },
+      "metrics": {
+        "elapsed_ms": 2346114,
+        "code_loc": 2855,
+        "tokens_in": 26855575,
+        "tokens_out": 106888,
+        "cost_usd": 18.27366905000001,
+        "actions": 292,
+        "behavior": {
+          "total": 292,
+          "spec_understanding": 27,
+          "planning": 11,
+          "code_understanding": 100,
+          "code_writing": 78,
+          "debugging": 70,
+          "hygiene": 4,
+          "external_search": 0,
+          "other": 2
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "uri",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 138,
+        "passed": 138,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 1131950,
+        "code_loc": 1320,
+        "tokens_in": 8011855,
+        "tokens_out": 56683,
+        "cost_usd": 6.81491675,
+        "actions": 124,
+        "behavior": {
+          "total": 124,
+          "spec_understanding": 28,
+          "planning": 8,
+          "code_understanding": 28,
+          "code_writing": 31,
+          "debugging": 27,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 1
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "url",
+      "difficulty": "medium",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 1220,
+        "passed": 1062,
+        "pass_rate": 87.05
+      },
+      "metrics": {
+        "elapsed_ms": 3847488,
+        "code_loc": 2517,
+        "tokens_in": 27951895,
+        "tokens_out": 94488,
+        "cost_usd": 18.358763149999987,
+        "actions": 290,
+        "behavior": {
+          "total": 290,
+          "spec_understanding": 32,
+          "planning": 17,
+          "code_understanding": 86,
+          "code_writing": 91,
+          "debugging": 58,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 6
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "wasm",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 800,
+        "passed": 800,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 6046021,
+        "code_loc": 6101,
+        "tokens_in": 44486071,
+        "tokens_out": 164568,
+        "cost_usd": 30.908616850000065,
+        "actions": 450,
+        "behavior": {
+          "total": 450,
+          "spec_understanding": 30,
+          "planning": 10,
+          "code_understanding": 145,
+          "code_writing": 108,
+          "debugging": 153,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 4
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "xml",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 735,
+        "passed": 735,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 8626003,
+        "code_loc": 3241,
+        "tokens_in": 58682088,
+        "tokens_out": 207187,
+        "cost_usd": 39.416830949999984,
+        "actions": 534,
+        "behavior": {
+          "total": 534,
+          "spec_understanding": 14,
+          "planning": 34,
+          "code_understanding": 174,
+          "code_writing": 141,
+          "debugging": 170,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 1
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "yaml",
+      "difficulty": "medium",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 345,
+        "passed": 235,
+        "pass_rate": 68.12
+      },
+      "metrics": {
+        "elapsed_ms": 5119406,
+        "code_loc": 3596,
+        "tokens_in": 46982939,
+        "tokens_out": 207663,
+        "cost_usd": 33.905605749999985,
+        "actions": 491,
+        "behavior": {
+          "total": 491,
+          "spec_understanding": 19,
+          "planning": 15,
+          "code_understanding": 208,
+          "code_writing": 115,
+          "debugging": 120,
+          "hygiene": 0,
+          "external_search": 4,
+          "other": 10
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.5",
+      "task_id": "zip",
+      "difficulty": "medium",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 1089,
+        "passed": 958,
+        "pass_rate": 87.97
+      },
+      "metrics": {
+        "elapsed_ms": 7693067,
+        "code_loc": 2006,
+        "tokens_in": 56332447,
+        "tokens_out": 174931,
+        "cost_usd": 37.19201085,
+        "actions": 595,
+        "behavior": {
+          "total": 595,
+          "spec_understanding": 29,
+          "planning": 7,
+          "code_understanding": 263,
+          "code_writing": 127,
+          "debugging": 117,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 51
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "c99",
+      "difficulty": "hard",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 117,
+        "passed": 117,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 3798267,
+        "code_loc": 4979,
+        "tokens_in": 23482290,
+        "tokens_out": 100459,
+        "cost_usd": 27.11579120000003,
+        "actions": 427,
+        "behavior": {
+          "total": 427,
+          "spec_understanding": 59,
+          "planning": 20,
+          "code_understanding": 167,
+          "code_writing": 85,
+          "debugging": 47,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 49
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "capnp",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 111,
+        "passed": 111,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 1352428,
+        "code_loc": 2605,
+        "tokens_in": 10630780,
+        "tokens_out": 57752,
+        "cost_usd": 9.367200650000003,
+        "actions": 195,
+        "behavior": {
+          "total": 195,
+          "spec_understanding": 32,
+          "planning": 11,
+          "code_understanding": 76,
+          "code_writing": 51,
+          "debugging": 23,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 1
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "cdcl",
+      "difficulty": "hard",
+      "task_passed": true,
+      "exit_code": 1,
+      "tests": {
+        "total": 4312,
+        "passed": 4312,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 24077883,
+        "code_loc": 1203,
+        "tokens_in": 60771144,
+        "tokens_out": 221023,
+        "cost_usd": 46.18713895000002,
+        "actions": 772,
+        "behavior": {
+          "total": 772,
+          "spec_understanding": 46,
+          "planning": 58,
+          "code_understanding": 342,
+          "code_writing": 123,
+          "debugging": 173,
+          "hygiene": 1,
+          "external_search": 18,
+          "other": 11
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "csv",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 98,
+        "passed": 98,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 2533832,
+        "code_loc": 474,
+        "tokens_in": 16267043,
+        "tokens_out": 91749,
+        "cost_usd": 12.438608649999994,
+        "actions": 214,
+        "behavior": {
+          "total": 214,
+          "spec_understanding": 17,
+          "planning": 12,
+          "code_understanding": 65,
+          "code_writing": 59,
+          "debugging": 56,
+          "hygiene": 1,
+          "external_search": 2,
+          "other": 2
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "ecma262",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 618,
+        "passed": 372,
+        "pass_rate": 60.19
+      },
+      "metrics": {
+        "elapsed_ms": 33331388,
+        "code_loc": 13901,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "actions": 2384,
+        "behavior": {
+          "total": 2384,
+          "spec_understanding": 155,
+          "planning": 253,
+          "code_understanding": 1273,
+          "code_writing": 243,
+          "debugging": 402,
+          "hygiene": 1,
+          "external_search": 31,
+          "other": 26
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "git_object",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 1000,
+        "passed": 1000,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 1282579,
+        "code_loc": 1291,
+        "tokens_in": 6787179,
+        "tokens_out": 40501,
+        "cost_usd": 8.269350999999997,
+        "actions": 206,
+        "behavior": {
+          "total": 206,
+          "spec_understanding": 26,
+          "planning": 11,
+          "code_understanding": 108,
+          "code_writing": 34,
+          "debugging": 21,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 5
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "hpack",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 129,
+        "passed": 129,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 2460583,
+        "code_loc": 5941,
+        "tokens_in": 9374177,
+        "tokens_out": 63297,
+        "cost_usd": 9.366331400000005,
+        "actions": 136,
+        "behavior": {
+          "total": 136,
+          "spec_understanding": 16,
+          "planning": 12,
+          "code_understanding": 37,
+          "code_writing": 33,
+          "debugging": 12,
+          "hygiene": 0,
+          "external_search": 7,
+          "other": 19
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "html5",
+      "difficulty": "hard",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 8221,
+        "passed": 8221,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 45018206,
+        "code_loc": 10585,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "actions": 2179,
+        "behavior": {
+          "total": 2179,
+          "spec_understanding": 126,
+          "planning": 96,
+          "code_understanding": 1057,
+          "code_writing": 225,
+          "debugging": 264,
+          "hygiene": 0,
+          "external_search": 304,
+          "other": 107
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "ini",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 98,
+        "passed": 98,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 1939633,
+        "code_loc": 923,
+        "tokens_in": 8939787,
+        "tokens_out": 80685,
+        "cost_usd": 9.045476500000003,
+        "actions": 146,
+        "behavior": {
+          "total": 146,
+          "spec_understanding": 14,
+          "planning": 10,
+          "code_understanding": 51,
+          "code_writing": 35,
+          "debugging": 32,
+          "hygiene": 0,
+          "external_search": 2,
+          "other": 2
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "jq",
+      "difficulty": "hard",
+      "task_passed": true,
+      "exit_code": 1,
+      "tests": {
+        "total": 218,
+        "passed": 218,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 4573833,
+        "code_loc": 6055,
+        "tokens_in": 27744124,
+        "tokens_out": 170316,
+        "cost_usd": 25.491475949999998,
+        "actions": 459,
+        "behavior": {
+          "total": 459,
+          "spec_understanding": 17,
+          "planning": 30,
+          "code_understanding": 241,
+          "code_writing": 101,
+          "debugging": 53,
+          "hygiene": 0,
+          "external_search": 12,
+          "other": 5
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "lua",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 0,
+      "tests": {
+        "total": 137,
+        "passed": 133,
+        "pass_rate": 97.08
+      },
+      "metrics": {
+        "elapsed_ms": 5450632,
+        "code_loc": 6688,
+        "tokens_in": 43369834,
+        "tokens_out": 155357,
+        "cost_usd": 398.24127650000014,
+        "actions": 425,
+        "behavior": {
+          "total": 425,
+          "spec_understanding": 34,
+          "planning": 32,
+          "code_understanding": 163,
+          "code_writing": 90,
+          "debugging": 87,
+          "hygiene": 1,
+          "external_search": 2,
+          "other": 16
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "protobuf",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 141,
+        "passed": 141,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 736070,
+        "code_loc": 858,
+        "tokens_in": 6453889,
+        "tokens_out": 28007,
+        "cost_usd": 4.771034050000002,
+        "actions": 97,
+        "behavior": {
+          "total": 97,
+          "spec_understanding": 14,
+          "planning": 8,
+          "code_understanding": 27,
+          "code_writing": 31,
+          "debugging": 17,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "pug",
+      "difficulty": "medium",
+      "task_passed": false,
+      "exit_code": 0,
+      "tests": {
+        "total": 251,
+        "passed": 129,
+        "pass_rate": 51.39
+      },
+      "metrics": {
+        "elapsed_ms": 6349886,
+        "code_loc": 4246,
+        "tokens_in": 44566632,
+        "tokens_out": 138218,
+        "cost_usd": 51.69448235000009,
+        "actions": 528,
+        "behavior": {
+          "total": 528,
+          "spec_understanding": 32,
+          "planning": 44,
+          "code_understanding": 268,
+          "code_writing": 85,
+          "debugging": 68,
+          "hygiene": 1,
+          "external_search": 5,
+          "other": 25
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "python",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 653,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 18652835,
+        "code_loc": 16991,
+        "tokens_in": 127992581,
+        "tokens_out": 365629,
+        "cost_usd": 135.9122100499998,
+        "actions": 2190,
+        "behavior": {
+          "total": 2190,
+          "spec_understanding": 112,
+          "planning": 132,
+          "code_understanding": 1253,
+          "code_writing": 264,
+          "debugging": 315,
+          "hygiene": 3,
+          "external_search": 31,
+          "other": 80
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "r6rs",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 1362,
+        "passed": 1252,
+        "pass_rate": 91.92
+      },
+      "metrics": {
+        "elapsed_ms": 28364145,
+        "code_loc": 20422,
+        "tokens_in": 21276091,
+        "tokens_out": 199493,
+        "cost_usd": 190.31636095000002,
+        "actions": 3146,
+        "behavior": {
+          "total": 3146,
+          "spec_understanding": 236,
+          "planning": 183,
+          "code_understanding": 1524,
+          "code_writing": 466,
+          "debugging": 595,
+          "hygiene": 0,
+          "external_search": 14,
+          "other": 128
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "toml",
+      "difficulty": "medium",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 733,
+        "passed": 718,
+        "pass_rate": 97.95
+      },
+      "metrics": {
+        "elapsed_ms": 46735938,
+        "code_loc": 6779,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "actions": 3093,
+        "behavior": {
+          "total": 3093,
+          "spec_understanding": 267,
+          "planning": 165,
+          "code_understanding": 1132,
+          "code_writing": 438,
+          "debugging": 474,
+          "hygiene": 5,
+          "external_search": 572,
+          "other": 40
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "uri",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 138,
+        "passed": 138,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 810499,
+        "code_loc": 1198,
+        "tokens_in": 5934887,
+        "tokens_out": 39640,
+        "cost_usd": 4.721625500000001,
+        "actions": 101,
+        "behavior": {
+          "total": 101,
+          "spec_understanding": 20,
+          "planning": 6,
+          "code_understanding": 28,
+          "code_writing": 25,
+          "debugging": 19,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 2
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "url",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 1220,
+        "passed": 1220,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 4260260,
+        "code_loc": 4065,
+        "tokens_in": 29159837,
+        "tokens_out": 126274,
+        "cost_usd": 26.968758050000012,
+        "actions": 432,
+        "behavior": {
+          "total": 432,
+          "spec_understanding": 98,
+          "planning": 19,
+          "code_understanding": 95,
+          "code_writing": 69,
+          "debugging": 63,
+          "hygiene": 1,
+          "external_search": 55,
+          "other": 32
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "wasm",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 800,
+        "passed": 800,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 1941150,
+        "code_loc": 4152,
+        "tokens_in": 16498272,
+        "tokens_out": 92343,
+        "cost_usd": 13.664339850000006,
+        "actions": 211,
+        "behavior": {
+          "total": 211,
+          "spec_understanding": 48,
+          "planning": 11,
+          "code_understanding": 62,
+          "code_writing": 42,
+          "debugging": 36,
+          "hygiene": 0,
+          "external_search": 1,
+          "other": 11
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "xml",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 735,
+        "passed": 735,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 5890480,
+        "code_loc": 2839,
+        "tokens_in": 50699322,
+        "tokens_out": 172270,
+        "cost_usd": 35.8803155,
+        "actions": 542,
+        "behavior": {
+          "total": 542,
+          "spec_understanding": 35,
+          "planning": 24,
+          "code_understanding": 214,
+          "code_writing": 152,
+          "debugging": 94,
+          "hygiene": 0,
+          "external_search": 22,
+          "other": 1
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "yaml",
+      "difficulty": "medium",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 345,
+        "passed": 344,
+        "pass_rate": 99.71
+      },
+      "metrics": {
+        "elapsed_ms": 6371364,
+        "code_loc": 3721,
+        "tokens_in": 42914774,
+        "tokens_out": 141979,
+        "cost_usd": 29.831661850000014,
+        "actions": 513,
+        "behavior": {
+          "total": 513,
+          "spec_understanding": 31,
+          "planning": 23,
+          "code_understanding": 245,
+          "code_writing": 59,
+          "debugging": 107,
+          "hygiene": 1,
+          "external_search": 17,
+          "other": 30
+        }
+      }
+    },
+    {
+      "model_id": "claude-opus-4.6",
+      "task_id": "zip",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 1089,
+        "passed": 1089,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 29283731,
+        "code_loc": 10530,
+        "tokens_in": 58098298,
+        "tokens_out": 227087,
+        "cost_usd": 1016.5301774999988,
+        "actions": 1990,
+        "behavior": {
+          "total": 1990,
+          "spec_understanding": 71,
+          "planning": 130,
+          "code_understanding": 1140,
+          "code_writing": 141,
+          "debugging": 203,
+          "hygiene": 0,
+          "external_search": 97,
+          "other": 208
+        }
+      }
+    },
+    {
+      "model_id": "claude-sonnet-4.5",
+      "task_id": "csv",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 98,
+        "passed": 96,
+        "pass_rate": 97.96
+      },
+      "metrics": {
+        "elapsed_ms": 842360,
+        "code_loc": 572,
+        "tokens_in": 6899302,
+        "tokens_out": 39836,
+        "cost_usd": 5.11359875,
+        "actions": 128,
+        "behavior": {
+          "total": 128,
+          "spec_understanding": 10,
+          "planning": 10,
+          "code_understanding": 20,
+          "code_writing": 59,
+          "debugging": 28,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 1
+        }
+      }
+    },
+    {
+      "model_id": "claude-sonnet-4.5",
+      "task_id": "git_object",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 1000,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 571519,
+        "code_loc": 693,
+        "tokens_in": 2645273,
+        "tokens_out": 26385,
+        "cost_usd": 2.48355525,
+        "actions": 94,
+        "behavior": {
+          "total": 94,
+          "spec_understanding": 7,
+          "planning": 7,
+          "code_understanding": 35,
+          "code_writing": 27,
+          "debugging": 15,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 3
+        }
+      }
+    },
+    {
+      "model_id": "claude-sonnet-4.5",
+      "task_id": "hpack",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 129,
+        "passed": 128,
+        "pass_rate": 99.22
+      },
+      "metrics": {
+        "elapsed_ms": 1899136,
+        "code_loc": 1571,
+        "tokens_in": 8971826,
+        "tokens_out": 61760,
+        "cost_usd": 10.423000749999993,
+        "actions": 303,
+        "behavior": {
+          "total": 303,
+          "spec_understanding": 13,
+          "planning": 18,
+          "code_understanding": 90,
+          "code_writing": 94,
+          "debugging": 69,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 19
+        }
+      }
+    },
+    {
+      "model_id": "claude-sonnet-4.5",
+      "task_id": "ini",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 98,
+        "passed": 70,
+        "pass_rate": 71.43
+      },
+      "metrics": {
+        "elapsed_ms": 1111673,
+        "code_loc": 882,
+        "tokens_in": 9380917,
+        "tokens_out": 48361,
+        "cost_usd": 6.6789855,
+        "actions": 160,
+        "behavior": {
+          "total": 160,
+          "spec_understanding": 5,
+          "planning": 7,
+          "code_understanding": 56,
+          "code_writing": 50,
+          "debugging": 40,
+          "hygiene": 2,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "claude-sonnet-4.5",
+      "task_id": "protobuf",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 141,
+        "passed": 131,
+        "pass_rate": 92.91
+      },
+      "metrics": {
+        "elapsed_ms": 1236912,
+        "code_loc": 1098,
+        "tokens_in": 14552938,
+        "tokens_out": 41658,
+        "cost_usd": 9.165477749999997,
+        "actions": 150,
+        "behavior": {
+          "total": 150,
+          "spec_understanding": 10,
+          "planning": 5,
+          "code_understanding": 20,
+          "code_writing": 64,
+          "debugging": 48,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 2
+        }
+      }
+    },
+    {
+      "model_id": "claude-sonnet-4.5",
+      "task_id": "uri",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 138,
+        "passed": 131,
+        "pass_rate": 94.93
+      },
+      "metrics": {
+        "elapsed_ms": 1268684,
+        "code_loc": 761,
+        "tokens_in": 8903743,
+        "tokens_out": 61783,
+        "cost_usd": 6.803719499999999,
+        "actions": 154,
+        "behavior": {
+          "total": 154,
+          "spec_understanding": 7,
+          "planning": 7,
+          "code_understanding": 34,
+          "code_writing": 61,
+          "debugging": 38,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 6
+        }
+      }
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "task_id": "csv",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 98,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 9667785,
+        "code_loc": 1058,
+        "tokens_in": 32695155,
+        "tokens_out": 178993,
+        "cost_usd": 0.6168303000000005,
+        "actions": 578,
+        "behavior": {
+          "total": 578,
+          "spec_understanding": 16,
+          "planning": 18,
+          "code_understanding": 184,
+          "code_writing": 258,
+          "debugging": 100,
+          "hygiene": 0,
+          "external_search": 2,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "task_id": "git_object",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 1000,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 6674398,
+        "code_loc": 1099,
+        "tokens_in": 17844818,
+        "tokens_out": 89176,
+        "cost_usd": 0.3891316666666666,
+        "actions": 320,
+        "behavior": {
+          "total": 320,
+          "spec_understanding": 20,
+          "planning": 15,
+          "code_understanding": 157,
+          "code_writing": 70,
+          "debugging": 47,
+          "hygiene": 0,
+          "external_search": 4,
+          "other": 7
+        }
+      }
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "task_id": "hpack",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 129,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 10587669,
+        "code_loc": 1625,
+        "tokens_in": 33591345,
+        "tokens_out": 142202,
+        "cost_usd": 0.6716097666666669,
+        "actions": 555,
+        "behavior": {
+          "total": 555,
+          "spec_understanding": 20,
+          "planning": 14,
+          "code_understanding": 197,
+          "code_writing": 229,
+          "debugging": 91,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 4
+        }
+      }
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "task_id": "ini",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 98,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 19857283,
+        "code_loc": 456,
+        "tokens_in": 54477808,
+        "tokens_out": 265417,
+        "cost_usd": 1.06447002,
+        "actions": 972,
+        "behavior": {
+          "total": 972,
+          "spec_understanding": 31,
+          "planning": 41,
+          "code_understanding": 367,
+          "code_writing": 355,
+          "debugging": 171,
+          "hygiene": 2,
+          "external_search": 2,
+          "other": 3
+        }
+      }
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "task_id": "protobuf",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 141,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 16731597,
+        "code_loc": 1297,
+        "tokens_in": 52036954,
+        "tokens_out": 211736,
+        "cost_usd": 0.9656367066666659,
+        "actions": 867,
+        "behavior": {
+          "total": 867,
+          "spec_understanding": 45,
+          "planning": 14,
+          "code_understanding": 321,
+          "code_writing": 355,
+          "debugging": 132,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "deepseek-v3.2",
+      "task_id": "uri",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 138,
+        "passed": 138,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 9181553,
+        "code_loc": 887,
+        "tokens_in": 21281256,
+        "tokens_out": 137861,
+        "cost_usd": 0.4168454000000001,
+        "actions": 355,
+        "behavior": {
+          "total": 355,
+          "spec_understanding": 22,
+          "planning": 19,
+          "code_understanding": 94,
+          "code_writing": 133,
+          "debugging": 84,
+          "hygiene": 2,
+          "external_search": 0,
+          "other": 1
+        }
+      }
+    },
+    {
+      "model_id": "gemini-3-flash-preview",
+      "task_id": "csv",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 98,
+        "passed": 97,
+        "pass_rate": 98.98
+      },
+      "metrics": {
+        "elapsed_ms": 2034161,
+        "code_loc": 260,
+        "tokens_in": 44059148,
+        "tokens_out": 90345,
+        "cost_usd": 22.300609,
+        "actions": 155,
+        "behavior": {
+          "total": 155,
+          "spec_understanding": 5,
+          "planning": 0,
+          "code_understanding": 13,
+          "code_writing": 66,
+          "debugging": 71,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "gemini-3-flash-preview",
+      "task_id": "git_object",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 255,
+      "tests": {
+        "total": 1000,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 79565,
+        "code_loc": 115,
+        "tokens_in": 166329,
+        "tokens_out": 340,
+        "cost_usd": 0.0841845,
+        "actions": 8,
+        "behavior": {
+          "total": 8,
+          "spec_understanding": 3,
+          "planning": 0,
+          "code_understanding": 5,
+          "code_writing": 0,
+          "debugging": 0,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "gemini-3-flash-preview",
+      "task_id": "hpack",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 129,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 593065,
+        "code_loc": 1099,
+        "tokens_in": 3338470,
+        "tokens_out": 47640,
+        "cost_usd": 1.812155,
+        "actions": 59,
+        "behavior": {
+          "total": 59,
+          "spec_understanding": 5,
+          "planning": 0,
+          "code_understanding": 8,
+          "code_writing": 36,
+          "debugging": 10,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "gemini-3-flash-preview",
+      "task_id": "ini",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 98,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 1068275,
+        "code_loc": 235,
+        "tokens_in": 4459861,
+        "tokens_out": 64580,
+        "cost_usd": 2.4236705,
+        "actions": 110,
+        "behavior": {
+          "total": 110,
+          "spec_understanding": 5,
+          "planning": 0,
+          "code_understanding": 19,
+          "code_writing": 53,
+          "debugging": 32,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 1
+        }
+      }
+    },
+    {
+      "model_id": "gemini-3-flash-preview",
+      "task_id": "protobuf",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 141,
+        "passed": 141,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 601924,
+        "code_loc": 911,
+        "tokens_in": 4142626,
+        "tokens_out": 33301,
+        "cost_usd": 2.171216,
+        "actions": 46,
+        "behavior": {
+          "total": 46,
+          "spec_understanding": 6,
+          "planning": 0,
+          "code_understanding": 6,
+          "code_writing": 19,
+          "debugging": 15,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "gemini-3-flash-preview",
+      "task_id": "uri",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 138,
+        "passed": 138,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 1001504,
+        "code_loc": 727,
+        "tokens_in": 5214070,
+        "tokens_out": 71866,
+        "cost_usd": 2.822633,
+        "actions": 94,
+        "behavior": {
+          "total": 94,
+          "spec_understanding": 4,
+          "planning": 0,
+          "code_understanding": 10,
+          "code_writing": 44,
+          "debugging": 31,
+          "hygiene": 0,
+          "external_search": 1,
+          "other": 4
+        }
+      }
+    },
+    {
+      "model_id": "gemini-3-pro-preview",
+      "task_id": "csv",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 98,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 1435638,
+        "code_loc": 413,
+        "tokens_in": 8476131,
+        "tokens_out": 30353,
+        "cost_usd": null,
+        "actions": 91,
+        "behavior": {
+          "total": 91,
+          "spec_understanding": 3,
+          "planning": 0,
+          "code_understanding": 8,
+          "code_writing": 50,
+          "debugging": 30,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "gemini-3-pro-preview",
+      "task_id": "git_object",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 1000,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 976705,
+        "code_loc": 770,
+        "tokens_in": 3331328,
+        "tokens_out": 48744,
+        "cost_usd": null,
+        "actions": 103,
+        "behavior": {
+          "total": 103,
+          "spec_understanding": 3,
+          "planning": 0,
+          "code_understanding": 4,
+          "code_writing": 48,
+          "debugging": 28,
+          "hygiene": 0,
+          "external_search": 14,
+          "other": 6
+        }
+      }
+    },
+    {
+      "model_id": "gemini-3-pro-preview",
+      "task_id": "hpack",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 129,
+        "passed": 128,
+        "pass_rate": 99.22
+      },
+      "metrics": {
+        "elapsed_ms": 1898340,
+        "code_loc": 1431,
+        "tokens_in": 5699327,
+        "tokens_out": 65212,
+        "cost_usd": null,
+        "actions": 88,
+        "behavior": {
+          "total": 88,
+          "spec_understanding": 6,
+          "planning": 0,
+          "code_understanding": 9,
+          "code_writing": 55,
+          "debugging": 17,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "gemini-3-pro-preview",
+      "task_id": "ini",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 98,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 768223,
+        "code_loc": 521,
+        "tokens_in": 1547078,
+        "tokens_out": 36805,
+        "cost_usd": null,
+        "actions": 48,
+        "behavior": {
+          "total": 48,
+          "spec_understanding": 4,
+          "planning": 0,
+          "code_understanding": 5,
+          "code_writing": 28,
+          "debugging": 11,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "gemini-3-pro-preview",
+      "task_id": "protobuf",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 141,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 481552,
+        "code_loc": 704,
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "actions": 23,
+        "behavior": {
+          "total": 23,
+          "spec_understanding": 5,
+          "planning": 0,
+          "code_understanding": 3,
+          "code_writing": 12,
+          "debugging": 3,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "gemini-3-pro-preview",
+      "task_id": "uri",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 138,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 925256,
+        "code_loc": 423,
+        "tokens_in": 932861,
+        "tokens_out": 18293,
+        "cost_usd": null,
+        "actions": 69,
+        "behavior": {
+          "total": 69,
+          "spec_understanding": 3,
+          "planning": 0,
+          "code_understanding": 3,
+          "code_writing": 48,
+          "debugging": 14,
+          "hygiene": 0,
+          "external_search": 1,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "glm-4.7",
+      "task_id": "csv",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 98,
+        "passed": 94,
+        "pass_rate": 95.92
+      },
+      "metrics": {
+        "elapsed_ms": 1146077,
+        "code_loc": 373,
+        "tokens_in": 10722784,
+        "tokens_out": 19272,
+        "cost_usd": 0.3963008199999997,
+        "actions": 141,
+        "behavior": {
+          "total": 141,
+          "spec_understanding": 11,
+          "planning": 6,
+          "code_understanding": 67,
+          "code_writing": 19,
+          "debugging": 23,
+          "hygiene": 0,
+          "external_search": 9,
+          "other": 6
+        }
+      }
+    },
+    {
+      "model_id": "glm-4.7",
+      "task_id": "git_object",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 1000,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 1740236,
+        "code_loc": 797,
+        "tokens_in": 10232234,
+        "tokens_out": 32619,
+        "cost_usd": 0.4179550799999997,
+        "actions": 112,
+        "behavior": {
+          "total": 112,
+          "spec_understanding": 5,
+          "planning": 5,
+          "code_understanding": 49,
+          "code_writing": 19,
+          "debugging": 17,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 17
+        }
+      }
+    },
+    {
+      "model_id": "glm-4.7",
+      "task_id": "hpack",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 129,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 1459193,
+        "code_loc": 945,
+        "tokens_in": 12154607,
+        "tokens_out": 62002,
+        "cost_usd": 0.5006010500000001,
+        "actions": 131,
+        "behavior": {
+          "total": 131,
+          "spec_understanding": 14,
+          "planning": 3,
+          "code_understanding": 39,
+          "code_writing": 37,
+          "debugging": 25,
+          "hygiene": 0,
+          "external_search": 4,
+          "other": 9
+        }
+      }
+    },
+    {
+      "model_id": "glm-4.7",
+      "task_id": "ini",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 98,
+        "passed": 98,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 5172825,
+        "code_loc": 1196,
+        "tokens_in": 39862905,
+        "tokens_out": 99957,
+        "cost_usd": 1.5682376299999998,
+        "actions": 438,
+        "behavior": {
+          "total": 438,
+          "spec_understanding": 8,
+          "planning": 10,
+          "code_understanding": 112,
+          "code_writing": 135,
+          "debugging": 169,
+          "hygiene": 0,
+          "external_search": 1,
+          "other": 3
+        }
+      }
+    },
+    {
+      "model_id": "glm-4.7",
+      "task_id": "protobuf",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 141,
+        "passed": 126,
+        "pass_rate": 89.36
+      },
+      "metrics": {
+        "elapsed_ms": 3126984,
+        "code_loc": 1015,
+        "tokens_in": 21222522,
+        "tokens_out": 76510,
+        "cost_usd": 0.8632337699999998,
+        "actions": 245,
+        "behavior": {
+          "total": 245,
+          "spec_understanding": 17,
+          "planning": 10,
+          "code_understanding": 60,
+          "code_writing": 54,
+          "debugging": 70,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 33
+        }
+      }
+    },
+    {
+      "model_id": "glm-4.7",
+      "task_id": "uri",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 138,
+        "passed": 138,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 2424648,
+        "code_loc": 1097,
+        "tokens_in": 29658659,
+        "tokens_out": 74971,
+        "cost_usd": 1.1087225299999994,
+        "actions": 326,
+        "behavior": {
+          "total": 326,
+          "spec_understanding": 11,
+          "planning": 18,
+          "code_understanding": 102,
+          "code_writing": 103,
+          "debugging": 84,
+          "hygiene": 0,
+          "external_search": 2,
+          "other": 6
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "c99",
+      "difficulty": "hard",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 117,
+        "passed": 117,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 11089142,
+        "code_loc": 5052,
+        "tokens_in": 66090268,
+        "tokens_out": 332642,
+        "cost_usd": 17.6775746,
+        "actions": 580,
+        "behavior": {
+          "total": 580,
+          "spec_understanding": 63,
+          "planning": 1,
+          "code_understanding": 282,
+          "code_writing": 149,
+          "debugging": 69,
+          "hygiene": 14,
+          "external_search": 0,
+          "other": 2
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "capnp",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 111,
+        "passed": 111,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 4430792,
+        "code_loc": 2798,
+        "tokens_in": 25158049,
+        "tokens_out": 136273,
+        "cost_usd": 7.042542149999999,
+        "actions": 265,
+        "behavior": {
+          "total": 265,
+          "spec_understanding": 33,
+          "planning": 0,
+          "code_understanding": 148,
+          "code_writing": 48,
+          "debugging": 29,
+          "hygiene": 5,
+          "external_search": 0,
+          "other": 2
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "cdcl",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 4312,
+        "passed": 4305,
+        "pass_rate": 99.84
+      },
+      "metrics": {
+        "elapsed_ms": 18461591,
+        "code_loc": 1380,
+        "tokens_in": 47339675,
+        "tokens_out": 181814,
+        "cost_usd": 11.74635525,
+        "actions": 393,
+        "behavior": {
+          "total": 393,
+          "spec_understanding": 9,
+          "planning": 1,
+          "code_understanding": 141,
+          "code_writing": 123,
+          "debugging": 56,
+          "hygiene": 53,
+          "external_search": 0,
+          "other": 10
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "csv",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 98,
+        "passed": 98,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 2457669,
+        "code_loc": 440,
+        "tokens_in": 12973210,
+        "tokens_out": 78933,
+        "cost_usd": 3.6891043,
+        "actions": 143,
+        "behavior": {
+          "total": 143,
+          "spec_understanding": 11,
+          "planning": 1,
+          "code_understanding": 81,
+          "code_writing": 28,
+          "debugging": 13,
+          "hygiene": 8,
+          "external_search": 0,
+          "other": 1
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "ecma262",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 618,
+        "passed": 604,
+        "pass_rate": 97.73
+      },
+      "metrics": {
+        "elapsed_ms": 152098215,
+        "code_loc": 33302,
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "actions": 9794,
+        "behavior": {
+          "total": 9794,
+          "spec_understanding": 82,
+          "planning": 0,
+          "code_understanding": 6973,
+          "code_writing": 1696,
+          "debugging": 765,
+          "hygiene": 38,
+          "external_search": 33,
+          "other": 207
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "git_object",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 1000,
+        "passed": 1000,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 4320431,
+        "code_loc": 1164,
+        "tokens_in": 37961889,
+        "tokens_out": 148475,
+        "cost_usd": 9.775594149999998,
+        "actions": 324,
+        "behavior": {
+          "total": 324,
+          "spec_understanding": 15,
+          "planning": 1,
+          "code_understanding": 176,
+          "code_writing": 76,
+          "debugging": 41,
+          "hygiene": 11,
+          "external_search": 0,
+          "other": 4
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "hpack",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 129,
+        "passed": 129,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 3628956,
+        "code_loc": 1157,
+        "tokens_in": 23900906,
+        "tokens_out": 143914,
+        "cost_usd": 6.676824699999999,
+        "actions": 204,
+        "behavior": {
+          "total": 204,
+          "spec_understanding": 22,
+          "planning": 1,
+          "code_understanding": 88,
+          "code_writing": 54,
+          "debugging": 21,
+          "hygiene": 5,
+          "external_search": 0,
+          "other": 13
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "html5",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 8221,
+        "passed": 6444,
+        "pass_rate": 78.38
+      },
+      "metrics": {
+        "elapsed_ms": 10901104,
+        "code_loc": 6433,
+        "tokens_in": 51762423,
+        "tokens_out": 209066,
+        "cost_usd": 12.65746825,
+        "actions": 386,
+        "behavior": {
+          "total": 386,
+          "spec_understanding": 39,
+          "planning": 1,
+          "code_understanding": 131,
+          "code_writing": 109,
+          "debugging": 81,
+          "hygiene": 2,
+          "external_search": 0,
+          "other": 23
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "ini",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 98,
+        "passed": 98,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 2785160,
+        "code_loc": 927,
+        "tokens_in": 17289350,
+        "tokens_out": 104746,
+        "cost_usd": 4.9481089,
+        "actions": 176,
+        "behavior": {
+          "total": 176,
+          "spec_understanding": 7,
+          "planning": 0,
+          "code_understanding": 75,
+          "code_writing": 56,
+          "debugging": 28,
+          "hygiene": 9,
+          "external_search": 0,
+          "other": 1
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "jq",
+      "difficulty": "hard",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 218,
+        "passed": 218,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 6665479,
+        "code_loc": 6416,
+        "tokens_in": 68928018,
+        "tokens_out": 267167,
+        "cost_usd": 16.6678351,
+        "actions": 522,
+        "behavior": {
+          "total": 522,
+          "spec_understanding": 17,
+          "planning": 0,
+          "code_understanding": 236,
+          "code_writing": 165,
+          "debugging": 87,
+          "hygiene": 17,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "lua",
+      "difficulty": "hard",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 137,
+        "passed": 137,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 9178442,
+        "code_loc": 5574,
+        "tokens_in": 71143818,
+        "tokens_out": 307148,
+        "cost_usd": 18.398134299999995,
+        "actions": 568,
+        "behavior": {
+          "total": 568,
+          "spec_understanding": 10,
+          "planning": 1,
+          "code_understanding": 299,
+          "code_writing": 197,
+          "debugging": 53,
+          "hygiene": 6,
+          "external_search": 0,
+          "other": 2
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "protobuf",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 141,
+        "passed": 141,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 1812286,
+        "code_loc": 1670,
+        "tokens_in": 14260720,
+        "tokens_out": 74458,
+        "cost_usd": 3.8285184,
+        "actions": 136,
+        "behavior": {
+          "total": 136,
+          "spec_understanding": 17,
+          "planning": 1,
+          "code_understanding": 74,
+          "code_writing": 28,
+          "debugging": 11,
+          "hygiene": 3,
+          "external_search": 0,
+          "other": 2
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "pug",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 251,
+        "passed": 251,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 88690241,
+        "code_loc": 14251,
+        "tokens_in": 647722289,
+        "tokens_out": 3277773,
+        "cost_usd": 176.89521814999998,
+        "actions": 5093,
+        "behavior": {
+          "total": 5093,
+          "spec_understanding": 277,
+          "planning": 1,
+          "code_understanding": 2752,
+          "code_writing": 977,
+          "debugging": 523,
+          "hygiene": 68,
+          "external_search": 140,
+          "other": 355
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "python",
+      "difficulty": "hard",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 653,
+        "passed": 653,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 6575186,
+        "code_loc": 7675,
+        "tokens_in": 64679139,
+        "tokens_out": 236817,
+        "cost_usd": 17.702392049999997,
+        "actions": 511,
+        "behavior": {
+          "total": 511,
+          "spec_understanding": 16,
+          "planning": 0,
+          "code_understanding": 283,
+          "code_writing": 127,
+          "debugging": 52,
+          "hygiene": 8,
+          "external_search": 0,
+          "other": 25
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "r6rs",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 1362,
+        "passed": 727,
+        "pass_rate": 53.38
+      },
+      "metrics": {
+        "elapsed_ms": 10434751,
+        "code_loc": 6436,
+        "tokens_in": 78015709,
+        "tokens_out": 349622,
+        "cost_usd": 20.19286115,
+        "actions": 654,
+        "behavior": {
+          "total": 654,
+          "spec_understanding": 68,
+          "planning": 1,
+          "code_understanding": 321,
+          "code_writing": 189,
+          "debugging": 67,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 7
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "toml",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 733,
+        "passed": 733,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 10747745,
+        "code_loc": 2280,
+        "tokens_in": 64372518,
+        "tokens_out": 344979,
+        "cost_usd": 17.2481085,
+        "actions": 474,
+        "behavior": {
+          "total": 474,
+          "spec_understanding": 42,
+          "planning": 0,
+          "code_understanding": 185,
+          "code_writing": 133,
+          "debugging": 91,
+          "hygiene": 19,
+          "external_search": 0,
+          "other": 4
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "uri",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 138,
+        "passed": 138,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 2578897,
+        "code_loc": 1128,
+        "tokens_in": 15901872,
+        "tokens_out": 101289,
+        "cost_usd": 4.588827599999999,
+        "actions": 187,
+        "behavior": {
+          "total": 187,
+          "spec_understanding": 8,
+          "planning": 1,
+          "code_understanding": 92,
+          "code_writing": 54,
+          "debugging": 27,
+          "hygiene": 4,
+          "external_search": 0,
+          "other": 1
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "url",
+      "difficulty": "medium",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 1220,
+        "passed": 1112,
+        "pass_rate": 91.15
+      },
+      "metrics": {
+        "elapsed_ms": 4462424,
+        "code_loc": 4849,
+        "tokens_in": 31862719,
+        "tokens_out": 159226,
+        "cost_usd": 8.40137025,
+        "actions": 338,
+        "behavior": {
+          "total": 338,
+          "spec_understanding": 60,
+          "planning": 0,
+          "code_understanding": 164,
+          "code_writing": 56,
+          "debugging": 35,
+          "hygiene": 2,
+          "external_search": 0,
+          "other": 21
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "wasm",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 800,
+        "passed": 800,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 7397434,
+        "code_loc": 3479,
+        "tokens_in": 59270441,
+        "tokens_out": 270425,
+        "cost_usd": 15.67134975,
+        "actions": 491,
+        "behavior": {
+          "total": 491,
+          "spec_understanding": 51,
+          "planning": 1,
+          "code_understanding": 241,
+          "code_writing": 103,
+          "debugging": 66,
+          "hygiene": 12,
+          "external_search": 16,
+          "other": 1
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "xml",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 735,
+        "passed": 735,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 6781523,
+        "code_loc": 4946,
+        "tokens_in": 61758434,
+        "tokens_out": 230336,
+        "cost_usd": 14.808744299999999,
+        "actions": 483,
+        "behavior": {
+          "total": 483,
+          "spec_understanding": 20,
+          "planning": 1,
+          "code_understanding": 204,
+          "code_writing": 157,
+          "debugging": 79,
+          "hygiene": 22,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "yaml",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 345,
+        "passed": 345,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 13927846,
+        "code_loc": 3664,
+        "tokens_in": 95399038,
+        "tokens_out": 571554,
+        "cost_usd": 26.7821365,
+        "actions": 721,
+        "behavior": {
+          "total": 721,
+          "spec_understanding": 25,
+          "planning": 1,
+          "code_understanding": 295,
+          "code_writing": 245,
+          "debugging": 115,
+          "hygiene": 26,
+          "external_search": 6,
+          "other": 8
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.2-codex-high",
+      "task_id": "zip",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 1089,
+        "passed": 1089,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 11698837,
+        "code_loc": 1346,
+        "tokens_in": 77731064,
+        "tokens_out": 373295,
+        "cost_usd": 20.3170632,
+        "actions": 693,
+        "behavior": {
+          "total": 693,
+          "spec_understanding": 17,
+          "planning": 0,
+          "code_understanding": 295,
+          "code_writing": 83,
+          "debugging": 54,
+          "hygiene": 8,
+          "external_search": 13,
+          "other": 223
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "c99",
+      "difficulty": "hard",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 117,
+        "passed": 117,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 2245457,
+        "code_loc": 3624,
+        "tokens_in": 22059197,
+        "tokens_out": 99254,
+        "cost_usd": 5.815096349999999,
+        "actions": 218,
+        "behavior": {
+          "total": 218,
+          "spec_understanding": 15,
+          "planning": 0,
+          "code_understanding": 87,
+          "code_writing": 55,
+          "debugging": 43,
+          "hygiene": 1,
+          "external_search": 1,
+          "other": 16
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "capnp",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 111,
+        "passed": 111,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 1921932,
+        "code_loc": 3114,
+        "tokens_in": 17827133,
+        "tokens_out": 82394,
+        "cost_usd": 4.880377949999999,
+        "actions": 194,
+        "behavior": {
+          "total": 194,
+          "spec_understanding": 26,
+          "planning": 0,
+          "code_understanding": 83,
+          "code_writing": 37,
+          "debugging": 42,
+          "hygiene": 2,
+          "external_search": 0,
+          "other": 4
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "cdcl",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 4312,
+        "passed": 4295,
+        "pass_rate": 99.61
+      },
+      "metrics": {
+        "elapsed_ms": 8020522,
+        "code_loc": 1650,
+        "tokens_in": 53072492,
+        "tokens_out": 96698,
+        "cost_usd": 11.143813799999998,
+        "actions": 216,
+        "behavior": {
+          "total": 216,
+          "spec_understanding": 9,
+          "planning": 0,
+          "code_understanding": 76,
+          "code_writing": 40,
+          "debugging": 61,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 29
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "csv",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 98,
+        "passed": 98,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 749390,
+        "code_loc": 467,
+        "tokens_in": 5793747,
+        "tokens_out": 37076,
+        "cost_usd": 1.84658845,
+        "actions": 84,
+        "behavior": {
+          "total": 84,
+          "spec_understanding": 7,
+          "planning": 0,
+          "code_understanding": 41,
+          "code_writing": 19,
+          "debugging": 15,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 2
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "ecma262",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 0,
+      "tests": {
+        "total": 618,
+        "passed": 108,
+        "pass_rate": 17.48
+      },
+      "metrics": {
+        "elapsed_ms": 2711315,
+        "code_loc": 7445,
+        "tokens_in": 17918689,
+        "tokens_out": 109558,
+        "cost_usd": 5.44629855,
+        "actions": 201,
+        "behavior": {
+          "total": 201,
+          "spec_understanding": 20,
+          "planning": 0,
+          "code_understanding": 97,
+          "code_writing": 44,
+          "debugging": 30,
+          "hygiene": 1,
+          "external_search": 5,
+          "other": 4
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "git_object",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 1000,
+        "passed": 1000,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 1572494,
+        "code_loc": 840,
+        "tokens_in": 9852506,
+        "tokens_out": 42386,
+        "cost_usd": 2.8035902999999998,
+        "actions": 125,
+        "behavior": {
+          "total": 125,
+          "spec_understanding": 5,
+          "planning": 0,
+          "code_understanding": 74,
+          "code_writing": 31,
+          "debugging": 12,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 2
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "hpack",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 129,
+        "passed": 129,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 1186566,
+        "code_loc": 1793,
+        "tokens_in": 11713089,
+        "tokens_out": 56740,
+        "cost_usd": 3.0990753499999997,
+        "actions": 142,
+        "behavior": {
+          "total": 142,
+          "spec_understanding": 17,
+          "planning": 1,
+          "code_understanding": 63,
+          "code_writing": 32,
+          "debugging": 23,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 6
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "html5",
+      "difficulty": "hard",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 8221,
+        "passed": 7086,
+        "pass_rate": 86.19
+      },
+      "metrics": {
+        "elapsed_ms": 11705697,
+        "code_loc": 11080,
+        "tokens_in": 67403182,
+        "tokens_out": 155467,
+        "cost_usd": 15.4513065,
+        "actions": 329,
+        "behavior": {
+          "total": 329,
+          "spec_understanding": 26,
+          "planning": 0,
+          "code_understanding": 99,
+          "code_writing": 66,
+          "debugging": 97,
+          "hygiene": 2,
+          "external_search": 24,
+          "other": 15
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "ini",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 98,
+        "passed": 98,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 953359,
+        "code_loc": 1495,
+        "tokens_in": 9156665,
+        "tokens_out": 46876,
+        "cost_usd": 2.5736693499999994,
+        "actions": 99,
+        "behavior": {
+          "total": 99,
+          "spec_understanding": 5,
+          "planning": 0,
+          "code_understanding": 40,
+          "code_writing": 29,
+          "debugging": 25,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "jq",
+      "difficulty": "hard",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 218,
+        "passed": 218,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 4092090,
+        "code_loc": 4914,
+        "tokens_in": 45678346,
+        "tokens_out": 184892,
+        "cost_usd": 11.412403099999999,
+        "actions": 435,
+        "behavior": {
+          "total": 435,
+          "spec_understanding": 12,
+          "planning": 0,
+          "code_understanding": 139,
+          "code_writing": 90,
+          "debugging": 98,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 95
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "lua",
+      "difficulty": "hard",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 137,
+        "passed": 137,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 3338174,
+        "code_loc": 9625,
+        "tokens_in": 22972049,
+        "tokens_out": 163245,
+        "cost_usd": 7.085958949999999,
+        "actions": 215,
+        "behavior": {
+          "total": 215,
+          "spec_understanding": 9,
+          "planning": 0,
+          "code_understanding": 91,
+          "code_writing": 77,
+          "debugging": 36,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 2
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "protobuf",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 141,
+        "passed": 141,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 692041,
+        "code_loc": 1590,
+        "tokens_in": 7093250,
+        "tokens_out": 34373,
+        "cost_usd": 2.0465150999999997,
+        "actions": 109,
+        "behavior": {
+          "total": 109,
+          "spec_understanding": 15,
+          "planning": 0,
+          "code_understanding": 51,
+          "code_writing": 27,
+          "debugging": 14,
+          "hygiene": 2,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "pug",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 251,
+        "passed": 251,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 12439329,
+        "code_loc": 2709,
+        "tokens_in": 92725998,
+        "tokens_out": 319316,
+        "cost_usd": 22.6866325,
+        "actions": 708,
+        "behavior": {
+          "total": 708,
+          "spec_understanding": 39,
+          "planning": 0,
+          "code_understanding": 252,
+          "code_writing": 130,
+          "debugging": 106,
+          "hygiene": 7,
+          "external_search": 96,
+          "other": 78
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "python",
+      "difficulty": "hard",
+      "task_passed": true,
+      "exit_code": 1,
+      "tests": {
+        "total": 653,
+        "passed": 653,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 8361890,
+        "code_loc": 7953,
+        "tokens_in": 51536280,
+        "tokens_out": 228395,
+        "cost_usd": 13.85986,
+        "actions": 419,
+        "behavior": {
+          "total": 419,
+          "spec_understanding": 22,
+          "planning": 0,
+          "code_understanding": 235,
+          "code_writing": 85,
+          "debugging": 53,
+          "hygiene": 1,
+          "external_search": 12,
+          "other": 11
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "r6rs",
+      "difficulty": "hard",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 1362,
+        "passed": 1362,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 9283933,
+        "code_loc": 3751,
+        "tokens_in": 52455387,
+        "tokens_out": 225027,
+        "cost_usd": 13.72226205,
+        "actions": 377,
+        "behavior": {
+          "total": 377,
+          "spec_understanding": 31,
+          "planning": 0,
+          "code_understanding": 174,
+          "code_writing": 47,
+          "debugging": 60,
+          "hygiene": 6,
+          "external_search": 6,
+          "other": 53
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "toml",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 733,
+        "passed": 733,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 3183993,
+        "code_loc": 2149,
+        "tokens_in": 20798537,
+        "tokens_out": 153217,
+        "cost_usd": 6.640084150000001,
+        "actions": 237,
+        "behavior": {
+          "total": 237,
+          "spec_understanding": 29,
+          "planning": 0,
+          "code_understanding": 79,
+          "code_writing": 34,
+          "debugging": 72,
+          "hygiene": 8,
+          "external_search": 13,
+          "other": 2
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "uri",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 138,
+        "passed": 138,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 909498,
+        "code_loc": 1645,
+        "tokens_in": 8976259,
+        "tokens_out": 45228,
+        "cost_usd": 2.6274020499999997,
+        "actions": 95,
+        "behavior": {
+          "total": 95,
+          "spec_understanding": 12,
+          "planning": 0,
+          "code_understanding": 32,
+          "code_writing": 24,
+          "debugging": 27,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "url",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 1220,
+        "passed": 1220,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 1149416,
+        "code_loc": 926,
+        "tokens_in": 11362167,
+        "tokens_out": 48536,
+        "cost_usd": 2.87934745,
+        "actions": 125,
+        "behavior": {
+          "total": 125,
+          "spec_understanding": 9,
+          "planning": 0,
+          "code_understanding": 67,
+          "code_writing": 20,
+          "debugging": 22,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 6
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "wasm",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 800,
+        "passed": 800,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 2748375,
+        "code_loc": 5085,
+        "tokens_in": 29510804,
+        "tokens_out": 125106,
+        "cost_usd": 8.011602199999999,
+        "actions": 263,
+        "behavior": {
+          "total": 263,
+          "spec_understanding": 27,
+          "planning": 0,
+          "code_understanding": 112,
+          "code_writing": 39,
+          "debugging": 43,
+          "hygiene": 0,
+          "external_search": 11,
+          "other": 31
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "xml",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 735,
+        "passed": 735,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 4170604,
+        "code_loc": 4504,
+        "tokens_in": 40931823,
+        "tokens_out": 165345,
+        "cost_usd": 10.56973785,
+        "actions": 339,
+        "behavior": {
+          "total": 339,
+          "spec_understanding": 20,
+          "planning": 0,
+          "code_understanding": 102,
+          "code_writing": 109,
+          "debugging": 76,
+          "hygiene": 0,
+          "external_search": 27,
+          "other": 5
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "yaml",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 345,
+        "passed": 345,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 3235875,
+        "code_loc": 856,
+        "tokens_in": 26035801,
+        "tokens_out": 148349,
+        "cost_usd": 47.63953775,
+        "actions": 288,
+        "behavior": {
+          "total": 288,
+          "spec_understanding": 19,
+          "planning": 0,
+          "code_understanding": 144,
+          "code_writing": 57,
+          "debugging": 51,
+          "hygiene": 1,
+          "external_search": 2,
+          "other": 14
+        }
+      }
+    },
+    {
+      "model_id": "gpt-5.3-codex-xhigh",
+      "task_id": "zip",
+      "difficulty": "medium",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 1089,
+        "passed": 1089,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 4459303,
+        "code_loc": 1258,
+        "tokens_in": 41187381,
+        "tokens_out": 177034,
+        "cost_usd": 10.831035949999999,
+        "actions": 330,
+        "behavior": {
+          "total": 330,
+          "spec_understanding": 11,
+          "planning": 0,
+          "code_understanding": 144,
+          "code_writing": 54,
+          "debugging": 63,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 57
+        }
+      }
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "task_id": "csv",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 98,
+        "passed": 95,
+        "pass_rate": 96.94
+      },
+      "metrics": {
+        "elapsed_ms": 810407,
+        "code_loc": 383,
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "actions": 32,
+        "behavior": {
+          "total": 32,
+          "spec_understanding": 5,
+          "planning": 3,
+          "code_understanding": 12,
+          "code_writing": 7,
+          "debugging": 5,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "task_id": "git_object",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 1000,
+        "passed": 759,
+        "pass_rate": 75.9
+      },
+      "metrics": {
+        "elapsed_ms": 7469001,
+        "code_loc": 1299,
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "actions": 121,
+        "behavior": {
+          "total": 121,
+          "spec_understanding": 6,
+          "planning": 7,
+          "code_understanding": 46,
+          "code_writing": 37,
+          "debugging": 19,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 5
+        }
+      }
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "task_id": "hpack",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 129,
+        "passed": 129,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 1949674,
+        "code_loc": 1961,
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "actions": 160,
+        "behavior": {
+          "total": 160,
+          "spec_understanding": 11,
+          "planning": 5,
+          "code_understanding": 32,
+          "code_writing": 35,
+          "debugging": 52,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 24
+        }
+      }
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "task_id": "ini",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 98,
+        "passed": 82,
+        "pass_rate": 83.67
+      },
+      "metrics": {
+        "elapsed_ms": 3742913,
+        "code_loc": 998,
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "actions": 99,
+        "behavior": {
+          "total": 99,
+          "spec_understanding": 6,
+          "planning": 0,
+          "code_understanding": 19,
+          "code_writing": 31,
+          "debugging": 35,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 8
+        }
+      }
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "task_id": "protobuf",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 141,
+        "passed": 135,
+        "pass_rate": 95.74
+      },
+      "metrics": {
+        "elapsed_ms": 3049938,
+        "code_loc": 1076,
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "actions": 176,
+        "behavior": {
+          "total": 176,
+          "spec_understanding": 17,
+          "planning": 4,
+          "code_understanding": 27,
+          "code_writing": 46,
+          "debugging": 56,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 25
+        }
+      }
+    },
+    {
+      "model_id": "kimi-k2.5",
+      "task_id": "uri",
+      "difficulty": "easy",
+      "task_passed": true,
+      "exit_code": 0,
+      "tests": {
+        "total": 138,
+        "passed": 138,
+        "pass_rate": 100.0
+      },
+      "metrics": {
+        "elapsed_ms": 4390309,
+        "code_loc": 1260,
+        "tokens_in": null,
+        "tokens_out": null,
+        "cost_usd": null,
+        "actions": 238,
+        "behavior": {
+          "total": 238,
+          "spec_understanding": 10,
+          "planning": 8,
+          "code_understanding": 32,
+          "code_writing": 65,
+          "debugging": 111,
+          "hygiene": 1,
+          "external_search": 0,
+          "other": 11
+        }
+      }
+    },
+    {
+      "model_id": "qwen3-max-2026-01-23",
+      "task_id": "csv",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 98,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 3066638,
+        "code_loc": 398,
+        "tokens_in": 19795768,
+        "tokens_out": 46435,
+        "cost_usd": 60.099398999999984,
+        "actions": 201,
+        "behavior": {
+          "total": 201,
+          "spec_understanding": 5,
+          "planning": 3,
+          "code_understanding": 29,
+          "code_writing": 121,
+          "debugging": 43,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "qwen3-max-2026-01-23",
+      "task_id": "git_object",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 1000,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 9476820,
+        "code_loc": 643,
+        "tokens_in": 24104561,
+        "tokens_out": 63697,
+        "cost_usd": 78.24506999999998,
+        "actions": 240,
+        "behavior": {
+          "total": 240,
+          "spec_understanding": 10,
+          "planning": 11,
+          "code_understanding": 111,
+          "code_writing": 73,
+          "debugging": 32,
+          "hygiene": 0,
+          "external_search": 3,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "qwen3-max-2026-01-23",
+      "task_id": "hpack",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 129,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 1873273,
+        "code_loc": 656,
+        "tokens_in": 7597478,
+        "tokens_out": 46520,
+        "cost_usd": 23.50978200000001,
+        "actions": 97,
+        "behavior": {
+          "total": 97,
+          "spec_understanding": 30,
+          "planning": 6,
+          "code_understanding": 7,
+          "code_writing": 30,
+          "debugging": 24,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "qwen3-max-2026-01-23",
+      "task_id": "ini",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 98,
+        "passed": 52,
+        "pass_rate": 53.06
+      },
+      "metrics": {
+        "elapsed_ms": 4715499,
+        "code_loc": 568,
+        "tokens_in": 4203333,
+        "tokens_out": 39433,
+        "cost_usd": 23.662058999999992,
+        "actions": 149,
+        "behavior": {
+          "total": 149,
+          "spec_understanding": 12,
+          "planning": 8,
+          "code_understanding": 50,
+          "code_writing": 48,
+          "debugging": 31,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 0
+        }
+      }
+    },
+    {
+      "model_id": "qwen3-max-2026-01-23",
+      "task_id": "protobuf",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 1,
+      "tests": {
+        "total": 141,
+        "passed": 0,
+        "pass_rate": 0.0
+      },
+      "metrics": {
+        "elapsed_ms": 24705147,
+        "code_loc": 1755,
+        "tokens_in": 32913624,
+        "tokens_out": 169330,
+        "cost_usd": 153.28561800000017,
+        "actions": 402,
+        "behavior": {
+          "total": 402,
+          "spec_understanding": 18,
+          "planning": 14,
+          "code_understanding": 71,
+          "code_writing": 198,
+          "debugging": 100,
+          "hygiene": 0,
+          "external_search": 0,
+          "other": 1
+        }
+      }
+    },
+    {
+      "model_id": "qwen3-max-2026-01-23",
+      "task_id": "uri",
+      "difficulty": "easy",
+      "task_passed": false,
+      "exit_code": 2,
+      "tests": {
+        "total": 138,
+        "passed": 42,
+        "pass_rate": 30.43
+      },
+      "metrics": {
+        "elapsed_ms": 12070540,
+        "code_loc": 1080,
+        "tokens_in": 6223498,
+        "tokens_out": 59710,
+        "cost_usd": 29.568996,
+        "actions": 101,
+        "behavior": {
+          "total": 101,
+          "spec_understanding": 10,
+          "planning": 10,
+          "code_understanding": 23,
+          "code_writing": 34,
+          "debugging": 22,
+          "hygiene": 0,
+          "external_search": 2,
+          "other": 0
+        }
+      }
+    }
+  ],
+  "summaries": {
+    "by_model": [
+      {
+        "model_id": "claude-opus-4.5",
+        "tasks_passed": 10,
+        "tasks_total": 22,
+        "tests_passed": 16818,
+        "tests_total": 22526,
+        "pass_rate": 81.66,
+        "total_cost_usd": 507.94,
+        "total_time_ms": 96645102,
+        "avg_actions": 335.64
+      },
+      {
+        "model_id": "claude-opus-4.6",
+        "tasks_passed": 15,
+        "tasks_total": 22,
+        "tests_passed": 21375,
+        "tests_total": 22526,
+        "pass_rate": 90.83,
+        "total_cost_usd": 2055.81,
+        "total_time_ms": 275215622,
+        "avg_actions": 926.64
+      },
+      {
+        "model_id": "claude-sonnet-4.5",
+        "tasks_passed": 0,
+        "tasks_total": 6,
+        "tests_passed": 556,
+        "tests_total": 1604,
+        "pass_rate": 76.07,
+        "total_cost_usd": 40.67,
+        "total_time_ms": 6930284,
+        "avg_actions": 164.83
+      },
+      {
+        "model_id": "deepseek-v3.2",
+        "tasks_passed": 1,
+        "tasks_total": 6,
+        "tests_passed": 138,
+        "tests_total": 1604,
+        "pass_rate": 16.67,
+        "total_cost_usd": 4.12,
+        "total_time_ms": 72700285,
+        "avg_actions": 607.83
+      },
+      {
+        "model_id": "gemini-3-flash-preview",
+        "tasks_passed": 2,
+        "tasks_total": 6,
+        "tests_passed": 376,
+        "tests_total": 1604,
+        "pass_rate": 49.83,
+        "total_cost_usd": 31.61,
+        "total_time_ms": 5378494,
+        "avg_actions": 78.67
+      },
+      {
+        "model_id": "gemini-3-pro-preview",
+        "tasks_passed": 0,
+        "tasks_total": 6,
+        "tests_passed": 128,
+        "tests_total": 1604,
+        "pass_rate": 16.54,
+        "total_cost_usd": null,
+        "total_time_ms": 6485714,
+        "avg_actions": 70.33
+      },
+      {
+        "model_id": "glm-4.7",
+        "tasks_passed": 2,
+        "tasks_total": 6,
+        "tests_passed": 456,
+        "tests_total": 1604,
+        "pass_rate": 64.21,
+        "total_cost_usd": 4.86,
+        "total_time_ms": 15069963,
+        "avg_actions": 232.17
+      },
+      {
+        "model_id": "gpt-5.2-codex-high",
+        "tasks_passed": 17,
+        "tasks_total": 22,
+        "tests_passed": 19985,
+        "tests_total": 22526,
+        "pass_rate": 96.39,
+        "total_cost_usd": 435.72,
+        "total_time_ms": 391124151,
+        "avg_actions": 1051.64
+      },
+      {
+        "model_id": "gpt-5.3-codex-xhigh",
+        "tasks_passed": 19,
+        "tasks_total": 22,
+        "tests_passed": 20864,
+        "tests_total": 22526,
+        "pass_rate": 95.6,
+        "total_cost_usd": 213.07,
+        "total_time_ms": 89131253,
+        "avg_actions": 252.18
+      },
+      {
+        "model_id": "kimi-k2.5",
+        "tasks_passed": 2,
+        "tasks_total": 6,
+        "tests_passed": 1338,
+        "tests_total": 1604,
+        "pass_rate": 92.04,
+        "total_cost_usd": null,
+        "total_time_ms": 21412242,
+        "avg_actions": 137.67
+      },
+      {
+        "model_id": "qwen3-max-2026-01-23",
+        "tasks_passed": 0,
+        "tasks_total": 6,
+        "tests_passed": 94,
+        "tests_total": 1604,
+        "pass_rate": 13.92,
+        "total_cost_usd": 368.37,
+        "total_time_ms": 55907917,
+        "avg_actions": 198.33
+      }
+    ],
+    "by_difficulty": [
+      {
+        "difficulty": "easy",
+        "model_id": "claude-opus-4.5",
+        "tasks_passed": 6,
+        "tasks_total": 6,
+        "tests_passed": 1604,
+        "tests_total": 1604,
+        "pass_rate": 100.0,
+        "total_cost_usd": 56.69,
+        "avg_time_ms": 1394757,
+        "avg_code_loc": 1092,
+        "avg_actions": 144.67
+      },
+      {
+        "difficulty": "easy",
+        "model_id": "claude-opus-4.6",
+        "tasks_passed": 6,
+        "tasks_total": 6,
+        "tests_passed": 1604,
+        "tests_total": 1604,
+        "pass_rate": 100.0,
+        "total_cost_usd": 48.61,
+        "avg_time_ms": 1627199,
+        "avg_code_loc": 1781,
+        "avg_actions": 150.0
+      },
+      {
+        "difficulty": "easy",
+        "model_id": "claude-sonnet-4.5",
+        "tasks_passed": 0,
+        "tasks_total": 6,
+        "tests_passed": 556,
+        "tests_total": 1604,
+        "pass_rate": 76.07,
+        "total_cost_usd": 40.67,
+        "avg_time_ms": 1155047,
+        "avg_code_loc": 930,
+        "avg_actions": 164.83
+      },
+      {
+        "difficulty": "easy",
+        "model_id": "deepseek-v3.2",
+        "tasks_passed": 1,
+        "tasks_total": 6,
+        "tests_passed": 138,
+        "tests_total": 1604,
+        "pass_rate": 16.67,
+        "total_cost_usd": 4.12,
+        "avg_time_ms": 12116714,
+        "avg_code_loc": 1070,
+        "avg_actions": 607.83
+      },
+      {
+        "difficulty": "easy",
+        "model_id": "gemini-3-flash-preview",
+        "tasks_passed": 2,
+        "tasks_total": 6,
+        "tests_passed": 376,
+        "tests_total": 1604,
+        "pass_rate": 49.83,
+        "total_cost_usd": 31.61,
+        "avg_time_ms": 896416,
+        "avg_code_loc": 558,
+        "avg_actions": 78.67
+      },
+      {
+        "difficulty": "easy",
+        "model_id": "gemini-3-pro-preview",
+        "tasks_passed": 0,
+        "tasks_total": 6,
+        "tests_passed": 128,
+        "tests_total": 1604,
+        "pass_rate": 16.54,
+        "total_cost_usd": null,
+        "avg_time_ms": 1080952,
+        "avg_code_loc": 710,
+        "avg_actions": 70.33
+      },
+      {
+        "difficulty": "easy",
+        "model_id": "glm-4.7",
+        "tasks_passed": 2,
+        "tasks_total": 6,
+        "tests_passed": 456,
+        "tests_total": 1604,
+        "pass_rate": 64.21,
+        "total_cost_usd": 4.86,
+        "avg_time_ms": 2511660,
+        "avg_code_loc": 904,
+        "avg_actions": 232.17
+      },
+      {
+        "difficulty": "easy",
+        "model_id": "gpt-5.2-codex-high",
+        "tasks_passed": 6,
+        "tasks_total": 6,
+        "tests_passed": 1604,
+        "tests_total": 1604,
+        "pass_rate": 100.0,
+        "total_cost_usd": 33.51,
+        "avg_time_ms": 2930566,
+        "avg_code_loc": 1081,
+        "avg_actions": 195.0
+      },
+      {
+        "difficulty": "easy",
+        "model_id": "gpt-5.3-codex-xhigh",
+        "tasks_passed": 6,
+        "tasks_total": 6,
+        "tests_passed": 1604,
+        "tests_total": 1604,
+        "pass_rate": 100.0,
+        "total_cost_usd": 15.0,
+        "avg_time_ms": 1010558,
+        "avg_code_loc": 1305,
+        "avg_actions": 109.0
+      },
+      {
+        "difficulty": "easy",
+        "model_id": "kimi-k2.5",
+        "tasks_passed": 2,
+        "tasks_total": 6,
+        "tests_passed": 1338,
+        "tests_total": 1604,
+        "pass_rate": 92.04,
+        "total_cost_usd": null,
+        "avg_time_ms": 3568707,
+        "avg_code_loc": 1163,
+        "avg_actions": 137.67
+      },
+      {
+        "difficulty": "easy",
+        "model_id": "qwen3-max-2026-01-23",
+        "tasks_passed": 0,
+        "tasks_total": 6,
+        "tests_passed": 94,
+        "tests_total": 1604,
+        "pass_rate": 13.92,
+        "total_cost_usd": 368.37,
+        "avg_time_ms": 9317986,
+        "avg_code_loc": 850,
+        "avg_actions": 198.33
+      },
+      {
+        "difficulty": "medium",
+        "model_id": "claude-opus-4.5",
+        "tasks_passed": 3,
+        "tasks_total": 8,
+        "tests_passed": 4593,
+        "tests_total": 5284,
+        "pass_rate": 82.61,
+        "total_cost_usd": 208.43,
+        "avg_time_ms": 4828414,
+        "avg_code_loc": 3304,
+        "avg_actions": 381.0
+      },
+      {
+        "difficulty": "medium",
+        "model_id": "claude-opus-4.6",
+        "tasks_passed": 5,
+        "tasks_total": 8,
+        "tests_passed": 5146,
+        "tests_total": 5284,
+        "pass_rate": 93.63,
+        "total_cost_usd": 1183.94,
+        "avg_time_ms": 12773155,
+        "avg_code_loc": 4867,
+        "avg_actions": 938.0
+      },
+      {
+        "difficulty": "medium",
+        "model_id": "gpt-5.2-codex-high",
+        "tasks_passed": 7,
+        "tasks_total": 8,
+        "tests_passed": 5176,
+        "tests_total": 5284,
+        "pass_rate": 98.89,
+        "total_cost_usd": 287.17,
+        "avg_time_ms": 18517105,
+        "avg_code_loc": 4702,
+        "avg_actions": 1069.75
+      },
+      {
+        "difficulty": "medium",
+        "model_id": "gpt-5.3-codex-xhigh",
+        "tasks_passed": 8,
+        "tasks_total": 8,
+        "tests_passed": 5284,
+        "tests_total": 5284,
+        "pass_rate": 100.0,
+        "total_cost_usd": 114.14,
+        "avg_time_ms": 4163603,
+        "avg_code_loc": 2575,
+        "avg_actions": 310.5
+      },
+      {
+        "difficulty": "hard",
+        "model_id": "claude-opus-4.5",
+        "tasks_passed": 1,
+        "tasks_total": 8,
+        "tests_passed": 10621,
+        "tests_total": 15638,
+        "pass_rate": 66.96,
+        "total_cost_usd": 242.82,
+        "avg_time_ms": 6206156,
+        "avg_code_loc": 6603,
+        "avg_actions": 433.5
+      },
+      {
+        "difficulty": "hard",
+        "model_id": "claude-opus-4.6",
+        "tasks_passed": 4,
+        "tasks_total": 8,
+        "tests_passed": 14625,
+        "tests_total": 15638,
+        "pass_rate": 81.15,
+        "total_cost_usd": 823.26,
+        "avg_time_ms": 20408399,
+        "avg_code_loc": 10103,
+        "avg_actions": 1497.75
+      },
+      {
+        "difficulty": "hard",
+        "model_id": "gpt-5.2-codex-high",
+        "tasks_passed": 4,
+        "tasks_total": 8,
+        "tests_passed": 13205,
+        "tests_total": 15638,
+        "pass_rate": 91.17,
+        "total_cost_usd": 115.04,
+        "avg_time_ms": 28175489,
+        "avg_code_loc": 9034,
+        "avg_actions": 1676.0
+      },
+      {
+        "difficulty": "hard",
+        "model_id": "gpt-5.3-codex-xhigh",
+        "tasks_passed": 5,
+        "tasks_total": 8,
+        "tests_passed": 13976,
+        "tests_total": 15638,
+        "pass_rate": 87.91,
+        "total_cost_usd": 83.94,
+        "avg_time_ms": 6219885,
+        "avg_code_loc": 6255,
+        "avg_actions": 301.25
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+# Virtual environment
+.venv/
+
+# Build output
+dist/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Cached clone of SWE-AGI-Eval
+.cache/
+
+# Note: data/leaderboards.json is committed so CI can build without SWE-AGI-Eval access

@@ -1,0 +1,7 @@
+{
+  "import": ["moonbitlang/x/fs"],
+  "targets": {
+    "pug_pub_test.mbt": ["js"],
+    "pug_priv_test.mbt": ["js"]
+  }
+}

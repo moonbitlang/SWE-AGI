@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SWE-AGI Benchmark{% endblock %}</title>
+    <link rel="stylesheet" href="css/main.css?v={{ asset_version }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <script>
+      // Initialize theme immediately to prevent flash
+      (function() {
+        const storedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark-mode');
+        }
+      })();
+    </script>
+    {% block head_extra %}{% endblock %}
+</head>
+<body>
+    {% include "_nav.html" %}
+
+    <div class="main-content">
+        {% block content %}
+        <!-- Page-specific content will be injected here -->
+        {% endblock %}
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-copyright">
+                        &copy; 2026 SWE-AGI Team. All rights reserved.
+                    </div>
+                    <div class="footer-links">
+                        <a href="https://github.com/moonbitlang/SWE-AGI" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://github.com/moonbitlang/SWE-AGI/blob/main/paper/main.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Common JS files -->
+    <script src="js/main.js?v={{ asset_version }}"></script>
+    {% block js_files %}
+    <!-- Page-specific JS files will be injected here -->
+    {% endblock %}
+
+    <script>
+        function initTheme() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+            // Move dark-mode class from documentElement to body if present
+            if (document.documentElement.classList.contains('dark-mode')) {
+                document.body.classList.add('dark-mode');
+                document.documentElement.classList.remove('dark-mode');
+            }
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-mode');
+                    const isDarkMode = document.body.classList.contains('dark-mode');
+                    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+                });
+            }
+
+            prefersDarkScheme.addEventListener('change', (e) => {
+                if (!localStorage.getItem('theme')) {
+                    if (e.matches) {
+                        document.body.classList.add('dark-mode');
+                    } else {
+                        document.body.classList.remove('dark-mode');
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+
+            // Highlight active nav link
+            const currentPath = window.location.pathname;
+            const currentPage = currentPath.split('/').pop().split('.')[0] || 'index';
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('data-page');
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+    {% block scripts_extra %}
+    <!-- Optional page-specific scripts -->
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,552 @@
+/* Components - Tables, cards, buttons, badges */
+
+/* Tables */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.table th,
+.table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--table-border);
+}
+
+.table th {
+  background: var(--table-header-bg);
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.table tbody tr:hover {
+  background: var(--table-row-hover);
+}
+
+.table th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.table th.sortable:hover {
+  background: var(--color-border);
+}
+
+.table th.sortable::after {
+  content: ' ↕';
+  opacity: 0.3;
+  font-size: 0.8em;
+}
+
+.table th.sorted-asc::after {
+  content: ' ↑';
+  opacity: 1;
+}
+
+.table th.sorted-desc::after {
+  content: ' ↓';
+  opacity: 1;
+}
+
+/* Data table specific */
+.data-table .model-name {
+  font-weight: 500;
+}
+
+.data-table .task-name {
+  font-family: var(--font-mono);
+}
+
+.data-table .actions-total-cell,
+.data-table .behavior-spec-understanding-cell,
+.data-table .behavior-planning-cell,
+.data-table .behavior-code-understanding-cell,
+.data-table .behavior-code-writing-cell,
+.data-table .behavior-debugging-cell,
+.data-table .behavior-hygiene-cell,
+.data-table .behavior-external-search-cell,
+.data-table .behavior-other-cell {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Pass rate visualization */
+.pass-rate-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 200px;
+}
+
+.pass-rate-value {
+  font-weight: 600;
+  min-width: 50px;
+}
+
+.pass-rate-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--gray-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.dark-mode .pass-rate-bar {
+  background: var(--gray-700);
+}
+
+.pass-rate-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-500), var(--green-600));
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+.pass-rate-detail {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+}
+
+/* Difficulty badges */
+.difficulty-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.difficulty-easy {
+  background: var(--green-100);
+  color: var(--green-600);
+}
+
+.difficulty-medium {
+  background: var(--yellow-100);
+  color: var(--yellow-600);
+}
+
+.difficulty-hard {
+  background: var(--red-100);
+  color: var(--red-600);
+}
+
+.dark-mode .difficulty-easy {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--green-500);
+}
+
+.dark-mode .difficulty-medium {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--yellow-500);
+}
+
+.dark-mode .difficulty-hard {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--red-500);
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+.status-passed {
+  background: var(--green-100);
+  color: var(--green-600);
+}
+
+.status-failed {
+  background: var(--red-100);
+  color: var(--red-600);
+}
+
+.dark-mode .status-passed {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--green-500);
+}
+
+.dark-mode .status-failed {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--red-500);
+}
+
+/* Filter controls */
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-md);
+  padding: var(--size-md) 0;
+  margin-bottom: var(--size-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.filter-select {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-background);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-light);
+}
+
+/* Filter buttons */
+.task-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: var(--size-lg);
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-background);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.filter-btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+/* Task cards */
+.task-card {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: box-shadow var(--transition-normal);
+}
+
+.task-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.task-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--size-md);
+  background: var(--color-background-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.task-card-header h3 {
+  margin: 0;
+  font-size: var(--text-base);
+}
+
+.task-card-body {
+  padding: var(--size-md);
+}
+
+.task-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--size-sm);
+  margin-bottom: var(--size-md);
+}
+
+.task-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meta-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.meta-value {
+  font-weight: 500;
+}
+
+.task-results h4 {
+  font-size: var(--text-sm);
+  margin-bottom: 0.5rem;
+}
+
+.mini-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mini-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+}
+
+.mini-result.passed {
+  background: var(--green-50);
+}
+
+.mini-result.failed {
+  background: var(--red-50);
+}
+
+.dark-mode .mini-result.passed {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.dark-mode .mini-result.failed {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.mini-model {
+  color: var(--color-text-secondary);
+}
+
+.mini-rate {
+  font-weight: 600;
+}
+
+/* Code blocks */
+.code-block {
+  background: var(--gray-100);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+}
+
+.dark-mode .code-block {
+  background: var(--gray-800);
+}
+
+.code-block pre {
+  margin: 0;
+  background: transparent;
+  border: none;
+}
+
+.code-block code {
+  background: transparent;
+  padding: 0;
+}
+
+/* Citation block */
+.citation {
+  position: relative;
+}
+
+.citation::before {
+  content: 'BibTeX';
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  background: var(--color-background);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Requirements list (submit page) */
+.requirements-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-md);
+  margin: var(--size-lg) 0;
+}
+
+.requirement-item {
+  display: flex;
+  gap: var(--size-md);
+  padding: var(--size-md);
+  background: var(--color-background-alt);
+  border-radius: var(--radius-lg);
+}
+
+.requirement-icon {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  color: white;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.requirement-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: var(--text-base);
+}
+
+.requirement-content p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+/* Difficulty sections */
+.difficulty-section {
+  margin-bottom: var(--size-xl);
+}
+
+.difficulty-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: var(--size-md);
+}
+
+/* No results message */
+.no-results {
+  text-align: center;
+  padding: var(--size-xl);
+  color: var(--color-text-muted);
+  background: var(--color-background-alt);
+  border-radius: var(--radius-lg);
+}
+
+/* Leaderboard wrapper */
+.leaderboard-wrapper,
+.summary-wrapper,
+.difficulty-wrapper {
+  margin-bottom: var(--size-lg);
+}
+
+/* Summary table styling */
+.summary-table .pass-rate-wrapper {
+  min-width: 150px;
+}
+
+/* Chart panels */
+.chart-panel {
+  background: var(--color-background-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--size-md);
+}
+
+.behavior-composition-panel {
+  margin-top: var(--size-md);
+}
+
+.chart-subtitle {
+  margin: 0 0 var(--size-xs) 0;
+  font-size: var(--text-lg);
+}
+
+.chart-help-text {
+  margin: 0 0 var(--size-md) 0;
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.model-toggle-group {
+  margin-bottom: var(--size-md);
+}
+
+.model-toggle-btn {
+  position: relative;
+  padding-left: 1.35rem;
+}
+
+.model-toggle-btn::before {
+  content: "";
+  position: absolute;
+  left: 0.55rem;
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--radius-full);
+  background: var(--model-color, var(--color-accent));
+  transform: translateY(-50%);
+}
+
+.model-toggle-btn:not(.active) {
+  opacity: 0.65;
+}
+
+.chart-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  min-height: 300px;
+}
+
+.radar-chart-wrapper {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.behavior-chart-wrapper {
+  max-width: 980px;
+  height: 360px;
+  min-height: 240px;
+  margin: 0 auto;
+}
+
+.chart-empty-message {
+  margin-top: var(--size-md);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 768px) {
+  .chart-canvas-wrapper {
+    height: 360px;
+    min-height: 260px;
+  }
+
+  .behavior-chart-wrapper {
+    height: 300px;
+    min-height: 220px;
+  }
+}

@@ -1,0 +1,13 @@
+target
+target/
+_build/
+.moonagent/*
+!.moonagent/skills/
+!.moonagent/skills/**
+_build
+target
+.mooncakes
+zip/fixtures/zipinfo_raw/
+worktrees/
+/tests/
+__pycache__/

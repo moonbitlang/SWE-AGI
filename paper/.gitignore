@@ -1,0 +1,11 @@
+*.aux
+*.bbl
+*.blg
+*.fls
+*.log
+*.out
+*.fdb_latexmk
+*.gz
+_minted/
+_minted-main/
+tmp.pdf

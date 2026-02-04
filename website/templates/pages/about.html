@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+
+{% block title %}About - SWE-AGI Benchmark{% endblock %}
+
+{% block content %}
+{% set easy_count = tasks | selectattr('difficulty', 'equalto', 'easy') | list | length %}
+{% set medium_count = tasks | selectattr('difficulty', 'equalto', 'medium') | list | length %}
+{% set hard_count = tasks | selectattr('difficulty', 'equalto', 'hard') | list | length %}
+
+<div class="container">
+    <header class="page-header">
+        <h1>About SWE-AGI</h1>
+        <p class="page-subtitle">Benchmarking Specification-Driven Software Construction with MoonBit in the Era of Autonomous Agents</p>
+        <div class="page-links" aria-label="Project links">
+            <a href="https://github.com/moonbitlang/SWE-AGI" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                Repository
+            </a>
+            <a href="https://github.com/moonbitlang/SWE-AGI/blob/main/paper/main.pdf" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                Paper
+            </a>
+            <a href="https://github.com/moonbitlang/SWE-AGI-Eval" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-chart-bar" aria-hidden="true"></i>
+                Evaluation Results
+            </a>
+        </div>
+    </header>
+
+    <section class="section content-section">
+        <h2>Overview</h2>
+        <p>
+            SWE-AGI is an open-source benchmark for evaluating end-to-end, specification-driven construction
+            of production-scale software systems in
+            <a href="https://www.moonbitlang.com/" target="_blank" rel="noopener noreferrer">MoonBit</a>.
+            Tasks require agents to build standards-compliant systems (parsers, interpreters, binary decoders,
+            and SAT solvers) from explicit specifications under a fixed API scaffold.
+        </p>
+
+        <p>
+            The benchmark is designed to prioritize reasoning over retrieval. Many target systems are largely
+            absent from the current MoonBit ecosystem, so progress depends on sustained specification
+            understanding, architecture decisions, and long-horizon implementation.
+        </p>
+    </section>
+
+    <section class="section content-section">
+        <h2>Benchmark Scope</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">{{ tasks | length }}</div>
+                <div class="stat-label">Tasks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">7</div>
+                <div class="stat-label">Task Categories</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">Weeks-Months</div>
+                <div class="stat-label">Typical Engineering Workload</div>
+            </div>
+        </div>
+
+        <p>
+            As described in the paper, SWE-AGI includes {{ tasks | length }} tasks across seven categories:
+        </p>
+        <ul>
+            <li>Template and domain-specific languages</li>
+            <li>Data serialization and configuration formats</li>
+            <li>Markup and document formats</li>
+            <li>Programming language front-ends</li>
+            <li>Binary formats and streaming decoders</li>
+            <li>Networking and protocol state machines</li>
+            <li>Automated reasoning and SAT solving</li>
+        </ul>
+    </section>
+
+    <section class="section content-section">
+        <h2>Task Structure</h2>
+        <p>Each task is packaged as a starter repository with a fixed interface:</p>
+
+        <div class="code-block">
+            <pre><code>tasks/&lt;task&gt;/
+├── specs/                 # Normative specs and reference documents
+├── TASK.md                # Goal, scope, acceptance criteria, constraints
+├── *_spec.mbt             # Fixed API declarations + helper contracts
+├── *_pub_test.mbt         # Public tests for local iteration
+├── *_priv_test.mbt        # Private tests (held out in evaluation checkout)
+├── moon.mod.json          # Package manifest and dependencies
+└── moon.pkg.json          # Package lockfile (pinned deps)</code></pre>
+        </div>
+
+        <p>
+            Agents iterate locally with public tests (typically a small visible subset), can add their own
+            spec-grounded checks, and submit final solutions for hidden private-test scoring.
+        </p>
+    </section>
+
+    <section class="section content-section">
+        <h2>Evaluation Protocol</h2>
+        <p>
+            SWE-AGI evaluates correctness and robustness via hidden private tests executed through
+            <code>swe-agi-submit</code>. The current paper does not include scored runtime or memory benchmarks.
+        </p>
+        <ul>
+            <li>Agents read <code>specs/</code> and <code>TASK.md</code>, then implement under a fixed MoonBit API scaffold</li>
+            <li>Agents run local validation (for example, <code>moon test</code>) using public tests and their own tests</li>
+            <li>Final scoring is based on hidden private tests returned by <code>swe-agi-submit</code></li>
+            <li>Frontier-model evaluations in the paper use a fixed 12-hour wall-clock budget per task</li>
+        </ul>
+    </section>
+
+    <section class="section content-section">
+        <h2>Difficulty Tiers</h2>
+
+        <div class="tier-cards">
+            <div class="tier-card tier-easy">
+                <h3>Easy ({{ easy_count }})</h3>
+                <p>
+                    Smaller parser/decoder systems, typically around 10<sup>3</sup> core LOC.
+                    All frontier models in the paper solve 6/6 easy tasks.
+                </p>
+                <ul class="task-list">
+                    {% for task in tasks if task.difficulty == 'easy' %}
+                    <li>{{ task.display_name }} ({{ task.total_tests }} tests)</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="tier-card tier-medium">
+                <h3>Medium ({{ medium_count }})</h3>
+                <p>
+                    Multi-module systems with richer state and error semantics.
+                    Typical scale is roughly 3x10<sup>3</sup> to 5x10<sup>3</sup> core LOC.
+                </p>
+                <ul class="task-list">
+                    {% for task in tasks if task.difficulty == 'medium' %}
+                    <li>{{ task.display_name }} ({{ task.total_tests }} tests)</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="tier-card tier-hard">
+                <h3>Hard ({{ hard_count }})</h3>
+                <p>
+                    Large specification-heavy systems (for example full parsers/interpreters)
+                    reaching up to about 10<sup>4</sup> core LOC.
+                </p>
+                <ul class="task-list">
+                    {% for task in tasks if task.difficulty == 'hard' %}
+                    <li>{{ task.display_name }} ({{ task.total_tests }} tests)</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section content-section">
+        <h2>Paper Snapshot</h2>
+        <p>
+            The latest paper reports full evaluations for four frontier models:
+        </p>
+        <ul>
+            <li><strong>gpt-5.3-codex</strong>: 19/22 tasks (86.4%)</li>
+            <li><strong>gpt-5.2-codex</strong>: 17/22 tasks (77.3%)</li>
+            <li><strong>claude-opus-4.6</strong>: 15/22 tasks (68.2%)</li>
+            <li><strong>claude-opus-4.5</strong>: 10/22 tasks (45.5%)</li>
+        </ul>
+        <p>
+            All four solve the easy tier; separation widens on medium and hard tasks, highlighting the
+            challenge of long-horizon, specification-driven software construction.
+        </p>
+    </section>
+
+    <section class="section content-section">
+        <h2>Why MoonBit?</h2>
+        <p>
+            <a href="https://www.moonbitlang.com/" target="_blank" rel="noopener noreferrer">MoonBit</a>
+            provides properties that are central to the benchmark design:
+        </p>
+        <ul>
+            <li><strong>Declaration-first scaffolding</strong> via <code>declare</code>, which freezes task interfaces</li>
+            <li><strong>Integrated toolchain</strong> (<code>moon</code>) for build, test, and packaging workflows</li>
+            <li><strong>Static typing and clear diagnostics</strong> to support reliable compile-test-refine loops</li>
+            <li><strong>Nascent ecosystem for target tasks</strong>, reducing superficial retrieval-based shortcuts</li>
+        </ul>
+    </section>
+
+    <section class="section content-section">
+        <h2>Citation</h2>
+        <p>If you use SWE-AGI in your research, please cite:</p>
+        <div class="code-block citation">
+            <pre><code>@misc{sweagi2026,
+  title={SWE-AGI: Benchmarking Specification-Driven Software Construction with MoonBit in the Era of Autonomous Agents},
+  author={Zhirui Zhang and Hongbo Zhang and Haoxiang Fei and Zhiyuan Bao and Yubin Chen and
+          Zhengyu Lei and Ziyue Liu and Yixuan Sun and Mingkun Xiao and Zihang Ye and
+          Yu Zhang and Hongcheng Zhu and Yuxiang Wen},
+  year={2026},
+  howpublished={\url{https://github.com/moonbitlang/SWE-AGI/blob/main/paper/main.pdf}},
+  note={MoonBit Project}
+}</code></pre>
+        </div>
+    </section>
+</div>
+{% endblock %}

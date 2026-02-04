@@ -1,0 +1,224 @@
+## Goal
+
+Implement a MoonBit **streaming XML parser and writer** that matches this
+repository’s test suite and the repo’s XML contract. The authoritative repo
+reference is vendored in:
+
+- `xml/specs/xml.md`
+
+## What This Task Is Really About
+
+This is an exercise in implementing a **real streaming parser** (pull-parser model):
+
+- read XML events one at a time from a reader
+- handle entities, attributes, namespaces, and error cases as required by tests
+- provide a writer and JSON conversion helpers used by the suite
+
+Avoid hardcoding: fixtures cover many XML forms and invalid inputs.
+
+## Approach
+
+Build incrementally:
+
+1. Tokenization and event model (`Event`) for start/end/text/cdata/comment, etc.
+2. Streaming reader that tracks line/column and returns events deterministically.
+3. Entity and attribute parsing rules required by tests.
+4. Writer/serialization helpers required by the suite.
+5. JSON conversion helpers used by snapshot tests.
+
+Run tests frequently while adding features.
+
+Important: The core logic must be implemented in MoonBit.
+
+## Scope
+
+In scope for this suite:
+
+- Reader API (`Reader::from_string`, `read_event`, `read_events_until_eof`, etc.)
+- Writer API for generating XML output as required by tests
+- Error behavior via `XmlError` variants
+
+Repo-specific note (important):
+
+- This is a streaming API; correctness includes event ordering and deterministic reader state progression.
+
+Out of scope (not required by current tests):
+
+- Full validating DTD/schema support
+
+## Required API
+
+Complete the declarations in `xml_spec.mbt`.
+
+Implementation notes:
+
+- You can **freely decide** the project structure (modules/files/directories),
+  the parsing strategy, and any internal data structures.
+- Do **not** modify the following files:
+  - `xml_spec.mbt` - API specification
+  - `specs/` folder - Reference documents and fixtures
+  - `*_pub_test.mbt` - Public test files (`xml_valid_pub_test.mbt`, `xml_invalid_pub_test.mbt`)
+  - `*_priv_test.mbt` - Private test files (`xml_valid_priv_test.mbt`, `xml_invalid_priv_test.mbt`)
+- Implement the required declarations by adding new `.mbt` files as needed.
+- **You may add additional test files** (e.g., xxx_test.mbt) if needed for testing and maintenance purposes
+
+Required entry points:
+
+- All `declare` declarations in `xml_spec.mbt` (Reader/Writer APIs, event types, errors, and JSON helpers)
+
+## Behavioral rules
+
+- Parsing must be streaming and deterministic.
+- Line/column tracking must match the suite’s expectations.
+- Must raise the correct `XmlError` variants on malformed input.
+- Writer output must match required canonical forms where asserted by tests.
+
+## Test execution
+
+```bash
+cd xml
+moon test
+```
+
+Use `moon test --update` only if you intentionally change snapshots.
+
+
+## Constraints
+
+### 1. Test Requirements
+
+**All tests must pass for task completion**:
+
+The model should keep running until all tests pass.
+
+- **Public tests** (`*_pub_test.mbt`): ~10% of total cases, visible in this repository for development and debugging
+- **Private tests** (`*_priv_test.mbt`): ~90% of total cases, **hidden** in the evaluation environment
+
+**⚠️ CRITICAL - Private Test Evaluation**:
+
+Passing only the public tests is **INSUFFICIENT** and will result in task failure. The task is complete **only when both public and private test suites pass**.
+
+**Why Private Tests Matter**:
+- **Coverage**: Private tests represent 90% of the total evaluation - they are the primary measure of success
+- **Comprehensiveness**: Validate full XML parsing/writing behavior for the supported subset, including edge cases and corner cases not exposed in public tests
+- **Real-world scenarios**: Test combinations and patterns that occur in real XML documents but may not be obvious from the spec
+- **Anti-cheating**: Prevent solutions that merely memorize or hardcode responses to public test cases
+
+**Evaluation Process**:
+
+**Step 1 - Local Testing (Development Phase)**:
+
+Before submitting for evaluation, ensure all public tests pass locally by running `moon test` in your project directory. Local testing helps you debug and iterate quickly, but **passing local tests alone does NOT complete this task**.
+
+**Step 2 - Server Evaluation (REQUIRED - Task Completion)**:
+
+⚠️ **MANDATORY STEP**: You **MUST** evaluate your solution against the full test suite (public + private) using the evaluation server. This is **NOT OPTIONAL**.
+
+**The task is incomplete until server evaluation confirms all tests pass.**
+
+To evaluate your solution:
+
+```bash
+swe-agi-submit --project xml --request-id eval-001
+```
+
+The server will respond with:
+- `status`: "pass" or "fail"
+- `summary`: Total test count, passed count, failed count
+- `errors`: Up to 5 failure messages (if any tests failed)
+
+**Success criteria for task completion**: 
+- `status` == "pass"
+- `summary.failed` == 0 (all tests must pass, including all private tests)
+
+**Important Notes**:
+- You cannot see private test results during development
+- Server evaluation is the **only way** to verify your solution against private tests
+- **Do not consider the task complete** until server evaluation returns success
+- If evaluation fails, fix the issues and re-evaluate until all tests pass
+
+### 2. Code Quality Requirements
+
+**Correctness**:
+- Zero compiler errors, warnings, or diagnostics
+- No runtime panics or unhandled edge cases
+- Proper error handling with meaningful error messages
+
+**Formatting**:
+- Run `moon fmt` to format all code
+- Run `moon info` to generate interface files (`.mbti`)
+- Follow MoonBit style conventions consistently
+
+**Implementation Integrity**:
+- Solutions must be real parsers/writers, not test-specific lookup tables
+- No hardcoded mappings derived from test fixtures
+- Implementation should work for arbitrary XML inputs within the supported subset
+
+### 3. Software Engineering Standards
+
+**Modularity and Organization**:
+- **Use subdirectories** to organize code by functional area:
+  - `reader/` - Streaming reader and tokenization
+  - `events/` - Event model and conversions
+  - `writer/` - Writer/serialization helpers
+  - `types/` - Core data structures and errors
+- Group related functionality together
+- Avoid dumping all code in the root directory
+
+**File Size Limits**:
+- Please try to keep each file to at most **1000 lines of core code** (excluding blank lines and comments)
+- Split large modules into focused, single-responsibility files
+- Use meaningful file names that reflect their purpose
+
+**Readability**:
+- Clear, descriptive function and variable names
+- Add comments for complex algorithms or non-obvious logic
+- Document public APIs and key data structures
+- Keep functions focused (prefer multiple small functions over large monolithic ones)
+
+**Code Structure**:
+- Logical separation of concerns (tokenize → read events → write)
+- Minimize coupling between modules
+- Use appropriate abstractions (types, enums, structs)
+- Avoid global mutable state
+
+**Example directory structure**:
+```
+xml/
+├── moon.mod.json
+├── moon.pkg.json
+├── xml_spec.mbt           # API declarations (do not modify)
+├── xml.mbt                # Main entry point
+├── reader/
+│   └── reader.mbt
+├── events/
+│   └── event.mbt
+├── writer/
+│   └── writer.mbt
+└── types/
+    ├── error.mbt
+    └── token.mbt
+```
+
+These standards ensure your code is maintainable, understandable, and follows professional software engineering practices.
+
+## Documentation
+
+**Write a comprehensive README.md**:
+
+Your implementation must include a `README.md` file that documents:
+
+- **Project overview**: What this parser implements and its purpose
+- **Architecture**: High-level design decisions and module organization
+- **Implementation approach**: Key algorithms, data structures, and parsing strategy
+- **Usage examples**: How to use the API (parsing code, generating JSON)
+- **Testing**: How to run tests and interpret results
+- **Design decisions**: Rationale for important technical choices
+
+The README should be written **based on your actual implementation** - describe the code you built, not generic information from specifications. It should help future developers understand your codebase quickly.
+
+## External references
+
+This environment has public network access. You may consult XML references
+online, but treat the vendored spec files in `specs/` as the authoritative
+baseline for behavior in this task.

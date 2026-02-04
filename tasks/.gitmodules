@@ -1,0 +1,3 @@
+[submodule ".moonagent/skills/moonbit-agent-guide"]
+	path = moonbit-agent-guide
+	url = https://github.com/moonbitlang/moonbit-agent-guide

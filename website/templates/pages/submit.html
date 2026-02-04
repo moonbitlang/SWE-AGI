@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+
+{% block title %}Submit - SWE-AGI Benchmark{% endblock %}
+
+{% block content %}
+<div class="container">
+    <header class="page-header">
+        <h1>Submit Results</h1>
+        <p class="page-subtitle">Run the official evaluation workflow and submit results to the SWE-AGI leaderboard</p>
+    </header>
+
+    <section class="section content-section">
+        <h2>Submission Requirements</h2>
+        <p>
+            To submit results to the SWE-AGI leaderboard, you must use the official Docker
+            evaluation setup with a public/private test split. This keeps submissions
+            reproducible and comparable.
+        </p>
+
+        <div class="requirements-list">
+            <div class="requirement-item">
+                <div class="requirement-icon">1</div>
+                <div class="requirement-content">
+                    <h3>Use Official Docker Workflow</h3>
+                    <p>
+                        Use the <code>docker/</code> infrastructure so agents only see public tests in
+                        <code>client_data</code>, while private tests remain in <code>server_data</code>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="requirement-item">
+                <div class="requirement-icon">2</div>
+                <div class="requirement-content">
+                    <h3>Use Repository Layout Correctly</h3>
+                    <p>
+                        Use one of two supported layouts: run directly in this monorepo
+                        (where <code>tasks/</code> and <code>docker/</code> already exist), or create
+                        an isolated <code>eval/</code> bundle that includes both
+                        <code>tasks/*</code> and <code>docker/</code>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="requirement-item">
+                <div class="requirement-icon">3</div>
+                <div class="requirement-content">
+                    <h3>Include Standard Artifacts</h3>
+                    <p>
+                        Each submitted task directory should include <code>log.jsonl</code>,
+                        <code>log.yaml</code>, and <code>run-metrics.json</code>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="requirement-item">
+                <div class="requirement-icon">4</div>
+                <div class="requirement-content">
+                    <h3>Submit Through GitHub PR</h3>
+                    <p>
+                        Submit results by pull request to
+                        <a href="https://github.com/moonbitlang/SWE-AGI-Eval" target="_blank" rel="noopener noreferrer">SWE-AGI-Eval</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section content-section">
+        <h2>Official Evaluation Workflow</h2>
+        <p>
+            Follow this process from <code>tasks/EVALUATION.md</code> and
+            <code>docker/README.md</code>.
+        </p>
+
+        <h3>1. Choose a workspace layout</h3>
+        <div class="code-block">
+            <pre><code># Option A: run directly in this monorepo
+cd &lt;path-to-SWE-AGI&gt;/docker
+
+# Option B: create an isolated bundle (from repo root)
+mkdir -p eval/&lt;date&gt;-&lt;runner-name&gt;
+cp -R tasks/* eval/&lt;date&gt;-&lt;runner-name&gt;/
+cp -R docker eval/&lt;date&gt;-&lt;runner-name&gt;/docker
+cd eval/&lt;date&gt;-&lt;runner-name&gt;/docker</code></pre>
+        </div>
+
+        <h3>2. Build image</h3>
+        <div class="code-block">
+            <pre><code>docker build --platform=linux/amd64 -t swe-agi:latest .</code></pre>
+        </div>
+
+        <h3>3. Prepare split data</h3>
+        <div class="code-block">
+            <pre><code>python3 setup.py</code></pre>
+        </div>
+
+        <h3>4. Start containers</h3>
+        <div class="code-block">
+            <pre><code>./start.sh
+# or: docker-compose up -d
+# or: docker compose up -d</code></pre>
+        </div>
+
+        <h3>5. Find client container and authenticate once</h3>
+        <div class="code-block">
+            <pre><code>docker ps --filter name=swe-agi-client
+# optional:
+# docker compose ps
+docker exec -it swe-agi-client-&lt;timestamp&gt; bash
+# inside container, login as needed:
+#   codex
+#   claude
+#   gemini
+#   kimi
+exit</code></pre>
+        </div>
+
+        <h3>6. Run evaluations</h3>
+        <div class="code-block">
+            <pre><code>docker exec -d swe-agi-client-&lt;timestamp&gt; swe-agi-run &lt;spec&gt; &lt;runner&gt;
+# example:
+docker exec -d swe-agi-client-20260206-120000 swe-agi-run toml gpt-5.3-codex</code></pre>
+        </div>
+
+        <h3>7. Check run artifacts</h3>
+        <div class="code-block">
+            <pre><code>ls client_data/&lt;spec&gt;/
+# expected:
+#   log.jsonl
+#   log.yaml
+#   run-metrics.json</code></pre>
+        </div>
+    </section>
+
+    <section class="section content-section">
+        <h2>Submission Process (Pull Request)</h2>
+        <p>
+            Copy completed results from your run workspace into
+            <a href="https://github.com/moonbitlang/SWE-AGI-Eval" target="_blank" rel="noopener noreferrer">SWE-AGI-Eval</a>
+            and open a pull request.
+        </p>
+
+        <div class="code-block">
+            <pre><code>SWE-AGI-Eval/
+└── &lt;model-name&gt;/
+    ├── toml/
+    │   ├── log.jsonl
+    │   ├── log.yaml
+    │   ├── run-metrics.json
+    │   └── ...copied task files...
+    ├── yaml/
+    │   └── ...
+    └── ...</code></pre>
+        </div>
+
+        <p>
+            Recommended pre-PR checklist:
+        </p>
+        <ul>
+            <li><code>log.jsonl</code>, <code>log.yaml</code>, and <code>run-metrics.json</code> exist for each submitted task</li>
+            <li>Runs complete without execution failures in <code>log.jsonl</code></li>
+            <li>Task directories and names match benchmark task names</li>
+        </ul>
+    </section>
+
+    <section class="section content-section">
+        <h2>Validation Notes</h2>
+        <p>
+            During runs, the agent submits with <code>swe-agi-submit</code>. The server
+            validates against the full suite (public + private tests) and returns pass/fail
+            summaries.
+        </p>
+        <p>
+            Use local public tests for iteration, but treat server-validated results as the
+            benchmark record.
+        </p>
+    </section>
+
+    <section class="section content-section">
+        <h2>Stopping and Resetting</h2>
+        <div class="code-block">
+            <pre><code>./stop.sh
+# or: docker-compose down
+# or: docker compose down
+
+# reset datasets (destructive):
+rm -rf client_data server_data
+python3 setup.py</code></pre>
+        </div>
+    </section>
+
+    <section class="section content-section">
+        <h2>Verification</h2>
+        <p>
+            We verify submissions by:
+        </p>
+        <ul>
+            <li>Re-running evaluation on a subset of tasks</li>
+            <li>Checking that implementations pass hidden private tests</li>
+            <li>Reviewing run artifacts and metrics for consistency</li>
+        </ul>
+        <p>
+            Submissions that cannot be reproduced or show signs of test contamination
+            will not be included on the leaderboard.
+        </p>
+    </section>
+
+    <section class="section content-section">
+        <h2>Questions?</h2>
+        <p>
+            Open an issue in
+            <a href="https://github.com/moonbitlang/SWE-AGI/issues" target="_blank" rel="noopener noreferrer">SWE-AGI</a>
+            or
+            <a href="https://github.com/moonbitlang/SWE-AGI-Eval/issues" target="_blank" rel="noopener noreferrer">SWE-AGI-Eval</a>.
+        </p>
+    </section>
+</div>
+{% endblock %}

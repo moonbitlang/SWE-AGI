@@ -1,0 +1,29 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "spec/url"
+
+// Values
+
+// Errors
+
+// Types and methods
+pub(all) type Url
+pub fn Url::hash(Self) -> String
+pub fn Url::host(Self) -> String
+pub fn Url::hostname(Self) -> String
+pub fn Url::href(Self) -> String
+pub fn Url::origin(Self) -> String
+pub fn Url::parse(String, base? : Self) -> Self?
+pub fn Url::password(Self) -> String
+pub fn Url::pathname(Self) -> String
+pub fn Url::port(Self) -> String
+pub fn Url::protocol(Self) -> String
+pub fn Url::search(Self) -> String
+pub fn Url::to_string(Self) -> String
+pub fn Url::username(Self) -> String
+
+pub type ValidationError
+
+// Type aliases
+
+// Traits
+

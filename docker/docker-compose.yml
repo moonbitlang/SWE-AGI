@@ -1,0 +1,44 @@
+services:
+  server:
+    image: swe-agi:latest
+    container_name: swe-agi-server-${TIMESTAMP:-latest}
+    expose:
+      - "8080"
+    volumes:
+      - ./server.py:/usr/local/bin/swe-agi-server
+      - .:/workspace
+    working_dir: /workspace
+    command: swe-agi-server
+    environment:
+      - ROLE=server
+    restart: unless-stopped
+    networks:
+      - swe-net
+
+  client:
+    image: swe-agi:latest
+    container_name: swe-agi-client-${TIMESTAMP:-latest}
+    volumes:
+      - ./.codex:/home/moonbit/.codex
+      - ./.claude:/home/moonbit/.claude
+      - ./.gemini:/home/moonbit/.gemini
+      - ./.kimi:/home/moonbit/.kimi
+      - ./run.js:/usr/local/bin/swe-agi-run
+      - ./submit.py:/usr/local/bin/swe-agi-submit
+      - ./client_data:/workspace
+    working_dir: /workspace
+    command: /bin/bash
+    environment:
+      - ROLE=client
+      - SERVER_URL=http://server:8080
+    depends_on:
+      - server
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    networks:
+      - swe-net
+
+networks:
+  swe-net:
+    driver: bridge

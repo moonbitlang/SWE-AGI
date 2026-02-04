@@ -1,0 +1,206 @@
+\begin{thebibliography}{28}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Anthropic}(2025)]{anthropic2025claude4}
+{Anthropic}.
+\newblock Claude sonnet 4.5.
+\newblock \url{https://www.anthropic.com/news/claude-sonnet-4-5}, 2025.
+
+\bibitem[Austin et~al.(2021)Austin, Odena, Nye, Bosma, Michalewski, Dohan,
+  Jiang, Cai, Terry, Le, et~al.]{austin2021program}
+J.~Austin, A.~Odena, M.~Nye, M.~Bosma, H.~Michalewski, D.~Dohan, E.~Jiang,
+  C.~Cai, M.~Terry, Q.~Le, et~al.
+\newblock Program synthesis with large language models.
+\newblock \emph{arXiv preprint arXiv:2108.07732}, 2021.
+\newblock URL \url{https://arxiv.org/abs/2108.07732}.
+
+\bibitem[Cassano et~al.(2022)Cassano, Gouwar, Nguyen,
+  et~al.]{cassano2022multiplE}
+F.~Cassano, J.~Gouwar, D.~Nguyen, et~al.
+\newblock {MultiPL-E}: A scalable and extensible approach to benchmarking
+  neural code generation, 2022.
+\newblock URL \url{https://arxiv.org/abs/2208.08227}.
+
+\bibitem[Chen et~al.(2021)Chen, Tworek, Jun, Yuan, de~Oliveira~Pinto, Kaplan,
+  Edwards, Burda, Joseph, Brockman, Ray, Puri, Krueger, Petrov, Khlaaf, Sastry,
+  Mishkin, Chan, Gray, Ryder, Pavlov, Power, Kaiser, Bavarian, Winter, Hilton,
+  Nakano, Hesse, Chen, Sigler, Ziegler, Stiennon, Wu, Radford, Amodei, and
+  Sutskever]{chen2021evaluating}
+M.~Chen, J.~Tworek, H.~Jun, Q.~Yuan, H.~P. de~Oliveira~Pinto, J.~Kaplan,
+  H.~Edwards, Y.~Burda, N.~Joseph, G.~Brockman, A.~Ray, R.~Puri, G.~Krueger,
+  M.~Petrov, H.~Khlaaf, G.~Sastry, P.~Mishkin, B.~Chan, S.~Gray, N.~Ryder,
+  M.~Pavlov, A.~Power, L.~Kaiser, M.~Bavarian, C.~Winter, J.~Hilton, R.~Nakano,
+  C.~Hesse, J.~Chen, E.~Sigler, D.~Ziegler, N.~Stiennon, J.~Wu, A.~Radford,
+  D.~Amodei, and I.~Sutskever.
+\newblock Evaluating large language models trained on code.
+\newblock \emph{arXiv preprint arXiv:2107.03374}, 2021.
+\newblock URL \url{https://arxiv.org/abs/2107.03374}.
+
+\bibitem[{DeepSeek Team} et~al.(2025)]{deepseek2025v32}
+{DeepSeek Team} et~al.
+\newblock Deepseek-v3.2: Pushing the frontier of open large language models.
+\newblock \emph{arXiv preprint arXiv:2512.02556}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2512.02556}.
+
+\bibitem[Deng et~al.(2025)Deng, Da, Pan, et~al.]{deng2025swebenchpro}
+X.~Deng, J.~Da, E.~Pan, et~al.
+\newblock {SWE}-{Bench} pro: Can {AI} agents solve long-horizon software
+  engineering tasks?, 2025.
+\newblock URL \url{https://arxiv.org/abs/2509.16941}.
+
+\bibitem[Fu et~al.(2025)Fu, Zhang, Guan, Zhu, Qiu, Liu, Cao, Cai, Zhang, and
+  Yu]{fu2025automaticallybenchmarkingllmcode}
+L.~Fu, B.~Zhang, H.~Guan, Y.~Zhu, L.~Qiu, W.~Liu, X.~Cao, X.~Cai, W.~Zhang, and
+  Y.~Yu.
+\newblock Automatically benchmarking llm code agents through agent-driven
+  annotation and evaluation, 2025.
+\newblock URL \url{https://arxiv.org/abs/2510.24358}.
+
+\bibitem[{Gemini Team} et~al.(2025)]{google2025gemini25}
+{Gemini Team} et~al.
+\newblock Gemini 2.5: Pushing the frontier with advanced reasoning,
+  multimodality, long context, and next generation agentic capabilities.
+\newblock \emph{arXiv preprint arXiv:2507.06261}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2507.06261}.
+
+\bibitem[Hendrycks et~al.(2021)Hendrycks, Basart, Kadavath, Mazeika, Arora,
+  Guo, Burns, Puranik, He, Song, and Steinhardt]{hendrycks2021apps}
+D.~Hendrycks, S.~Basart, S.~Kadavath, M.~Mazeika, A.~Arora, E.~Guo, C.~Burns,
+  S.~Puranik, H.~He, D.~Song, and J.~Steinhardt.
+\newblock Measuring coding challenge competence with {APPS}.
+\newblock \emph{arXiv preprint arXiv:2105.09938}, 2021.
+\newblock URL \url{https://arxiv.org/abs/2105.09938}.
+
+\bibitem[Jain et~al.(2024)Jain, Han, Gu, Li, Yan, Zhang, Wang, Solar-Lezama,
+  Sen, and Stoica]{jain2024livecodebench}
+N.~Jain, K.~Han, A.~Gu, W.-D. Li, F.~Yan, T.~Zhang, S.~Wang, A.~Solar-Lezama,
+  K.~Sen, and I.~Stoica.
+\newblock Livecodebench: Holistic and contamination free evaluation of large
+  language models for code.
+\newblock \emph{arXiv preprint arXiv:2403.07974}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2403.07974}.
+
+\bibitem[Jiang et~al.(2025)Jiang, Yap, and
+  Liang]{jiang2025ossbenchbenchmarkgeneratorcoding}
+Y.~Jiang, R.~Yap, and Z.~Liang.
+\newblock Oss-bench: Benchmark generator for coding llms, 2025.
+\newblock URL \url{https://arxiv.org/abs/2505.12331}.
+
+\bibitem[Jimenez et~al.(2023)Jimenez, Yang, Wettig,
+  et~al.]{jimenez2023swebench}
+C.~E. Jimenez, J.~Yang, A.~Wettig, et~al.
+\newblock {SWE}-bench: Can language models resolve real-world {GitHub} issues?
+\newblock \emph{arXiv preprint arXiv:2310.06770}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2310.06770}.
+
+\bibitem[{Kimi Team} et~al.(2025)]{kimi2025k2}
+{Kimi Team} et~al.
+\newblock Kimi k2: Open agentic intelligence.
+\newblock \emph{arXiv preprint arXiv:2507.20534}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2507.20534}.
+
+\bibitem[Liang et~al.(2022)Liang, Bommasani, Lee, Tsipras, Soylu, Yasunaga,
+  Zhang, Narayanan, Wu, Kumar, et~al.]{liang2022helm}
+P.~Liang, R.~Bommasani, T.~Lee, D.~Tsipras, D.~Soylu, M.~Yasunaga, Y.~Zhang,
+  D.~Narayanan, Y.~Wu, A.~Kumar, et~al.
+\newblock Holistic evaluation of language models.
+\newblock \emph{arXiv preprint arXiv:2211.09110}, 2022.
+\newblock URL \url{https://arxiv.org/abs/2211.09110}.
+
+\bibitem[Liu et~al.(2023{\natexlab{a}})Liu, Xia, Wang, and
+  Zhang]{liu2023evalplus}
+J.~Liu, C.~S. Xia, Y.~Wang, and L.~Zhang.
+\newblock Is your code generated by {ChatGPT} really correct? rigorous
+  evaluation of large language models for code generation, 2023{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2305.01210}.
+
+\bibitem[Liu et~al.(2023{\natexlab{b}})Liu, Xu, and McAuley]{liu2023repobench}
+T.~Liu, C.~Xu, and J.~McAuley.
+\newblock {RepoBench}: Benchmarking repository-level code auto-completion
+  systems.
+\newblock \emph{arXiv preprint arXiv:2306.03091}, 2023{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2306.03091}.
+
+\bibitem[Liu et~al.(2023{\natexlab{c}})Liu, Yu, Zhang, Xu, Lei, Lai, Gu, Ding,
+  Men, Yang, Zhang, Deng, Zeng, Du, Zhang, Shen, Zhang, Su, Sun, Huang, Dong,
+  and Tang]{liu2023agentbench}
+X.~Liu, H.~Yu, H.~Zhang, Y.~Xu, X.~Lei, H.~Lai, Y.~Gu, H.~Ding, K.~Men,
+  K.~Yang, S.~Zhang, X.~Deng, A.~Zeng, Z.~Du, C.~Zhang, S.~Shen, T.~Zhang,
+  Y.~Su, H.~Sun, M.~Huang, Y.~Dong, and J.~Tang.
+\newblock Agentbench: Evaluating {LLM}s as agents, 2023{\natexlab{c}}.
+\newblock URL \url{https://arxiv.org/abs/2308.03688}.
+
+\bibitem[{MoonBit Team}(2025)]{moonbit}
+{MoonBit Team}.
+\newblock {MoonBit} programming language.
+\newblock \url{https://www.moonbitlang.com/}, 2025.
+
+\bibitem[{OpenAI}(2025)]{openai2025gpt5}
+{OpenAI}.
+\newblock {OpenAI} {GPT}-5 system card.
+\newblock \emph{arXiv preprint arXiv:2601.03267}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2601.03267}.
+
+\bibitem[{Qwen Team} et~al.(2025)]{qwen2025qwen3}
+{Qwen Team} et~al.
+\newblock Qwen3 technical report.
+\newblock \emph{arXiv preprint arXiv:2505.09388}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2505.09388}.
+
+\bibitem[Schick et~al.(2023)Schick, Dwivedi-Yu, Dess{\`i}, Raileanu, Lomeli,
+  Zettlemoyer, and Cancedda]{schick2023toolformer}
+T.~Schick, J.~Dwivedi-Yu, R.~Dess{\`i}, R.~Raileanu, M.~Lomeli, L.~Zettlemoyer,
+  and N.~Cancedda.
+\newblock Toolformer: Language models can teach themselves to use tools, 2023.
+\newblock URL \url{https://arxiv.org/abs/2302.04761}.
+
+\bibitem[Shinn et~al.(2023)Shinn, Labash, Gopinath, Narasimhan, and
+  Yao]{shinn2023reflexion}
+N.~Shinn, B.~Labash, A.~Gopinath, K.~Narasimhan, and S.~Yao.
+\newblock Reflexion: Language agents with verbal reinforcement learning, 2023.
+\newblock URL \url{https://arxiv.org/abs/2303.11366}.
+
+\bibitem[Srivastava et~al.(2022)Srivastava, Rastogi, Rao, Shoeb, Abid, Fisch,
+  Brown, Santoro, Gupta, Garriga-Alonso, et~al.]{srivastava2022bigbench}
+A.~Srivastava, A.~Rastogi, A.~Rao, A.~A.~M. Shoeb, A.~Abid, A.~Fisch, A.~R.
+  Brown, A.~Santoro, A.~Gupta, A.~Garriga-Alonso, et~al.
+\newblock Beyond the imitation game: Quantifying and extrapolating the
+  capabilities of language models.
+\newblock \emph{arXiv preprint arXiv:2206.04615}, 2022.
+\newblock URL \url{https://arxiv.org/abs/2206.04615}.
+
+\bibitem[Thai et~al.(2025)Thai, Le, Manh, Nhat, and
+  Bui]{thai2026sweevobenchmarkingcodingagents}
+M.~V.~T. Thai, T.~Le, D.~N. Manh, H.~P. Nhat, and N.~D.~Q. Bui.
+\newblock Swe-evo: Benchmarking coding agents in long-horizon software
+  evolution scenarios, 2025.
+\newblock URL \url{https://arxiv.org/abs/2512.18470}.
+
+\bibitem[{The Terminal-Bench Team}(2025)]{tbench2025terminalbench}
+{The Terminal-Bench Team}.
+\newblock Terminal-bench: A benchmark for {AI} agents in terminal environments,
+  Apr 2025.
+\newblock URL \url{https://github.com/laude-institute/terminal-bench}.
+
+\bibitem[Thomas(2026)]{thomas2026darkflow}
+R.~Thomas.
+\newblock Breaking the spell of vibe coding.
+\newblock \url{https://www.fast.ai/posts/2026-01-28-dark-flow/}, 2026.
+
+\bibitem[Yang et~al.(2024)Yang, Jimenez, Wettig, et~al.]{yang2024sweagent}
+J.~Yang, C.~E. Jimenez, A.~Wettig, et~al.
+\newblock {SWE}-agent: Agent-computer interfaces enable automated software
+  engineering, 2024.
+\newblock URL \url{https://arxiv.org/abs/2405.15793}.
+
+\bibitem[Yao et~al.(2022)Yao, Zhao, Yu, Du, Shafran, Narasimhan, and
+  Cao]{yao2022react}
+S.~Yao, J.~Zhao, D.~Yu, N.~Du, I.~Shafran, K.~Narasimhan, and Y.~Cao.
+\newblock {ReAct}: Synergizing reasoning and acting in language models, 2022.
+\newblock URL \url{https://arxiv.org/abs/2210.03629}.
+
+\end{thebibliography}

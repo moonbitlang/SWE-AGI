@@ -1,0 +1,248 @@
+{% macro render_behavior_cell(behavior, key) %}
+{% set total = behavior.total if behavior and behavior.total is not none else none %}
+{% set count = behavior.get(key) if behavior else none %}
+{% if total is not none and count is not none %}
+{% set pct = (count / total * 100) if total > 0 else 0 %}
+{{ "%.1f"|format(pct) }}% ({{ count }})
+{% else %}
+N/A
+{% endif %}
+{% endmacro %}
+
+{% macro render_leaderboard_table(results, models, tasks, show_filters=true) %}
+<div class="leaderboard-wrapper">
+    {% if show_filters %}
+    <div class="filter-controls">
+        <div class="filter-group">
+            <label for="difficulty-filter">Difficulty:</label>
+            <select id="difficulty-filter" class="filter-select">
+                <option value="all">All</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="model-filter">Model:</label>
+            <select id="model-filter" class="filter-select">
+                <option value="all">All Models</option>
+                {% for model in models %}
+                <option value="{{ model.id }}">{{ model.display_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="task-filter">Task:</label>
+            <select id="task-filter" class="filter-select">
+                <option value="all">All Tasks</option>
+                {% for task in tasks %}
+                <option value="{{ task.id }}">{{ task.display_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="table-responsive">
+        <table class="table data-table" id="leaderboard-table">
+            <thead>
+                <tr>
+                    <th class="sortable" data-sort="model">Model</th>
+                    <th class="sortable" data-sort="task">Task</th>
+                    <th class="sortable" data-sort="difficulty">Difficulty</th>
+                    <th class="sortable" data-sort="passed">Passed</th>
+                    <th class="sortable sorted-desc" data-sort="pass_rate">Pass Rate</th>
+                    <th class="sortable" data-sort="duration">Duration</th>
+                    <th class="sortable" data-sort="loc">LOC</th>
+                    <th class="sortable" data-sort="cost">Cost</th>
+                    <th class="sortable" data-sort="actions_total">Total Actions</th>
+                    <th class="sortable" data-sort="behavior_spec_understanding">Spec Understanding</th>
+                    <th class="sortable" data-sort="behavior_planning">Planning</th>
+                    <th class="sortable" data-sort="behavior_code_understanding">Code Understanding</th>
+                    <th class="sortable" data-sort="behavior_code_writing">Code Writing</th>
+                    <th class="sortable" data-sort="behavior_debugging">Debugging</th>
+                    <th class="sortable" data-sort="behavior_hygiene">Hygiene</th>
+                    <th class="sortable" data-sort="behavior_external_search">External Search</th>
+                    <th class="sortable" data-sort="behavior_other">Other</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+                {% for result in results %}
+                {% set behavior = result.metrics.behavior if result.metrics.behavior else none %}
+                {% set is_passed = result.task_passed or result.tests.pass_rate >= 100 %}
+                <tr data-model="{{ result.model_id }}"
+                    data-task="{{ result.task_id }}"
+                    data-difficulty="{{ result.difficulty }}"
+                    data-pass-rate="{{ result.tests.pass_rate }}">
+                    <td class="model-cell">
+                        <span class="model-name font-mono">{{ result.model_id }}</span>
+                    </td>
+                    <td class="task-cell">
+                        <span class="task-name">{{ result.task_id }}</span>
+                    </td>
+                    <td class="difficulty-cell">
+                        <span class="difficulty-badge difficulty-{{ result.difficulty }}">
+                            {{ result.difficulty }}
+                        </span>
+                    </td>
+                    <td class="passed-cell">
+                        {% if is_passed %}
+                        <span class="status-badge status-passed">Yes</span>
+                        {% else %}
+                        <span class="status-badge status-failed">No</span>
+                        {% endif %}
+                    </td>
+                    <td class="pass-rate-cell">
+                        <div class="pass-rate-wrapper">
+                            <span class="pass-rate-value">{{ "%.1f"|format(result.tests.pass_rate) }}%</span>
+                            <div class="pass-rate-bar">
+                                <div class="pass-rate-fill" style="width: {{ result.tests.pass_rate }}%"></div>
+                            </div>
+                            <span class="pass-rate-detail">({{ result.tests.passed }}/{{ result.tests.total }})</span>
+                        </div>
+                    </td>
+                    <td class="duration-cell">
+                        {{ result.metrics.elapsed_ms | format_duration }}
+                    </td>
+                    <td class="loc-cell">
+                        {{ result.metrics.code_loc or "N/A" }}
+                    </td>
+                    <td class="cost-cell">
+                        {{ result.metrics.cost_usd | format_cost }}
+                    </td>
+                    <td class="actions-total-cell">
+                        {{ behavior.total if behavior and behavior.total is not none else (result.metrics.actions if result.metrics.actions is not none else "N/A") }}
+                    </td>
+                    <td class="behavior-spec-understanding-cell">
+                        {{ render_behavior_cell(behavior, "spec_understanding") }}
+                    </td>
+                    <td class="behavior-planning-cell">
+                        {{ render_behavior_cell(behavior, "planning") }}
+                    </td>
+                    <td class="behavior-code-understanding-cell">
+                        {{ render_behavior_cell(behavior, "code_understanding") }}
+                    </td>
+                    <td class="behavior-code-writing-cell">
+                        {{ render_behavior_cell(behavior, "code_writing") }}
+                    </td>
+                    <td class="behavior-debugging-cell">
+                        {{ render_behavior_cell(behavior, "debugging") }}
+                    </td>
+                    <td class="behavior-hygiene-cell">
+                        {{ render_behavior_cell(behavior, "hygiene") }}
+                    </td>
+                    <td class="behavior-external-search-cell">
+                        {{ render_behavior_cell(behavior, "external_search") }}
+                    </td>
+                    <td class="behavior-other-cell">
+                        {{ render_behavior_cell(behavior, "other") }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="no-results" style="display: none;">
+        No results match the selected filters.
+    </div>
+</div>
+{% endmacro %}
+
+{% macro render_summary_table(summaries, models) %}
+<div class="summary-wrapper">
+    <div class="table-responsive">
+        <table class="table data-table summary-table">
+            <thead>
+                <tr>
+                    <th class="sortable" data-sort="model">Model</th>
+                    <th class="sortable" data-sort="org">Organization</th>
+                    <th class="sortable sorted-desc" data-sort="tasks">Tasks Passed</th>
+                    <th class="sortable" data-sort="pass_rate">Pass Rate</th>
+                    <th class="sortable" data-sort="cost">Total Cost</th>
+                    <th class="sortable" data-sort="time">Total Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for summary in summaries.by_model | sort(attribute='tasks_passed', reverse=true) %}
+                {% set model = models | selectattr('id', 'equalto', summary.model_id) | first %}
+                <tr data-model="{{ summary.model_id }}">
+                    <td class="model-cell">
+                        <span class="model-name font-mono">{{ model.display_name if model else summary.model_id }}</span>
+                    </td>
+                    <td class="org-cell">
+                        {{ model.org if model else "Unknown" }}
+                    </td>
+                    <td class="tasks-cell">
+                        {{ summary.tasks_passed }}/{{ summary.tasks_total }}
+                    </td>
+                    <td class="pass-rate-cell">
+                        <div class="pass-rate-wrapper">
+                            <span class="pass-rate-value">{{ "%.1f"|format(summary.pass_rate) }}%</span>
+                            <div class="pass-rate-bar">
+                                <div class="pass-rate-fill" style="width: {{ summary.pass_rate }}%"></div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="cost-cell">
+                        {{ summary.total_cost_usd | format_cost if summary.total_cost_usd else "N/A" }}
+                    </td>
+                    <td class="time-cell">
+                        {{ summary.total_time_ms | format_duration }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro render_difficulty_table(summaries, models) %}
+<div class="difficulty-wrapper">
+    {% for difficulty in ['easy', 'medium', 'hard'] %}
+    <div class="difficulty-section">
+        <h3 class="difficulty-title">
+            <span class="difficulty-badge difficulty-{{ difficulty }}">{{ difficulty | capitalize }}</span>
+            Tier
+        </h3>
+        <div class="table-responsive">
+            <table class="table data-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Tasks Passed</th>
+                        <th>Pass Rate</th>
+                        <th>Avg Time</th>
+                        <th>Avg LOC</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for summary in summaries.by_difficulty if summary.difficulty == difficulty %}
+                    {% set model = models | selectattr('id', 'equalto', summary.model_id) | first %}
+                    <tr>
+                        <td class="model-cell">
+                            <span class="model-name font-mono">{{ model.display_name if model else summary.model_id }}</span>
+                        </td>
+                        <td>{{ summary.tasks_passed }}/{{ summary.tasks_total }}</td>
+                        <td>
+                            <div class="pass-rate-wrapper">
+                                <span class="pass-rate-value">{{ "%.1f"|format(summary.pass_rate) }}%</span>
+                                <div class="pass-rate-bar">
+                                    <div class="pass-rate-fill" style="width: {{ summary.pass_rate }}%"></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>{{ summary.avg_time_ms | format_duration }}</td>
+                        <td>{{ summary.avg_code_loc }}</td>
+                        <td>{{ summary.total_cost_usd | format_cost if summary.total_cost_usd else "N/A" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endmacro %}

@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% from "_leaderboard_table.html" import render_summary_table, render_difficulty_table %}
+
+{% block title %}SWE-AGI Leaderboard{% endblock %}
+
+{% block content %}
+<div class="container">
+    <header class="page-header">
+        <h1>SWE-AGI</h1>
+        <p class="page-subtitle">Benchmarking Specification-Driven Software Construction with MoonBit in the Era of Autonomous Agents</p>
+        <div class="page-links" aria-label="Project links">
+            <a href="https://github.com/moonbitlang/SWE-AGI" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                Repository
+            </a>
+            <a href="https://github.com/moonbitlang/SWE-AGI/blob/main/paper/main.pdf" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                Paper
+            </a>
+            <a href="https://github.com/moonbitlang/SWE-AGI-Eval" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-chart-bar" aria-hidden="true"></i>
+                Evaluation Results
+            </a>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Overview</h2>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">{{ models | length }}</div>
+                <div class="stat-label">Models Evaluated</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">{{ tasks | length }}</div>
+                <div class="stat-label">Tasks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">10<sup>3</sup>-10<sup>4</sup></div>
+                <div class="stat-label">Typical Core LOC per Task</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">{{ metadata.total_tests_by_task.values() | sum | int }}</div>
+                <div class="stat-label">Total Tests</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Difficulty Tiers</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Model Comparison</h2>
+            <p>
+                Four-model comparison across six dimensions. Task Passed is shown out of {{ tasks | length }} tasks.
+                Scores use a zero baseline for each axis (value / axis max * 100).
+            </p>
+        </div>
+        <div class="chart-panel">
+            <div
+                id="model-radar-toggles"
+                class="task-filters model-toggle-group"
+                role="group"
+                aria-label="Toggle model visibility"
+            ></div>
+            <div class="chart-canvas-wrapper radar-chart-wrapper">
+                <canvas id="model-radar-chart" aria-label="Radar chart comparing selected models"></canvas>
+            </div>
+            <p id="model-radar-empty" class="chart-empty-message" hidden>
+                Comparison data is unavailable for one or more selected models.
+            </p>
+        </div>
+        <div class="chart-panel behavior-composition-panel">
+            <h3 class="chart-subtitle">Behavior Composition by Model</h3>
+            <p class="chart-help-text">
+                Each model bar is normalized to 100%. Color encodes behavior category; hover segments to inspect percentage and raw action counts.
+            </p>
+            <div class="chart-canvas-wrapper behavior-chart-wrapper">
+                <canvas id="behavior-composition-chart" aria-label="100% stacked bar chart comparing behavior composition"></canvas>
+            </div>
+            <p id="behavior-composition-empty" class="chart-empty-message" hidden>
+                Behavior composition data is unavailable for the selected models.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Model Summary</h2>
+            <p>Overall performance across all tasks</p>
+        </div>
+        {{ render_summary_table(summaries, models) }}
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Results by Difficulty</h2>
+            <p>Performance breakdown by task difficulty tier</p>
+        </div>
+        {{ render_difficulty_table(summaries, models) }}
+    </section>
+</div>
+
+<!-- Leaderboard data for JS -->
+<script type="application/json" id="leaderboard-data">
+{{ leaderboards | tojson }}
+</script>
+{% endblock %}
+
+{% block js_files %}
+<script src="js/leaderboard.js?v={{ asset_version }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/charts.js?v={{ asset_version }}"></script>
+{% endblock %}

@@ -1,0 +1,7 @@
+client_data/
+server_data/
+.codex/
+.claude/
+.gemini/
+.kimi/
+__pycache__/

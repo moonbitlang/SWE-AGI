@@ -1,0 +1,13 @@
+[project]
+name = "swe-agi-website"
+version = "0.1.0"
+description = "SWE-AGI Benchmark Leaderboard Website"
+requires-python = ">=3.9"
+dependencies = [
+    "jinja2>=3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "watchdog",
+]
