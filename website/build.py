@@ -9,8 +9,10 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 
 ROOT = pathlib.Path(__file__).parent
+REPO_ROOT = ROOT.parent
 TEMPLATES = ROOT / "templates"
 DIST = ROOT / "dist"
+PAPER_SRC = REPO_ROOT / "paper" / "main.pdf"
 
 
 def get_pages():
@@ -82,6 +84,14 @@ def main() -> None:
     # Copy favicon if exists
     if (ROOT / "img" / "favicon.ico").exists():
         shutil.copy(ROOT / "img" / "favicon.ico", DIST / "favicon.ico")
+
+    # Copy paper PDF so pages can link to a local artifact in dist
+    paper_dst = DIST / "paper" / "main.pdf"
+    paper_dst.parent.mkdir(exist_ok=True)
+    if PAPER_SRC.exists():
+        shutil.copy(PAPER_SRC, paper_dst)
+    else:
+        print(f"Warning: {PAPER_SRC} not found. Skipping paper copy.")
 
     # Load data
     data_file = ROOT / "data" / "leaderboards.json"
