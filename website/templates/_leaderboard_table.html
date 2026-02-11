@@ -233,13 +233,13 @@ not none %} {% set pct = (count / total * 100) if total > 0 else 0 %} {{
       <table class="table data-table">
         <thead>
           <tr>
-            <th>Model</th>
-            <th>Agent</th>
-            <th>Tasks Passed</th>
-            <th>Test Case Pass Rate</th>
-            <th>Avg Time</th>
-            <th>Avg LOC</th>
-            <th>Cost</th>
+            <th class="sortable" data-sort="model">Model</th>
+            <th class="sortable" data-sort="agent">Agent</th>
+            <th class="sortable sorted-desc" data-sort="tasks">Tasks Passed</th>
+            <th class="sortable" data-sort="pass_rate">Test Case Pass Rate</th>
+            <th class="sortable" data-sort="time">Avg Time</th>
+            <th class="sortable" data-sort="loc">Avg LOC</th>
+            <th class="sortable" data-sort="cost">Cost</th>
           </tr>
         </thead>
         <tbody>
@@ -255,8 +255,10 @@ not none %} {% set pct = (count / total * 100) if total > 0 else 0 %} {{
             <td class="agent-cell">
               {{ model.runner_display_name if model and model.runner_display_name else (model.runner if model and model.runner else "N/A") }}
             </td>
-            <td>{{ summary.tasks_passed }}/{{ summary.tasks_total }}</td>
-            <td>
+            <td class="tasks-cell">
+              {{ summary.tasks_passed }}/{{ summary.tasks_total }}
+            </td>
+            <td class="pass-rate-cell">
               <div class="pass-rate-wrapper">
                 <span class="pass-rate-value"
                   >{{ "%.1f"|format(summary.pass_rate) }}%</span
@@ -269,9 +271,9 @@ not none %} {% set pct = (count / total * 100) if total > 0 else 0 %} {{
                 </div>
               </div>
             </td>
-            <td>{{ summary.avg_time_ms | format_duration }}</td>
-            <td>{{ summary.avg_code_loc }}</td>
-            <td>
+            <td class="time-cell">{{ summary.avg_time_ms | format_duration }}</td>
+            <td class="loc-cell">{{ summary.avg_code_loc }}</td>
+            <td class="cost-cell">
               {{ summary.total_cost_usd | format_cost if summary.total_cost_usd
               else "N/A" }}
             </td>
