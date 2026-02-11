@@ -174,11 +174,14 @@ function getSortValue(row, field) {
         getCellText(row, ".task-cell .task-name")
       );
     case "difficulty":
-      const diff =
+      const diffRaw =
         row.getAttribute("data-difficulty") ||
         getCellText(row, ".difficulty-cell");
+      const diff =
+        typeof diffRaw === "string" ? diffRaw.trim().toLowerCase() : "";
+      const difficultyRank = { easy: 0, medium: 1, hard: 2 };
       // Sort order: easy, medium, hard
-      return { easy: 0, medium: 1, hard: 2 }[diff] || 3;
+      return difficultyRank[diff] ?? 3;
     case "passed":
       const passedCell = row.querySelector(".passed-cell .status-badge");
       return passedCell && passedCell.classList.contains("status-passed")
