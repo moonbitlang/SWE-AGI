@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-11T15:39:08.565187",
+  "generated_at": "2026-02-11T16:09:39.661449",
   "metadata": {
     "difficulty_tiers": {
       "easy": [
@@ -71,57 +71,79 @@
     {
       "id": "claude-opus-4.5",
       "display_name": "Claude Opus 4.5",
-      "org": "Anthropic"
+      "org": "Anthropic",
+      "runner": "claude",
+      "runner_display_name": "Claude Code"
     },
     {
       "id": "claude-opus-4.6",
       "display_name": "Claude Opus 4.6",
-      "org": "Anthropic"
+      "org": "Anthropic",
+      "runner": "claude",
+      "runner_display_name": "Claude Code"
     },
     {
       "id": "claude-sonnet-4.5",
       "display_name": "Claude Sonnet 4.5",
-      "org": "Anthropic"
+      "org": "Anthropic",
+      "runner": "claude",
+      "runner_display_name": "Claude Code"
     },
     {
       "id": "deepseek-v3.2",
       "display_name": "DeepSeek V3.2",
-      "org": "DeepSeek"
+      "org": "DeepSeek",
+      "runner": "claude",
+      "runner_display_name": "Claude Code"
     },
     {
       "id": "gemini-3-flash-preview",
       "display_name": "Gemini 3 Flash",
-      "org": "Google"
+      "org": "Google",
+      "runner": "gemini",
+      "runner_display_name": "Gemini CLI"
     },
     {
       "id": "gemini-3-pro-preview",
       "display_name": "Gemini 3 Pro",
-      "org": "Google"
+      "org": "Google",
+      "runner": "gemini",
+      "runner_display_name": "Gemini CLI"
     },
     {
       "id": "glm-4.7",
       "display_name": "GLM-4.7",
-      "org": "Zhipu AI"
+      "org": "Zhipu AI",
+      "runner": "claude",
+      "runner_display_name": "Claude Code"
     },
     {
       "id": "gpt-5.2-codex-high",
       "display_name": "GPT-5.2 Codex",
-      "org": "OpenAI"
+      "org": "OpenAI",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI"
     },
     {
       "id": "gpt-5.3-codex-xhigh",
       "display_name": "GPT-5.3 Codex",
-      "org": "OpenAI"
+      "org": "OpenAI",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI"
     },
     {
       "id": "kimi-k2.5",
       "display_name": "Kimi K2.5",
-      "org": "Moonshot AI"
+      "org": "Moonshot AI",
+      "runner": "kimi",
+      "runner_display_name": "Kimi Code CLI"
     },
     {
       "id": "qwen3-max-2026-01-23",
       "display_name": "Qwen3 Max",
-      "org": "Alibaba"
+      "org": "Alibaba",
+      "runner": "claude",
+      "runner_display_name": "Claude Code"
     }
   ],
   "tasks": [
@@ -261,6 +283,8 @@
   "results": [
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "c99",
       "difficulty": "hard",
       "task_passed": false,
@@ -292,6 +316,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "capnp",
       "difficulty": "medium",
       "task_passed": true,
@@ -323,6 +349,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "cdcl",
       "difficulty": "hard",
       "task_passed": false,
@@ -354,6 +382,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "csv",
       "difficulty": "easy",
       "task_passed": true,
@@ -385,6 +415,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "ecma262",
       "difficulty": "hard",
       "task_passed": false,
@@ -416,6 +448,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "git_object",
       "difficulty": "easy",
       "task_passed": true,
@@ -447,6 +481,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "hpack",
       "difficulty": "easy",
       "task_passed": true,
@@ -478,6 +514,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "html5",
       "difficulty": "hard",
       "task_passed": false,
@@ -509,6 +547,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "ini",
       "difficulty": "easy",
       "task_passed": true,
@@ -540,6 +580,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "jq",
       "difficulty": "hard",
       "task_passed": true,
@@ -571,6 +613,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "lua",
       "difficulty": "hard",
       "task_passed": false,
@@ -602,6 +646,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "protobuf",
       "difficulty": "easy",
       "task_passed": true,
@@ -633,6 +679,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "pug",
       "difficulty": "medium",
       "task_passed": false,
@@ -664,6 +712,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "python",
       "difficulty": "hard",
       "task_passed": false,
@@ -695,6 +745,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "r6rs",
       "difficulty": "hard",
       "task_passed": false,
@@ -726,6 +778,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "toml",
       "difficulty": "medium",
       "task_passed": false,
@@ -757,6 +811,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "uri",
       "difficulty": "easy",
       "task_passed": true,
@@ -788,6 +844,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "url",
       "difficulty": "medium",
       "task_passed": false,
@@ -819,6 +877,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "wasm",
       "difficulty": "medium",
       "task_passed": true,
@@ -850,6 +910,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "xml",
       "difficulty": "medium",
       "task_passed": true,
@@ -881,6 +943,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "yaml",
       "difficulty": "medium",
       "task_passed": false,
@@ -912,6 +976,8 @@
     },
     {
       "model_id": "claude-opus-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "zip",
       "difficulty": "medium",
       "task_passed": false,
@@ -943,6 +1009,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "c99",
       "difficulty": "hard",
       "task_passed": true,
@@ -974,6 +1042,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "capnp",
       "difficulty": "medium",
       "task_passed": true,
@@ -1005,6 +1075,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "cdcl",
       "difficulty": "hard",
       "task_passed": true,
@@ -1036,6 +1108,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "csv",
       "difficulty": "easy",
       "task_passed": true,
@@ -1067,6 +1141,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "ecma262",
       "difficulty": "hard",
       "task_passed": false,
@@ -1098,6 +1174,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "git_object",
       "difficulty": "easy",
       "task_passed": true,
@@ -1129,6 +1207,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "hpack",
       "difficulty": "easy",
       "task_passed": true,
@@ -1160,6 +1240,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "html5",
       "difficulty": "hard",
       "task_passed": true,
@@ -1191,6 +1273,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "ini",
       "difficulty": "easy",
       "task_passed": true,
@@ -1222,6 +1306,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "jq",
       "difficulty": "hard",
       "task_passed": true,
@@ -1253,6 +1339,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "lua",
       "difficulty": "hard",
       "task_passed": false,
@@ -1284,6 +1372,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "protobuf",
       "difficulty": "easy",
       "task_passed": true,
@@ -1315,6 +1405,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "pug",
       "difficulty": "medium",
       "task_passed": false,
@@ -1346,6 +1438,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "python",
       "difficulty": "hard",
       "task_passed": false,
@@ -1377,6 +1471,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "r6rs",
       "difficulty": "hard",
       "task_passed": false,
@@ -1408,6 +1504,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "toml",
       "difficulty": "medium",
       "task_passed": false,
@@ -1439,6 +1537,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "uri",
       "difficulty": "easy",
       "task_passed": true,
@@ -1470,6 +1570,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "url",
       "difficulty": "medium",
       "task_passed": true,
@@ -1501,6 +1603,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "wasm",
       "difficulty": "medium",
       "task_passed": true,
@@ -1532,6 +1636,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "xml",
       "difficulty": "medium",
       "task_passed": true,
@@ -1563,6 +1669,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "yaml",
       "difficulty": "medium",
       "task_passed": false,
@@ -1594,6 +1702,8 @@
     },
     {
       "model_id": "claude-opus-4.6",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "zip",
       "difficulty": "medium",
       "task_passed": true,
@@ -1625,6 +1735,8 @@
     },
     {
       "model_id": "claude-sonnet-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "csv",
       "difficulty": "easy",
       "task_passed": false,
@@ -1656,6 +1768,8 @@
     },
     {
       "model_id": "claude-sonnet-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "git_object",
       "difficulty": "easy",
       "task_passed": false,
@@ -1687,6 +1801,8 @@
     },
     {
       "model_id": "claude-sonnet-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "hpack",
       "difficulty": "easy",
       "task_passed": false,
@@ -1718,6 +1834,8 @@
     },
     {
       "model_id": "claude-sonnet-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "ini",
       "difficulty": "easy",
       "task_passed": false,
@@ -1749,6 +1867,8 @@
     },
     {
       "model_id": "claude-sonnet-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "protobuf",
       "difficulty": "easy",
       "task_passed": false,
@@ -1780,6 +1900,8 @@
     },
     {
       "model_id": "claude-sonnet-4.5",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "uri",
       "difficulty": "easy",
       "task_passed": false,
@@ -1811,6 +1933,8 @@
     },
     {
       "model_id": "deepseek-v3.2",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "csv",
       "difficulty": "easy",
       "task_passed": false,
@@ -1842,6 +1966,8 @@
     },
     {
       "model_id": "deepseek-v3.2",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "git_object",
       "difficulty": "easy",
       "task_passed": false,
@@ -1873,6 +1999,8 @@
     },
     {
       "model_id": "deepseek-v3.2",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "hpack",
       "difficulty": "easy",
       "task_passed": false,
@@ -1904,6 +2032,8 @@
     },
     {
       "model_id": "deepseek-v3.2",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "ini",
       "difficulty": "easy",
       "task_passed": false,
@@ -1935,6 +2065,8 @@
     },
     {
       "model_id": "deepseek-v3.2",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "protobuf",
       "difficulty": "easy",
       "task_passed": false,
@@ -1966,6 +2098,8 @@
     },
     {
       "model_id": "deepseek-v3.2",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "uri",
       "difficulty": "easy",
       "task_passed": true,
@@ -1997,6 +2131,8 @@
     },
     {
       "model_id": "gemini-3-flash-preview",
+      "runner": "gemini",
+      "runner_display_name": "Gemini CLI",
       "task_id": "csv",
       "difficulty": "easy",
       "task_passed": false,
@@ -2028,6 +2164,8 @@
     },
     {
       "model_id": "gemini-3-flash-preview",
+      "runner": "gemini",
+      "runner_display_name": "Gemini CLI",
       "task_id": "git_object",
       "difficulty": "easy",
       "task_passed": false,
@@ -2059,6 +2197,8 @@
     },
     {
       "model_id": "gemini-3-flash-preview",
+      "runner": "gemini",
+      "runner_display_name": "Gemini CLI",
       "task_id": "hpack",
       "difficulty": "easy",
       "task_passed": false,
@@ -2090,6 +2230,8 @@
     },
     {
       "model_id": "gemini-3-flash-preview",
+      "runner": "gemini",
+      "runner_display_name": "Gemini CLI",
       "task_id": "ini",
       "difficulty": "easy",
       "task_passed": false,
@@ -2121,6 +2263,8 @@
     },
     {
       "model_id": "gemini-3-flash-preview",
+      "runner": "gemini",
+      "runner_display_name": "Gemini CLI",
       "task_id": "protobuf",
       "difficulty": "easy",
       "task_passed": true,
@@ -2152,6 +2296,8 @@
     },
     {
       "model_id": "gemini-3-flash-preview",
+      "runner": "gemini",
+      "runner_display_name": "Gemini CLI",
       "task_id": "uri",
       "difficulty": "easy",
       "task_passed": true,
@@ -2183,6 +2329,8 @@
     },
     {
       "model_id": "gemini-3-pro-preview",
+      "runner": "gemini",
+      "runner_display_name": "Gemini CLI",
       "task_id": "csv",
       "difficulty": "easy",
       "task_passed": false,
@@ -2214,6 +2362,8 @@
     },
     {
       "model_id": "gemini-3-pro-preview",
+      "runner": "gemini",
+      "runner_display_name": "Gemini CLI",
       "task_id": "git_object",
       "difficulty": "easy",
       "task_passed": false,
@@ -2245,6 +2395,8 @@
     },
     {
       "model_id": "gemini-3-pro-preview",
+      "runner": "gemini",
+      "runner_display_name": "Gemini CLI",
       "task_id": "hpack",
       "difficulty": "easy",
       "task_passed": false,
@@ -2276,6 +2428,8 @@
     },
     {
       "model_id": "gemini-3-pro-preview",
+      "runner": "gemini",
+      "runner_display_name": "Gemini CLI",
       "task_id": "ini",
       "difficulty": "easy",
       "task_passed": false,
@@ -2307,6 +2461,8 @@
     },
     {
       "model_id": "gemini-3-pro-preview",
+      "runner": "gemini",
+      "runner_display_name": "Gemini CLI",
       "task_id": "protobuf",
       "difficulty": "easy",
       "task_passed": false,
@@ -2338,6 +2494,8 @@
     },
     {
       "model_id": "gemini-3-pro-preview",
+      "runner": "gemini",
+      "runner_display_name": "Gemini CLI",
       "task_id": "uri",
       "difficulty": "easy",
       "task_passed": false,
@@ -2369,6 +2527,8 @@
     },
     {
       "model_id": "glm-4.7",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "csv",
       "difficulty": "easy",
       "task_passed": false,
@@ -2400,6 +2560,8 @@
     },
     {
       "model_id": "glm-4.7",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "git_object",
       "difficulty": "easy",
       "task_passed": false,
@@ -2431,6 +2593,8 @@
     },
     {
       "model_id": "glm-4.7",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "hpack",
       "difficulty": "easy",
       "task_passed": false,
@@ -2462,6 +2626,8 @@
     },
     {
       "model_id": "glm-4.7",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "ini",
       "difficulty": "easy",
       "task_passed": true,
@@ -2493,6 +2659,8 @@
     },
     {
       "model_id": "glm-4.7",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "protobuf",
       "difficulty": "easy",
       "task_passed": false,
@@ -2524,6 +2692,8 @@
     },
     {
       "model_id": "glm-4.7",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "uri",
       "difficulty": "easy",
       "task_passed": true,
@@ -2555,6 +2725,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "c99",
       "difficulty": "hard",
       "task_passed": true,
@@ -2586,6 +2758,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "capnp",
       "difficulty": "medium",
       "task_passed": true,
@@ -2617,6 +2791,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "cdcl",
       "difficulty": "hard",
       "task_passed": false,
@@ -2648,6 +2824,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "csv",
       "difficulty": "easy",
       "task_passed": true,
@@ -2679,6 +2857,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "ecma262",
       "difficulty": "hard",
       "task_passed": false,
@@ -2710,6 +2890,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "git_object",
       "difficulty": "easy",
       "task_passed": true,
@@ -2741,6 +2923,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "hpack",
       "difficulty": "easy",
       "task_passed": true,
@@ -2772,6 +2956,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "html5",
       "difficulty": "hard",
       "task_passed": false,
@@ -2803,6 +2989,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "ini",
       "difficulty": "easy",
       "task_passed": true,
@@ -2834,6 +3022,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "jq",
       "difficulty": "hard",
       "task_passed": true,
@@ -2865,6 +3055,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "lua",
       "difficulty": "hard",
       "task_passed": true,
@@ -2896,6 +3088,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "protobuf",
       "difficulty": "easy",
       "task_passed": true,
@@ -2927,6 +3121,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "pug",
       "difficulty": "medium",
       "task_passed": true,
@@ -2958,6 +3154,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "python",
       "difficulty": "hard",
       "task_passed": true,
@@ -2989,6 +3187,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "r6rs",
       "difficulty": "hard",
       "task_passed": false,
@@ -3020,6 +3220,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "toml",
       "difficulty": "medium",
       "task_passed": true,
@@ -3051,6 +3253,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "uri",
       "difficulty": "easy",
       "task_passed": true,
@@ -3082,6 +3286,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "url",
       "difficulty": "medium",
       "task_passed": false,
@@ -3113,6 +3319,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "wasm",
       "difficulty": "medium",
       "task_passed": true,
@@ -3144,6 +3352,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "xml",
       "difficulty": "medium",
       "task_passed": true,
@@ -3175,6 +3385,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "yaml",
       "difficulty": "medium",
       "task_passed": true,
@@ -3206,6 +3418,8 @@
     },
     {
       "model_id": "gpt-5.2-codex-high",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "zip",
       "difficulty": "medium",
       "task_passed": true,
@@ -3237,6 +3451,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "c99",
       "difficulty": "hard",
       "task_passed": true,
@@ -3268,6 +3484,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "capnp",
       "difficulty": "medium",
       "task_passed": true,
@@ -3299,6 +3517,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "cdcl",
       "difficulty": "hard",
       "task_passed": false,
@@ -3330,6 +3550,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "csv",
       "difficulty": "easy",
       "task_passed": true,
@@ -3361,6 +3583,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "ecma262",
       "difficulty": "hard",
       "task_passed": false,
@@ -3392,6 +3616,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "git_object",
       "difficulty": "easy",
       "task_passed": true,
@@ -3423,6 +3649,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "hpack",
       "difficulty": "easy",
       "task_passed": true,
@@ -3454,6 +3682,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "html5",
       "difficulty": "hard",
       "task_passed": false,
@@ -3485,6 +3715,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "ini",
       "difficulty": "easy",
       "task_passed": true,
@@ -3516,6 +3748,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "jq",
       "difficulty": "hard",
       "task_passed": true,
@@ -3547,6 +3781,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "lua",
       "difficulty": "hard",
       "task_passed": true,
@@ -3578,6 +3814,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "protobuf",
       "difficulty": "easy",
       "task_passed": true,
@@ -3609,6 +3847,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "pug",
       "difficulty": "medium",
       "task_passed": true,
@@ -3640,6 +3880,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "python",
       "difficulty": "hard",
       "task_passed": true,
@@ -3671,6 +3913,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "r6rs",
       "difficulty": "hard",
       "task_passed": true,
@@ -3702,6 +3946,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "toml",
       "difficulty": "medium",
       "task_passed": true,
@@ -3733,6 +3979,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "uri",
       "difficulty": "easy",
       "task_passed": true,
@@ -3764,6 +4012,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "url",
       "difficulty": "medium",
       "task_passed": true,
@@ -3795,6 +4045,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "wasm",
       "difficulty": "medium",
       "task_passed": true,
@@ -3826,6 +4078,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "xml",
       "difficulty": "medium",
       "task_passed": true,
@@ -3857,6 +4111,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "yaml",
       "difficulty": "medium",
       "task_passed": true,
@@ -3888,6 +4144,8 @@
     },
     {
       "model_id": "gpt-5.3-codex-xhigh",
+      "runner": "codex",
+      "runner_display_name": "Codex CLI",
       "task_id": "zip",
       "difficulty": "medium",
       "task_passed": true,
@@ -3919,6 +4177,8 @@
     },
     {
       "model_id": "kimi-k2.5",
+      "runner": "kimi",
+      "runner_display_name": "Kimi Code CLI",
       "task_id": "csv",
       "difficulty": "easy",
       "task_passed": false,
@@ -3950,6 +4210,8 @@
     },
     {
       "model_id": "kimi-k2.5",
+      "runner": "kimi",
+      "runner_display_name": "Kimi Code CLI",
       "task_id": "git_object",
       "difficulty": "easy",
       "task_passed": false,
@@ -3981,6 +4243,8 @@
     },
     {
       "model_id": "kimi-k2.5",
+      "runner": "kimi",
+      "runner_display_name": "Kimi Code CLI",
       "task_id": "hpack",
       "difficulty": "easy",
       "task_passed": true,
@@ -4012,6 +4276,8 @@
     },
     {
       "model_id": "kimi-k2.5",
+      "runner": "kimi",
+      "runner_display_name": "Kimi Code CLI",
       "task_id": "ini",
       "difficulty": "easy",
       "task_passed": false,
@@ -4043,6 +4309,8 @@
     },
     {
       "model_id": "kimi-k2.5",
+      "runner": "kimi",
+      "runner_display_name": "Kimi Code CLI",
       "task_id": "protobuf",
       "difficulty": "easy",
       "task_passed": false,
@@ -4074,6 +4342,8 @@
     },
     {
       "model_id": "kimi-k2.5",
+      "runner": "kimi",
+      "runner_display_name": "Kimi Code CLI",
       "task_id": "uri",
       "difficulty": "easy",
       "task_passed": true,
@@ -4105,6 +4375,8 @@
     },
     {
       "model_id": "qwen3-max-2026-01-23",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "csv",
       "difficulty": "easy",
       "task_passed": false,
@@ -4136,6 +4408,8 @@
     },
     {
       "model_id": "qwen3-max-2026-01-23",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "git_object",
       "difficulty": "easy",
       "task_passed": false,
@@ -4167,6 +4441,8 @@
     },
     {
       "model_id": "qwen3-max-2026-01-23",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "hpack",
       "difficulty": "easy",
       "task_passed": false,
@@ -4198,6 +4474,8 @@
     },
     {
       "model_id": "qwen3-max-2026-01-23",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "ini",
       "difficulty": "easy",
       "task_passed": false,
@@ -4229,6 +4507,8 @@
     },
     {
       "model_id": "qwen3-max-2026-01-23",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "protobuf",
       "difficulty": "easy",
       "task_passed": false,
@@ -4260,6 +4540,8 @@
     },
     {
       "model_id": "qwen3-max-2026-01-23",
+      "runner": "claude",
+      "runner_display_name": "Claude Code",
       "task_id": "uri",
       "difficulty": "easy",
       "task_passed": false,

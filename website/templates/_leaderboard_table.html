@@ -84,7 +84,7 @@ not none %} {% set pct = (count / total * 100) if total > 0 else 0 %} {{
             <span class="model-name font-mono">{{ result.model_id }}</span>
           </td>
           <td class="agent-cell">
-            {{ model_info.display_name if model_info else result.model_id }}
+            {{ result.runner_display_name if result.runner_display_name else (result.runner if result.runner else (model_info.display_name if model_info else result.model_id)) }}
           </td>
           <td class="task-cell">
             <span class="task-name">{{ result.task_id }}</span>
@@ -168,6 +168,7 @@ not none %} {% set pct = (count / total * 100) if total > 0 else 0 %} {{
       <thead>
         <tr>
           <th class="sortable" data-sort="model">Model</th>
+          <th class="sortable" data-sort="agent">Agent</th>
           <th class="sortable" data-sort="org">Organization</th>
           <th class="sortable sorted-desc" data-sort="tasks">Tasks Passed</th>
           <th class="sortable" data-sort="pass_rate">Test Case Pass Rate</th>
@@ -184,6 +185,9 @@ not none %} {% set pct = (count / total * 100) if total > 0 else 0 %} {{
             <span class="model-name font-mono"
               >{{ model.display_name if model else summary.model_id }}</span
             >
+          </td>
+          <td class="agent-cell">
+            {{ model.runner_display_name if model and model.runner_display_name else (model.runner if model and model.runner else "N/A") }}
           </td>
           <td class="org-cell">{{ model.org if model else "Unknown" }}</td>
           <td class="tasks-cell">
@@ -230,6 +234,7 @@ not none %} {% set pct = (count / total * 100) if total > 0 else 0 %} {{
         <thead>
           <tr>
             <th>Model</th>
+            <th>Agent</th>
             <th>Tasks Passed</th>
             <th>Test Case Pass Rate</th>
             <th>Avg Time</th>
@@ -246,6 +251,9 @@ not none %} {% set pct = (count / total * 100) if total > 0 else 0 %} {{
               <span class="model-name font-mono"
                 >{{ model.display_name if model else summary.model_id }}</span
               >
+            </td>
+            <td class="agent-cell">
+              {{ model.runner_display_name if model and model.runner_display_name else (model.runner if model and model.runner else "N/A") }}
             </td>
             <td>{{ summary.tasks_passed }}/{{ summary.tasks_total }}</td>
             <td>

@@ -105,6 +105,13 @@ MODEL_INFO = {
     "step-3.5-flash": {"display_name": "Step 3.5 Flash", "org": "StepFun"},
 }
 
+RUNNER_DISPLAY_NAMES = {
+    "claude": "Claude Code",
+    "codex": "Codex CLI",
+    "gemini": "Gemini CLI",
+    "kimi": "Kimi Code CLI",
+}
+
 # Behavior analysis categories from SWE-AGI-Eval/report/behavior_stats.py
 BEHAVIOR_KEYS = (
     "spec_understanding",
@@ -263,6 +270,40 @@ def get_cost_for_model(model_name: str, result: dict) -> Optional[float]:
     if isinstance(cost, (int, float)):
         return cost * cost_scale_for_model(model_name)
     return estimate_cost_usd_for_model(model_name, result)
+
+
+def normalize_runner_id(runner: Any) -> Optional[str]:
+    """Normalize runner variants to canonical IDs."""
+    if not isinstance(runner, str):
+        return None
+    normalized = runner.strip().lower()
+    if not normalized:
+        return None
+    if "claude" in normalized:
+        return "claude"
+    if "codex" in normalized:
+        return "codex"
+    return normalized
+
+
+def get_runner_display_name(runner_id: Optional[str], raw_runner: Any) -> Optional[str]:
+    """Get user-friendly runner display name."""
+    if runner_id in RUNNER_DISPLAY_NAMES:
+        return RUNNER_DISPLAY_NAMES[runner_id]
+    if isinstance(raw_runner, str) and raw_runner.strip():
+        return raw_runner.strip()
+    return runner_id
+
+
+def infer_model_runner(model_results: list[dict]) -> tuple[Optional[str], Optional[str]]:
+    """Infer a model-level runner label from per-task results."""
+    for result in model_results:
+        raw_runner = result.get("runner")
+        runner_id = normalize_runner_id(raw_runner)
+        if runner_id is None:
+            continue
+        return runner_id, get_runner_display_name(runner_id, raw_runner)
+    return None, None
 
 
 def load_behavior_stats_module(eval_dir: Path) -> Optional[Any]:
@@ -426,10 +467,13 @@ def generate_leaderboards_json(eval_dir: Path) -> dict:
     models_list = []
     for model_id in sorted(all_results.keys()):
         info = MODEL_INFO.get(model_id, {"display_name": model_id, "org": "Unknown"})
+        runner_id, runner_display_name = infer_model_runner(all_results[model_id])
         models_list.append({
             "id": model_id,
             "display_name": info["display_name"],
             "org": info["org"],
+            "runner": runner_id,
+            "runner_display_name": runner_display_name,
         })
 
     # Build tasks list
@@ -453,9 +497,14 @@ def generate_leaderboards_json(eval_dir: Path) -> dict:
             total = total_tests_for_task(task_id, result)
             passed = passed_tests_for_task(task_id, result)
             pass_rate = (passed / total * 100) if total > 0 else 0.0
+            raw_runner = result.get("runner")
+            runner_id = normalize_runner_id(raw_runner)
+            runner_display_name = get_runner_display_name(runner_id, raw_runner)
 
             results_list.append({
                 "model_id": model_id,
+                "runner": runner_id,
+                "runner_display_name": runner_display_name,
                 "task_id": task_id,
                 "difficulty": get_task_difficulty(task_id),
                 "task_passed": task_passed(task_id, result),
