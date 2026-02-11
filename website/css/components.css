@@ -40,18 +40,18 @@
 }
 
 .table th.sortable::after {
-  content: ' ↕';
+  content: " ↕";
   opacity: 0.3;
   font-size: 0.8em;
 }
 
 .table th.sorted-asc::after {
-  content: ' ↑';
+  content: " ↑";
   opacity: 1;
 }
 
 .table th.sorted-desc::after {
-  content: ' ↓';
+  content: " ↓";
   opacity: 1;
 }
 
@@ -381,7 +381,7 @@
 }
 
 .citation::before {
-  content: 'BibTeX';
+  content: "BibTeX";
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -540,13 +540,69 @@
 }
 
 @media (max-width: 768px) {
+  .table-responsive {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .table {
+    min-width: 1400px; /* Force scrolling on very small screens to keep ALL 18 columns readable */
+  }
+
+  .table th,
+  .table td {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .pass-rate-wrapper {
+    min-width: 80px;
+    gap: 0.25rem;
+  }
+
+  .pass-rate-detail {
+    display: none;
+  }
+
   .chart-canvas-wrapper {
-    height: 360px;
-    min-height: 260px;
+    height: 260px;
+    min-height: 200px;
+    width: 100% !important;
   }
 
   .behavior-chart-wrapper {
-    height: 300px;
-    min-height: 220px;
+    height: 240px;
+    min-height: 180px;
+  }
+
+  .filter-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .filter-group {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .filter-select {
+    width: 100%;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .task-meta {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .chart-panel {
+    padding: 0.75rem;
   }
 }
