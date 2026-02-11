@@ -77,7 +77,7 @@
   white-space: nowrap;
 }
 
-/* Pass rate visualization */
+/* Test case pass rate visualization */
 .pass-rate-wrapper {
   display: flex;
   align-items: center;

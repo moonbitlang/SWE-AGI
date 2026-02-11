@@ -24,7 +24,7 @@ const RADAR_AXIS_CONFIG = [
     { key: 'avg_duration', label: '1 / (Avg. Duration)', scaleMode: RADAR_AXIS_SCALE_MODE.RECIPROCAL },
     { key: 'avg_core_loc', label: '1 / (Avg. Core LOC)', scaleMode: RADAR_AXIS_SCALE_MODE.RECIPROCAL },
     { key: 'avg_actions', label: '1 / (Avg. Actions)', scaleMode: RADAR_AXIS_SCALE_MODE.RECIPROCAL },
-    { key: 'test_pass_rate', label: 'Test Pass Rate', scaleMode: RADAR_AXIS_SCALE_MODE.LINEAR },
+    { key: 'test_pass_rate', label: 'Test Case Pass Rate', scaleMode: RADAR_AXIS_SCALE_MODE.LINEAR },
 ];
 
 const RADAR_MODEL_COLORS = {
@@ -94,7 +94,7 @@ function renderPassRateChart(summaries, models) {
 
     const ctx = canvas.getContext('2d');
 
-    // Sort by pass rate descending
+    // Sort by test case pass rate descending
     const sortedSummaries = [...summaries].sort((a, b) => b.pass_rate - a.pass_rate);
 
     const labels = sortedSummaries.map((summary) => {
@@ -116,7 +116,7 @@ function renderPassRateChart(summaries, models) {
         data: {
             labels: labels,
             datasets: [{
-                label: 'Pass Rate (%)',
+                label: 'Test Case Pass Rate (%)',
                 data: passRates,
                 backgroundColor: 'rgba(59, 130, 246, 0.8)',
                 borderColor: 'rgba(59, 130, 246, 1)',
@@ -135,7 +135,7 @@ function renderPassRateChart(summaries, models) {
                 tooltip: {
                     callbacks: {
                         label: function (context) {
-                            return `Pass Rate: ${context.raw.toFixed(1)}%`;
+                            return `Test Case Pass Rate: ${context.raw.toFixed(1)}%`;
                         },
                     },
                 },

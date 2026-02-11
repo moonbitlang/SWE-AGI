@@ -397,7 +397,7 @@ def get_task_difficulty(task_name: str) -> str:
 
 
 def average_task_pass_rate(results: list[dict]) -> float:
-    """Compute unweighted mean of per-task pass rates."""
+    """Compute unweighted mean of per-task test case pass rates."""
     if not results:
         return 0.0
 

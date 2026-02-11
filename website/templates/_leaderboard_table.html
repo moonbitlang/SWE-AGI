@@ -46,7 +46,7 @@ not none %} {% set pct = (count / total * 100) if total > 0 else 0 %} {{
           <th class="sortable" data-sort="task">Task</th>
           <th class="sortable" data-sort="difficulty">Difficulty</th>
           <th class="sortable" data-sort="passed">Passed</th>
-          <th class="sortable sorted-desc" data-sort="pass_rate">Pass Rate</th>
+          <th class="sortable sorted-desc" data-sort="pass_rate">Test Case Pass Rate</th>
           <th class="sortable" data-sort="duration">Duration</th>
           <th class="sortable" data-sort="loc">LOC</th>
           <th class="sortable" data-sort="cost">Cost</th>
@@ -170,7 +170,7 @@ not none %} {% set pct = (count / total * 100) if total > 0 else 0 %} {{
           <th class="sortable" data-sort="model">Model</th>
           <th class="sortable" data-sort="org">Organization</th>
           <th class="sortable sorted-desc" data-sort="tasks">Tasks Passed</th>
-          <th class="sortable" data-sort="pass_rate">Pass Rate</th>
+          <th class="sortable" data-sort="pass_rate">Test Case Pass Rate</th>
           <th class="sortable" data-sort="cost">Total Cost</th>
           <th class="sortable" data-sort="time">Total Time</th>
         </tr>
@@ -231,7 +231,7 @@ not none %} {% set pct = (count / total * 100) if total > 0 else 0 %} {{
           <tr>
             <th>Model</th>
             <th>Tasks Passed</th>
-            <th>Pass Rate</th>
+            <th>Test Case Pass Rate</th>
             <th>Avg Time</th>
             <th>Avg LOC</th>
             <th>Cost</th>
