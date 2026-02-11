@@ -69,7 +69,7 @@ TASK_DISPLAY_NAMES = {
     "capnp": "Cap'n Proto",
     "cdcl": "CDCL SAT Solver",
     "csv": "CSV Parser",
-    "ecma262": "ECMAScript Parser",
+    "ecma262": "ECMAScript runtime",
     "git_object": "Git Object Parser",
     "hpack": "HPACK Decoder",
     "html5": "HTML5 Parser",

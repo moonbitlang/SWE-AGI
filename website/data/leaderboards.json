@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-11T16:09:39.661449",
+  "generated_at": "2026-02-11T16:30:53.162238",
   "metadata": {
     "difficulty_tiers": {
       "easy": [
@@ -173,7 +173,7 @@
     },
     {
       "id": "ecma262",
-      "display_name": "ECMAScript Parser",
+      "display_name": "ECMAScript runtime",
       "difficulty": "hard",
       "total_tests": 618
     },
