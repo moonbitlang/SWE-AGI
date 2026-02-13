@@ -15,6 +15,10 @@ implementation rather than copying near-matching code.
 
 [swe-agi.com](https://swe-agi.com)
 
+## Evaluation Results
+
+[moonbitlang/SWE-AGI-Eval](https://github.com/moonbitlang/SWE-AGI-Eval) is where we store evaluation results.
+
 ## Repository Layout
 
 - `tasks/`: spec-driven task suites (MoonBit modules/packages)
