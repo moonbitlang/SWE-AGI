@@ -11,6 +11,10 @@ absent from the current MoonBit ecosystem, so success depends on sustained
 specification comprehension, architectural decisions, and long-horizon
 implementation rather than copying near-matching code.
 
+## Paper Website
+
+[swe-agi.com](https://swe-agi.com)
+
 ## Repository Layout
 
 - `tasks/`: spec-driven task suites (MoonBit modules/packages)
