@@ -360,34 +360,34 @@ fn assert_convert_root(root : @capnp.StructDecoder) -> Unit raise {
   for i = 0; i < texts.length(); i = i + 1 {
     text_values.push(texts.get_text(i))
   }
-  inspect(text_values, content="[\"alpha\", \"beta\"]")
+  debug_inspect(text_values, content="[\"alpha\", \"beta\"]")
   let ints = root.read_list(1)
   let int_values : Array[Int] = []
   for i = 0; i < ints.length(); i = i + 1 {
     int_values.push(ints.get_int32(i))
   }
-  inspect(int_values, content="[1, -2, 3]")
+  debug_inspect(int_values, content="[1, -2, 3]")
   let flags = root.read_list(2)
   let flag_values : Array[Bool] = []
   for i = 0; i < flags.length(); i = i + 1 {
     flag_values.push(flags.get_bool(i))
   }
-  inspect(flag_values, content="[true, false, true]")
+  debug_inspect(flag_values, content="[true, false, true]")
   let u16s = root.read_list(3)
   let u16_values : Array[Int] = []
   for i = 0; i < u16s.length(); i = i + 1 {
     u16_values.push(u16s.get_uint16(i).to_int())
   }
-  inspect(u16_values, content="[1, 65535]")
+  debug_inspect(u16_values, content="[1, 65535]")
   let child = root.read_pointer(4).as_struct()
-  inspect((child.read_uint32(0), child.read_text(0)), content="(123, \"kid\")")
+  debug_inspect((child.read_uint32(0), child.read_text(0)), content="(123, \"kid\")")
   let children = root.read_list(5)
   let child_values : Array[String] = []
   for i = 0; i < children.length(); i = i + 1 {
     let item = children.get_struct(i)
     child_values.push("\{item.read_uint32(0)}:\{item.read_text(0)}")
   }
-  inspect(child_values, content="[\"1:one\", \"2:two\"]")
+  debug_inspect(child_values, content="[\"1:one\", \"2:two\"]")
 }
 
 ///|
@@ -514,7 +514,7 @@ test "list/get_int16/values" {
   for i = 0; i < list_decoder.length(); i = i + 1 {
     values.push(list_decoder.get_int16(i).to_int())
   }
-  inspect(values, content="[0, 32767, -32768, -1]")
+  debug_inspect(values, content="[0, 32767, -32768, -1]")
 }
 
 ///|
@@ -535,5 +535,5 @@ test "list/get_uint16/values" {
   for i = 0; i < list_decoder.length(); i = i + 1 {
     values.push(list_decoder.get_uint16(i).to_int())
   }
-  inspect(values, content="[0, 65535, 1000]")
+  debug_inspect(values, content="[0, 65535, 1000]")
 }

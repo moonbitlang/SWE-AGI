@@ -8,4 +8,4 @@ pub(all) enum ListElementKind {
   Byte8
   Pointer
   Composite
-} derive(ToJson, Show, Eq)
+} derive(ToJson, Debug, Eq)
