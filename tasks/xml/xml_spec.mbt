@@ -140,4 +140,4 @@ pub(all) suberror XmlError {
   UnmatchedTag(expected~ : String, found~ : String)
   InvalidAttribute(String)
   InvalidEntity(String)
-} derive(Show, Eq)
+} derive(Debug, Eq)

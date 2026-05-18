@@ -104,7 +104,7 @@ test "escape text" {
 test "unescape entities" {
   let text = "&lt;tag&gt; &amp; &quot;quoted&quot; &apos;apos&apos;"
   let unescaped = try? @xml.unescape(text)
-  inspect(unescaped, content="Ok(\"<tag> & \\\"quoted\\\" 'apos'\")")
+  debug_inspect(unescaped, content="Ok(\"<tag> & \\\"quoted\\\" 'apos'\")")
 }
 ```
 
