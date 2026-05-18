@@ -24,61 +24,61 @@ pub impl Writer for @buffer.Buffer with write(self, bytes : BytesView) raise {
 }
 
 ///|
-declare pub fn[T : Writer] write_varint(
-  writer : T,
+declare pub fn write_varint(
+  writer : &Writer,
   input : UInt64,
 ) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_tag(
-  writer : T,
+declare pub fn write_tag(
+  writer : &Writer,
   tag : (UInt, UInt),
 ) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_int32(writer : T, v : Int) -> Unit raise
+declare pub fn write_int32(writer : &Writer, v : Int) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_int64(writer : T, v : Int64) -> Unit raise
+declare pub fn write_int64(writer : &Writer, v : Int64) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_uint32(writer : T, v : UInt) -> Unit raise
+declare pub fn write_uint32(writer : &Writer, v : UInt) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_uint64(writer : T, v : UInt64) -> Unit raise
+declare pub fn write_uint64(writer : &Writer, v : UInt64) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_sint32(writer : T, v : Int) -> Unit raise
+declare pub fn write_sint32(writer : &Writer, v : Int) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_sint64(writer : T, v : Int64) -> Unit raise
+declare pub fn write_sint64(writer : &Writer, v : Int64) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_fixed32(writer : T, v : UInt) -> Unit raise
+declare pub fn write_fixed32(writer : &Writer, v : UInt) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_fixed64(writer : T, v : UInt64) -> Unit raise
+declare pub fn write_fixed64(writer : &Writer, v : UInt64) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_sfixed32(writer : T, v : Int) -> Unit raise
+declare pub fn write_sfixed32(writer : &Writer, v : Int) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_sfixed64(writer : T, v : Int64) -> Unit raise
+declare pub fn write_sfixed64(writer : &Writer, v : Int64) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_float(writer : T, v : Float) -> Unit raise
+declare pub fn write_float(writer : &Writer, v : Float) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_double(writer : T, v : Double) -> Unit raise
+declare pub fn write_double(writer : &Writer, v : Double) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_bool(writer : T, v : Bool) -> Unit raise
+declare pub fn write_bool(writer : &Writer, v : Bool) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_enum(writer : T, v : Enum) -> Unit raise
+declare pub fn write_enum(writer : &Writer, v : Enum) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_bytes(writer : T, v : Bytes) -> Unit raise
+declare pub fn write_bytes(writer : &Writer, v : Bytes) -> Unit raise
 
 ///|
-declare pub fn[T : Writer] write_string(writer : T, v : String) -> Unit raise
+declare pub fn write_string(writer : &Writer, v : String) -> Unit raise

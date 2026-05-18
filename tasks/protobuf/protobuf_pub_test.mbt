@@ -430,7 +430,7 @@ fn decode_difficult(b64 : String) -> DifficultDecoded raise {
           4 => {
             let packed = reader
               |> @protobuf.read_packed(
-                fn(r) { r |> @protobuf.read_double() },
+                r => r |> @protobuf.read_double(),
                 Some(8U),
               )
             for score in packed {
@@ -615,7 +615,7 @@ fn decode_middle(b64 : String) -> MiddleDecoded raise {
           3 => {
             let packed = reader
               |> @protobuf.read_packed(
-                fn(r) { r |> @protobuf.read_sint32() },
+                r => r |> @protobuf.read_sint32(),
                 None,
               )
             for value in packed {
