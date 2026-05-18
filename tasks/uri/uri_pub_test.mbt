@@ -54,35 +54,35 @@ test "component/scheme/single-letter" {
 ///|
 test "component/userinfo/simple" {
   let uri = Uri::parse("http://user@example.com/")
-  assert_eq(uri.userinfo(), Some("user"))
+  @debug.assert_eq(uri.userinfo(), Some("user"))
 }
 
 ///|
 test "component/userinfo/with-password" {
   let uri = Uri::parse("http://user:pass@example.com/")
-  assert_eq(uri.userinfo(), Some("user:pass"))
+  @debug.assert_eq(uri.userinfo(), Some("user:pass"))
 }
 
 ///|
 test "component/userinfo/empty" {
   let uri = Uri::parse("http://@example.com/")
-  assert_eq(uri.userinfo(), Some(""))
+  @debug.assert_eq(uri.userinfo(), Some(""))
 }
 
 ///|
 test "component/userinfo/percent-encoded" {
   let uri = Uri::parse("http://user%40name@example.com/")
-  assert_eq(uri.userinfo(), Some("user%40name"))
+  @debug.assert_eq(uri.userinfo(), Some("user%40name"))
 }
 
 ///|
 test "component/userinfo/complex" {
   let uri = Uri::parse("http://user:p%40ss:word@example.com/")
-  assert_eq(uri.userinfo(), Some("user:p%40ss:word"))
+  @debug.assert_eq(uri.userinfo(), Some("user:p%40ss:word"))
 }
 
 ///|
 test "component/userinfo/none" {
   let uri = Uri::parse("http://example.com/")
-  assert_eq(uri.userinfo(), None)
+  @debug.assert_eq(uri.userinfo(), None)
 }
