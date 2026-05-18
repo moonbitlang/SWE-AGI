@@ -16,7 +16,7 @@ test "229Q" {
   ]
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -61,7 +61,7 @@ test "26DV" {
   }
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -75,7 +75,7 @@ test "27NA" {
   let in_json : Json = "text"
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -91,7 +91,7 @@ test "2AUY" {
   let in_json : Json = ["a", "b", 42, "d"]
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -128,7 +128,7 @@ test "2EBW" {
   }
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -144,7 +144,7 @@ test "2LFX" {
   let in_json : Json = "foo"
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -159,7 +159,7 @@ test "2SXE" {
   let in_json : Json = { "key": "value", "foo": "key" }
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -182,7 +182,7 @@ test "2XXW" {
   }
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -198,7 +198,7 @@ test "33X3" {
   let in_json : Json = [1, -2, 33]
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -218,7 +218,7 @@ test "35KP" {
   let in_json : Json = { "a": "b" }
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -235,7 +235,7 @@ test "36F6" {
   let in_json : Json = { "plain": "a b\nc" }
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -250,7 +250,7 @@ test "3ALJ" {
   let in_json : Json = [["s1_i1", "s1_i2"], "s2"]
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -271,7 +271,7 @@ test "3GZX" {
   }
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -300,7 +300,7 @@ test "3MYT" {
   let in_json : Json = "k:#foo &a !t s"
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -314,7 +314,7 @@ test "3R3P" {
   let in_json : Json = ["a"]
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -327,7 +327,7 @@ test "3UYS" {
   let in_json : Json = { "escaped slash": "a/b" }
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -348,7 +348,7 @@ test "4CQQ" {
   }
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -376,7 +376,7 @@ test "4GC6" {
   let in_json : Json = "here's to \"quotes\""
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -439,7 +439,7 @@ test "4Q9F" {
   let in_json : Json = "ab cd\nef\n\ngh\n"
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -463,7 +463,7 @@ test "4QFQ" {
   ]
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -477,7 +477,7 @@ test "4RWC" {
   let in_json : Json = [1, 2, 3]
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -490,7 +490,7 @@ test "4UYU" {
   let in_json : Json = "foo: bar\": baz"
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -504,7 +504,7 @@ test "4V8U" {
   let in_json : Json = "plain\\value\\with\\backslashes"
   let yaml = @yaml.parse(in_yaml)
   match yaml {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -579,7 +579,7 @@ test "parse scalar" {
     #|
   let in_json : Json = "hello"
   match @yaml.parse(in_yaml) {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -592,7 +592,7 @@ test "parse mapping" {
     #|
   let in_json : Json = { "a": 1, "b": "two" }
   match @yaml.parse(in_yaml) {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -605,7 +605,7 @@ test "parse ignores comments" {
     #|
   let in_json : Json = { "a": 1, "b": "two" }
   match @yaml.parse(in_yaml) {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
@@ -617,7 +617,7 @@ test "parse null scalar" {
     #|
   let in_json : Json = null
   match @yaml.parse(in_yaml) {
-    Ok(yaml) => assert_eq(yaml.to_json(), in_json)
+    Ok(yaml) => @debug.assert_eq(yaml.to_json(), in_json)
     Err(error) => fail("Unexpected parse error: " + error.to_string())
   }
 }
