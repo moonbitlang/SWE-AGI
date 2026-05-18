@@ -781,7 +781,7 @@ test "r6rs_unicode/63" {
         ),
       ),
     ),
-    content="\"stra\xDF;e\"",
+    content="\"stra\u00DFe\"",
   )
 }
 
@@ -823,7 +823,7 @@ test "r6rs_unicode/66" {
         ),
       ),
     ),
-    content="\"\x3C3;\"",
+    content="\"\u03C3\"",
   )
 }
 
@@ -837,7 +837,7 @@ test "r6rs_unicode/67" {
         ),
       ),
     ),
-    content="\"\x39E;\x391;\x39F;\x3A3;\"",
+    content="\"\u039E\u0391\u039F\u03A3\"",
   )
 }
 
@@ -851,7 +851,7 @@ test "r6rs_unicode/68" {
         ),
       ),
     ),
-    content="\"\x3BE;\x3B1;\x3BF;\x3C2;\"",
+    content="\"\u03BE\u03B1\u03BF\u03C2\"",
   )
 }
 
@@ -865,7 +865,7 @@ test "r6rs_unicode/69" {
         ),
       ),
     ),
-    content="\"\x3BE;\x3B1;\x3BF;\x3C3;\x3C2;\"",
+    content="\"\u03BE\u03B1\u03BF\u03C3\u03C2\"",
   )
 }
 
@@ -879,7 +879,7 @@ test "r6rs_unicode/70" {
         ),
       ),
     ),
-    content="\"\x3BE;\x3B1;\x3BF;\x3C2; \x3C3;\"",
+    content="\"\u03BE\u03B1\u03BF\u03C2 \u03C3\"",
   )
 }
 
@@ -893,7 +893,7 @@ test "r6rs_unicode/71" {
         ),
       ),
     ),
-    content="\"\x3BE;\x3B1;\x3BF;\x3C3;\"",
+    content="\"\u03BE\u03B1\u03BF\u03C3\"",
   )
 }
 
@@ -907,7 +907,7 @@ test "r6rs_unicode/72" {
         ),
       ),
     ),
-    content="\"\x39E;\x391;\x39F;\x3A3;\"",
+    content="\"\u039E\u0391\u039F\u03A3\"",
   )
 }
 
@@ -921,7 +921,7 @@ test "r6rs_unicode/73" {
         ),
       ),
     ),
-    content="\"\x39E;\x391;\x39F;\x3A3;\"",
+    content="\"\u039E\u0391\u039F\u03A3\"",
   )
 }
 
@@ -991,7 +991,7 @@ test "r6rs_unicode/78" {
         ),
       ),
     ),
-    content="\"a\x3C3;:x\"",
+    content="\"a\u03C3:x\"",
   )
 }
 
@@ -1005,7 +1005,7 @@ test "r6rs_unicode/79" {
         ),
       ),
     ),
-    content="\"a\x3C3;.x\"",
+    content="\"a\u03C3.x\"",
   )
 }
 
@@ -1019,7 +1019,7 @@ test "r6rs_unicode/80" {
         ),
       ),
     ),
-    content="\"a\x3C3;'x\"",
+    content="\"a\u03C3'x\"",
   )
 }
 
@@ -1033,7 +1033,7 @@ test "r6rs_unicode/81" {
         ),
       ),
     ),
-    content="\"a\x3C3;_x\"",
+    content="\"a\u03C3_x\"",
   )
 }
 
@@ -1425,7 +1425,7 @@ test "r6rs_unicode/112" {
         ),
       ),
     ),
-    content="\"\x65;\x301;\"",
+    content="\"e\u0301\"",
   )
 }
 
@@ -1439,7 +1439,7 @@ test "r6rs_unicode/114" {
         ),
       ),
     ),
-    content="\"\x65;\x301;\"",
+    content="\"e\u0301\"",
   )
 }
 
@@ -1453,7 +1453,7 @@ test "r6rs_unicode/115" {
         ),
       ),
     ),
-    content="\"\xE9;\"",
+    content="\"\u00E9\"",
   )
 }
 
@@ -1467,7 +1467,7 @@ test "r6rs_unicode/116" {
         ),
       ),
     ),
-    content="\"\x65;\x301;\"",
+    content="\"e\u0301\"",
   )
 }
 
@@ -1481,7 +1481,7 @@ test "r6rs_unicode/117" {
         ),
       ),
     ),
-    content="\"\xE9;\"",
+    content="\"\u00E9\"",
   )
 }
 
@@ -1495,7 +1495,7 @@ test "r6rs_unicode/118" {
         ),
       ),
     ),
-    content="\"\x65;\x301;\"",
+    content="\"e\u0301\"",
   )
 }
 
@@ -1509,6 +1509,6 @@ test "r6rs_unicode/119" {
         ),
       ),
     ),
-    content="\"\xE9;\"",
+    content="\"\u00E9\"",
   )
 }

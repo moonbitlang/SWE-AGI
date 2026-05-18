@@ -165,6 +165,6 @@ test "r6rs_unicode/113" {
         ),
       ),
     ),
-    content="\"\xE9;\"",
+    content="\"\u00E9\"",
   )
 }
