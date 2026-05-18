@@ -18,7 +18,7 @@
 pub(all) struct HeaderField {
   name : Bytes
   value : Bytes
-} derive(Show, Eq)
+} derive(Debug, Eq)
 
 ///|
 /// Calculate entry size per RFC 7541 Section 4.1
@@ -42,7 +42,7 @@ pub(all) suberror HpackError {
   InvalidTableSizeUpdate
   /// Invalid representation type byte
   InvalidRepresentation(Byte)
-} derive(Show, Eq)
+} derive(Debug, Eq)
 
 ///|
 /// HPACK Decoder context
