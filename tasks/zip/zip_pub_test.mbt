@@ -58,10 +58,10 @@ async fn parse_seekable_fixture(path : String) -> ZipReport {
 
 ///|
 async fn parse_stream_fixture(path : String) -> ZipReport {
-  @async.with_task_group(fn(group) {
+  @async.with_task_group(group => {
     let (reader, writer) = @io.pipe()
     defer reader.close()
-    group.spawn_bg(fn() {
+    group.spawn_bg(() => {
       defer writer.close()
       let file = @fs.open(path, mode=@fs.Mode::ReadOnly)
       defer file.close()

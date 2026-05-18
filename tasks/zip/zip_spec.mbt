@@ -7,7 +7,7 @@
 pub(all) suberror ZipError {
   Io(String)
   Invalid(String)
-} derive(Show, Eq)
+} derive(Debug, Eq)
 
 ///|
 /// A single central-directory entry as reported by the reference metadata
@@ -49,7 +49,7 @@ pub(all) struct ZipEntry {
   compression_method : String
   mod_date : String
   mod_time : String
-} derive(Show, Eq)
+} derive(Debug, Eq)
 
 ///|
 /// Archive summary values reported by the reference metadata pipeline.
@@ -62,7 +62,7 @@ pub(all) struct ZipSummary {
   uncompressed_size : Int?
   compressed_size : Int?
   compression_ratio : String?
-} derive(Show, Eq)
+} derive(Debug, Eq)
 
 ///|
 /// Tolerant parse result for a ZIP archive.
@@ -74,7 +74,7 @@ pub(all) struct ZipReport {
   entries : Array[ZipEntry]
   summary : ZipSummary
   invalid : Bool
-} derive(Show, Eq)
+} derive(Debug, Eq)
 
 ///|
 /// Convert a ZipReport into JSON for snapshot testing.
