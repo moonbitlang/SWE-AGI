@@ -1,5 +1,9 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "spec/capnp"
+package "capnp"
+
+import {
+  "moonbitlang/core/debug",
+}
 
 // Values
 
@@ -51,10 +55,7 @@ pub(all) enum ListElementKind {
   Byte8
   Pointer
   Composite
-}
-pub impl Eq for ListElementKind
-pub impl Show for ListElementKind
-pub impl ToJson for ListElementKind
+} derive(Eq, ToJson, @debug.Debug)
 
 type ListWriter
 pub fn ListWriter::element_kind(Self) -> ListElementKind

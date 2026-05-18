@@ -287,7 +287,7 @@ test "list/element_kind/bit1" {
   let bytes = writer.to_bytes()
   let decoder = @capnp.Decoder::from_bytes(bytes[:])
   let list_decoder = decoder.root().as_list()
-  inspect(list_decoder.element_kind(), content="Bit1")
+  @debug.assert_eq(list_decoder.element_kind(), @capnp.ListElementKind::Bit1)
 }
 
 ///|
@@ -302,7 +302,7 @@ test "list/element_kind/byte1" {
   let bytes = writer.to_bytes()
   let decoder = @capnp.Decoder::from_bytes(bytes[:])
   let list_decoder = decoder.root().as_list()
-  inspect(list_decoder.element_kind(), content="Byte1")
+  @debug.assert_eq(list_decoder.element_kind(), @capnp.ListElementKind::Byte1)
 }
 
 ///|
@@ -317,7 +317,7 @@ test "list/element_kind/byte2" {
   let bytes = writer.to_bytes()
   let decoder = @capnp.Decoder::from_bytes(bytes[:])
   let list_decoder = decoder.root().as_list()
-  inspect(list_decoder.element_kind(), content="Byte2")
+  @debug.assert_eq(list_decoder.element_kind(), @capnp.ListElementKind::Byte2)
 }
 
 ///|
@@ -332,7 +332,7 @@ test "list/element_kind/byte4" {
   let bytes = writer.to_bytes()
   let decoder = @capnp.Decoder::from_bytes(bytes[:])
   let list_decoder = decoder.root().as_list()
-  inspect(list_decoder.element_kind(), content="Byte4")
+  @debug.assert_eq(list_decoder.element_kind(), @capnp.ListElementKind::Byte4)
 }
 
 ///|
@@ -347,7 +347,7 @@ test "list/element_kind/byte8" {
   let bytes = writer.to_bytes()
   let decoder = @capnp.Decoder::from_bytes(bytes[:])
   let list_decoder = decoder.root().as_list()
-  inspect(list_decoder.element_kind(), content="Byte8")
+  @debug.assert_eq(list_decoder.element_kind(), @capnp.ListElementKind::Byte8)
 }
 
 ///|
@@ -362,7 +362,7 @@ test "list/element_kind/pointer" {
   let bytes = writer.to_bytes()
   let decoder = @capnp.Decoder::from_bytes(bytes[:])
   let list_decoder = decoder.root().as_list()
-  inspect(list_decoder.element_kind(), content="Pointer")
+  @debug.assert_eq(list_decoder.element_kind(), @capnp.ListElementKind::Pointer)
 }
 
 ///|
@@ -572,7 +572,7 @@ test "pointer/list/void" {
   let root = decoder.root().as_struct()
   let list = root.read_list(0)
   assert_eq(list.length(), 5)
-  assert_eq(list.element_kind(), @capnp.ListElementKind::Void)
+  @debug.assert_eq(list.element_kind(), @capnp.ListElementKind::Void)
 }
 
 ///|
@@ -592,7 +592,7 @@ test "pointer/list/bit" {
   let root = decoder.root().as_struct()
   let list = root.read_list(0)
   assert_eq(list.length(), 8)
-  assert_eq(list.element_kind(), @capnp.ListElementKind::Bit1)
+  @debug.assert_eq(list.element_kind(), @capnp.ListElementKind::Bit1)
   // Bits: 0=0, 1=1, 2=0, 3=1, 4=0, 5=1, 6=0, 7=1
   assert_eq(list.get_bool(0), false)
   assert_eq(list.get_bool(1), true)
@@ -617,7 +617,7 @@ test "pointer/list/byte" {
   let root = decoder.root().as_struct()
   let list = root.read_list(0)
   assert_eq(list.length(), 4)
-  assert_eq(list.element_kind(), @capnp.ListElementKind::Byte1)
+  @debug.assert_eq(list.element_kind(), @capnp.ListElementKind::Byte1)
   assert_eq(list.get_uint8(0), b'\x01')
   assert_eq(list.get_uint8(1), b'\x02')
   assert_eq(list.get_uint8(2), b'\x03')
@@ -641,7 +641,7 @@ test "pointer/list/int16" {
   let root = decoder.root().as_struct()
   let list = root.read_list(0)
   assert_eq(list.length(), 2)
-  assert_eq(list.element_kind(), @capnp.ListElementKind::Byte2)
+  @debug.assert_eq(list.element_kind(), @capnp.ListElementKind::Byte2)
   assert_eq(list.get_uint16(0).to_int(), 0x1234)
   assert_eq(list.get_uint16(1).to_int(), 0x5678)
 }
@@ -663,7 +663,7 @@ test "pointer/list/int32" {
   let root = decoder.root().as_struct()
   let list = root.read_list(0)
   assert_eq(list.length(), 2)
-  assert_eq(list.element_kind(), @capnp.ListElementKind::Byte4)
+  @debug.assert_eq(list.element_kind(), @capnp.ListElementKind::Byte4)
   assert_eq(list.get_uint32(0), 0x12345678U)
 }
 
@@ -685,7 +685,7 @@ test "pointer/list/int64" {
   let root = decoder.root().as_struct()
   let list = root.read_list(0)
   assert_eq(list.length(), 2)
-  assert_eq(list.element_kind(), @capnp.ListElementKind::Byte8)
+  @debug.assert_eq(list.element_kind(), @capnp.ListElementKind::Byte8)
   assert_eq(list.get_uint64(0), 0x123456789ABCDEF0UL)
 }
 
