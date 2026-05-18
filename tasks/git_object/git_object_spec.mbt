@@ -10,7 +10,7 @@ pub(all) suberror GitObjectError {
   InvalidHeader(String)
   InvalidSize(String)
   InvalidSha1(String)
-} derive(Show, Eq)
+} derive(Debug, Eq)
 
 ///|
 /// Supported git object kinds.
@@ -22,7 +22,7 @@ pub(all) enum GitObjectKind {
   Commit
   Tag
   Unknown(String)
-} derive(Show, Eq)
+} derive(Debug, Eq)
 
 ///|
 /// A single tree entry as rendered by git.
@@ -34,20 +34,20 @@ pub(all) struct GitTreeEntry {
   kind : GitObjectKind
   oid : String
   name : String
-} derive(Show, Eq)
+} derive(Debug, Eq)
 
 ///|
 /// Blob content with base64 payload and optional UTF-8 text.
 pub(all) struct GitBlobContent {
   base64 : String
   text : String?
-} derive(Show, Eq)
+} derive(Debug, Eq)
 
 ///|
 /// Tree content as a list of entries.
 pub(all) struct GitTreeContent {
   entries : Array[GitTreeEntry]
-} derive(Show, Eq)
+} derive(Debug, Eq)
 
 ///|
 /// Commit content as raw header lines and message.
@@ -57,14 +57,14 @@ pub(all) struct GitTreeContent {
 pub(all) struct GitCommitContent {
   headers : Array[String]
   message : String
-} derive(Show, Eq)
+} derive(Debug, Eq)
 
 ///|
 /// Tag content as raw header lines and message.
 pub(all) struct GitTagContent {
   headers : Array[String]
   message : String
-} derive(Show, Eq)
+} derive(Debug, Eq)
 
 ///|
 /// Parsed git object content.
@@ -76,7 +76,7 @@ pub(all) enum GitObjectContent {
   Commit(GitCommitContent)
   Tag(GitTagContent)
   Unknown(String)
-} derive(Show, Eq)
+} derive(Debug, Eq)
 
 ///|
 /// Parsed git object with SHA-1 validation metadata.
@@ -89,7 +89,7 @@ pub(all) struct GitObject {
   size : Int
   sha1_ok : Bool
   content : GitObjectContent
-} derive(Show, Eq)
+} derive(Debug, Eq)
 
 ///|
 /// Convert a GitObject into JSON for snapshot testing.

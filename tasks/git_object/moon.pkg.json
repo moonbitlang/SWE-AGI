@@ -1,6 +1,0 @@
-{
-  "test-import": [
-    "moonbitlang/async",
-    "moonbitlang/async/fs"
-  ]
-}

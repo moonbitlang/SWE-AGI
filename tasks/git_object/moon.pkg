@@ -1,0 +1,6 @@
+import {
+  "moonbitlang/async",
+  "moonbitlang/async/fs",
+  "moonbitlang/core/json",
+  "moonbitlang/core/encoding/utf8" @encoding/utf8,
+} for "test"
