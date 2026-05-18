@@ -107,7 +107,8 @@ fn exec_ok(src : String) -> Unit raise {
   let result : Result[Unit, @lua.LuaError] = try? @lua.exec(src)
   match result {
     Ok(_) => ()
-    Err(err) => fail("Expected Lua chunk to succeed, got: " + err.to_string())
+    Err(err) =>
+      fail("Expected Lua chunk to succeed, got: " + @debug.to_string(err))
   }
 }
 
@@ -117,7 +118,7 @@ fn exec_syntax_error(src : String) -> Unit raise {
   match result {
     Ok(_) => fail("Expected syntax error, but chunk succeeded")
     Err(@lua.LuaError::SyntaxError(_)) => ()
-    Err(err) => fail("Expected syntax error, got: " + err.to_string())
+    Err(err) => fail("Expected syntax error, got: " + @debug.to_string(err))
   }
 }
 
@@ -127,6 +128,6 @@ fn exec_runtime_error(src : String) -> Unit raise {
   match result {
     Ok(_) => fail("Expected runtime error, but chunk succeeded")
     Err(@lua.LuaError::RuntimeError(_)) => ()
-    Err(err) => fail("Expected runtime error, got: " + err.to_string())
+    Err(err) => fail("Expected runtime error, got: " + @debug.to_string(err))
   }
 }

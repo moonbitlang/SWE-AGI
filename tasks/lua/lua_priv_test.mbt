@@ -705,8 +705,6 @@ test "hard/error/runtime-bad-coroutine" {
   exec_runtime_error(src)
 }
 
-
-
 ///|
 test "mid/happy/varargs-select" {
   let src =
@@ -1499,4 +1497,3 @@ test "hard/happy/multi-return" {
     #|
   exec_ok(src)
 }
-
