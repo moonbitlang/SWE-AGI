@@ -7,7 +7,7 @@
 pub(all) suberror LuaError {
   SyntaxError(String)
   RuntimeError(String)
-} derive(Show, Eq, ToJson)
+} derive(Debug, Eq, ToJson)
 
 ///|
 /// Execute a Lua chunk in a fresh VM with standard Lua 5.4 libraries loaded.

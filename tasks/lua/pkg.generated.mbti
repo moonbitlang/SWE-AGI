@@ -1,0 +1,22 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "lua"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn exec(StringView) -> Unit raise LuaError
+
+// Errors
+pub(all) suberror LuaError {
+  SyntaxError(String)
+  RuntimeError(String)
+} derive(Eq, ToJson, @debug.Debug)
+
+// Types and methods
+
+// Type aliases
+
+// Traits
+
