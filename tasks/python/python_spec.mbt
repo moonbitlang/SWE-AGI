@@ -18,7 +18,7 @@ pub(all) suberror PyError {
   AttributeError(String)
   IoError(String)
   NotImplemented(String)
-} derive(Show, Eq, ToJson)
+} derive(Debug, Eq, ToJson)
 
 ///|
 /// Opaque interpreter instance with its own globals/builtins state.
