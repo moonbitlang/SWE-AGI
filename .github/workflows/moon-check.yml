@@ -1,0 +1,59 @@
+name: moon check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: ${{ matrix.task }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        task:
+          - c99
+          - capnp
+          - cdcl
+          - csv
+          - ecma262
+          - git_object
+          - hpack
+          - html5
+          - ini
+          - jq
+          - lua
+          - protobuf
+          - pug
+          - python
+          - r6rs
+          - toml
+          - uri
+          - url
+          - wasm
+          - xml
+          - yaml
+          - zip
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install MoonBit CLI
+        run: |
+          curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash
+          echo "$HOME/.moon/bin" >> "$GITHUB_PATH"
+
+      - name: Verify install
+        run: moon version --all
+
+      - name: Update registry
+        run: moon update
+
+      - name: moon check
+        working-directory: tasks/${{ matrix.task }}
+        run: moon check
