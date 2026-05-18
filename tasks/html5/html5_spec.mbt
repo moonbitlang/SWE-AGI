@@ -26,6 +26,11 @@ pub impl Show for Token with output(token, logger) {
 }
 
 ///|
+pub impl @debug.Debug for Token with to_repr(token) {
+  @debug.Repr::literal(token.to_string())
+}
+
+///|
 declare pub type Namespace
 
 ///|
