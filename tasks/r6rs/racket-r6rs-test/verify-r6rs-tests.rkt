@@ -155,7 +155,7 @@
 ;; Unescape MoonBit string escapes
 ;; Process character by character to correctly handle escape sequences
 ;; In MoonBit: \\ = backslash, \n = newline, \t = tab, \r = return, \" = quote
-;; Also handles \xHEX; for Unicode escapes (MoonBit uses R6RS-style hex escapes)
+;; Also handles MoonBit Unicode escapes.
 (define (unescape-moonbit-string str)
   (let loop ([chars (string->list str)] [result '()])
     (cond
@@ -168,16 +168,16 @@
            [(char=? next #\t) (loop (cddr chars) (cons #\tab result))]
            [(char=? next #\r) (loop (cddr chars) (cons #\return result))]
            [(char=? next #\") (loop (cddr chars) (cons #\" result))]
-           ;; \xHEX; Unicode escape (MoonBit/R6RS style)
+           ;; Deprecated MoonBit byte-style hex escape.
            [(char=? next #\x)
-            (let ([hex-result (parse-hex-escape (cddr chars))])
+            (let ([hex-result (parse-fixed-hex-escape (cddr chars) 2)])
               (if hex-result
                   (loop (cdr hex-result) (cons (integer->char (car hex-result)) result))
                   ;; Invalid hex escape - keep as literal
                   (loop (cddr chars) (cons next (cons #\\ result)))))]
-           ;; \uHEX; Unicode escape (alternative style)
+           ;; \uFFFF or \u{HEX} Unicode escape.
            [(char=? next #\u)
-            (let ([hex-result (parse-hex-escape (cddr chars))])
+            (let ([hex-result (parse-moonbit-unicode-escape (cddr chars))])
               (if hex-result
                   (loop (cdr hex-result) (cons (integer->char (car hex-result)) result))
                   ;; Invalid hex escape - keep as literal
@@ -186,7 +186,8 @@
            [else (loop (cddr chars) (cons next (cons #\\ result)))]))]
       [else (loop (cdr chars) (cons (car chars) result))])))
 
-;; Parse hex escape: expects chars starting after \x, returns (value . remaining-chars) or #f
+;; Parse an R6RS-style hex escape: expects chars after \x, ending at ;
+;; Returns (value . remaining-chars) or #f.
 (define (parse-hex-escape chars)
   (let loop ([cs chars] [hex-chars '()])
     (cond
@@ -204,6 +205,41 @@
            (char<=? #\A (car cs) #\F))
        (loop (cdr cs) (cons (car cs) hex-chars))]
       [else #f])))
+
+;; Parse fixed-width MoonBit escapes like \xNN and \uFFFF.
+(define (parse-fixed-hex-escape chars len)
+  (let loop ([cs chars] [remaining len] [hex-chars '()])
+    (cond
+      [(= remaining 0)
+       (let* ([hex-str (list->string (reverse hex-chars))]
+              [val (string->number hex-str 16)])
+         (and val (cons val cs)))]
+      [(null? cs) #f]
+      [(or (char<=? #\0 (car cs) #\9)
+           (char<=? #\a (car cs) #\f)
+           (char<=? #\A (car cs) #\F))
+       (loop (cdr cs) (- remaining 1) (cons (car cs) hex-chars))]
+      [else #f])))
+
+;; Parse MoonBit Unicode escapes: \uFFFF or \u{HEX}.
+(define (parse-moonbit-unicode-escape chars)
+  (cond
+    [(and (pair? chars) (char=? (car chars) #\{))
+     (let loop ([cs (cdr chars)] [hex-chars '()])
+       (cond
+         [(null? cs) #f]
+         [(char=? (car cs) #\})
+          (if (null? hex-chars)
+              #f
+              (let* ([hex-str (list->string (reverse hex-chars))]
+                     [val (string->number hex-str 16)])
+                (and val (cons val (cdr cs)))))]
+         [(or (char<=? #\0 (car cs) #\9)
+              (char<=? #\a (car cs) #\f)
+              (char<=? #\A (car cs) #\F))
+          (loop (cdr cs) (cons (car cs) hex-chars))]
+         [else #f]))]
+    [else (parse-fixed-hex-escape chars 4)]))
 
 ;; ============================================================================
 ;; Evaluation Module - Run Scheme code in R6RS environment
